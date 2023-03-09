@@ -30,9 +30,16 @@
                 <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                     <li class="nav-item">
                         <!-- TODO color hover, JS for reveal Search -->
-                        <form class="d-flex my-2 my-lg-0">
+                        <form class="d-flex my-0">
                             <input class="form-control me-sm-2" type="text" placeholder="Type something...">
-                            <button class="btn nav-link my-2 my-sm-0" type="submit">Search</button>
+                            <button class="btn nav-link my-2 my-sm-0 border-0" type="submit">Search</button>
+                        </form>
+                        <form class="search-form d-none" role="search">
+                            <div class="form-group pull-right" id="search">
+                              <input type="text" class="form-control" placeholder="Search">
+                              <button type="submit" class="form-control form-control-submit">Submit</button>
+                              <span class="search-label"><i class="glyphicon glyphicon-search">Search</i></span>
+                            </div>
                         </form>
                     </li>
                     <li class="nav-item">
@@ -45,37 +52,65 @@
             </div>
       </div>
     </nav>
-    <nav class="navbar navbar-expand-sm navbar-light bg-light">
+    <nav class="navbar navbar-expand-sm navbar-light bg-light py-0 py-sm-2">
           <div class="container">
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
-                aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
             <div class="collapse navbar-collapse" id="collapsibleNavId">
                 <ul class="navbar-nav m-auto mt-2 mt-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Women</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <h4>Clothing</h4>
-                            <a class="dropdown-item" href="#">T-shirts</a>
-                            <a class="dropdown-item" href="#">Shirts</a>
-                            <a class="dropdown-item" href="#">Hoodies</a>
-                            <a class="dropdown-item" href="#">Jeans</a>
-                            <a class="dropdown-item" href="#">Vests</a>
+                    <li class="nav-item dropdown position-static">
+                        <a class="nav-link dropdown-toggle" href="#" id="women-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Women</a>
+                        <div class="dropdown-menu w-100 mt-0 border-0 border-bottom bg-light" aria-labelledby="women-dropdown">
+                            <div class="container">
+                                <div class="row my-4">
+                                  <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                    <h4>Clothing</h4>
+                                    <div class="list-group list-group-flush">
+                                      <a href="" class="list-group-item list-group-item-action bg-light">T-shirts</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Shirts</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Hoodies</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Jeans</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Vests</a>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
+                                  </div>
+                                  <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
+                                    <picture>
+                                        <source srcset="./slides/1.svg" type="image/svg+xml">
+                                        <img src="./slides/1.svg" class="img-fluid" alt="image">
+                                      </picture>
+                                  </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="dropdownId" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Men</a>
-                        <div class="dropdown-menu" aria-labelledby="dropdownId">
-                            <h4>Clothing</h4>
-                            <a class="dropdown-item" href="#">T-shirts</a>
-                            <a class="dropdown-item" href="#">Shirts</a>
-                            <a class="dropdown-item" href="#">Hoodies</a>
-                            <a class="dropdown-item" href="#">Jeans</a>
-                            <a class="dropdown-item" href="#">Vests</a>
+                    <li class="nav-item dropdown position-static">
+                        <a class="nav-link dropdown-toggle" href="#" id="women-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Men</a>
+                        <div class="dropdown-menu w-100 mt-0 border-0 border-bottom bg-light" aria-labelledby="women-dropdown">
+                            <div class="container">
+                                <div class="row my-4">
+                                  <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                    <h4>Clothing</h4>
+                                    <div class="list-group list-group-flush">
+                                      <a href="" class="list-group-item list-group-item-action bg-light">T-shirts</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Shirts</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Hoodies</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Jeans</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Vests</a>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
+                                  </div>
+                                  <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
+                                    <picture>
+                                        <source srcset="./slides/2.svg" type="image/svg+xml">
+                                        <img src="./slides/2.svg" class="img-fluid" alt="image">
+                                      </picture>
+                                  </div>
+                                </div>
+                            </div>
                         </div>
                     </li>
                     <li class="nav-item">
