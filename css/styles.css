@@ -1,0 +1,9 @@
+.dropdown-menu.show {
+    margin-top: -2vh !important;
+}
+
+.featured-items a {
+    color: black;
+    text-decoration: none;
+    margin-top: 5px;
+}
