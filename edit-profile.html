@@ -14,8 +14,6 @@
   <link href="./css/carousel.css" rel="stylesheet">
   <!-- Main CSS -->
   <link href="./css/styles.css" rel="stylesheet">
-  <!-- Login CSS -->
-  <link href="./css/login.css" rel="stylesheet">
 </head>
 
 <body>
@@ -128,23 +126,71 @@
     
   </header>
   <main>
-    <h1 class="page-header text-center my-5">Edit Profile</h1>
-    <section class="container login text-center">
-    <form>
-        <div class="mb-3">
-        <label for="" class="form-label">Email</label>
-        <input type="email" class="form-control" name="" id="" aria-describedby="emailHelpId" placeholder="abc@mail.com">
+
+    <section class="container mb-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <h1 class="mt-5 mb-4 text-center">Edit details</h1>
+          <form>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
+              <label for="floatingInput">Email address</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="John">
+              <label for="floatingInput">Name</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="email" class="form-control" id="floatingInput" placeholder="Doe">
+              <label for="floatingInput">Surname</label>
+            </div>
+
+            <div class="row">
+              <div class="col-lg-3">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="Pezinská">
+                  <label for="floatingInput">Postcode</label>
+                </div>
+              </div>
+              <div class="col-lg-9">
+                <div class="form-floating mb-3">
+                  <input type="email" class="form-control" id="floatingInput" placeholder="Pezinská">
+                  <label for="floatingInput">Street</label>
+                </div>
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button type="submit" class="btn btn-primary w-100">Edit details</button>
+              </div>
+            </div>
+          </form>  
         </div>
-        <div class="mb-3">
-        <label for="" class="form-label">Password</label>
-        <input type="password" class="form-control" name="" id="" placeholder="">
+      </div>
+    </section>
+
+    <section class="container mb-5">
+      <div class="row d-flex justify-content-center">
+        <div class="col-md-6">
+          <h1 class="mt-4 mb-4 text-center">Edit password</h1>
+          <form>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
+              <label for="floatingInput">Password</label>
+              <p class="text-muted mt-1">Aspoň 8 znakov</p>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="password" class="form-control" id="floatingPassword" placeholder="Repeat password">
+              <label for="floatingInput">Repeat password</label>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <button type="submit" class="btn btn-primary w-100">Edit password</button>
+              </div>
+            </div>
+          </form>  
         </div>
-        <div class="mb-3">
-          <label for="" class="form-label">Repeat password</label>
-          <input type="password" class="form-control" name="" id="" placeholder="">
-          </div>
-        <button type="submit" class="btn btn-primary">Register</button>
-    </form>  
+      </div>
     </section>
   </main>
   <div class="container">
