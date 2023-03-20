@@ -78,7 +78,7 @@
                                   </div>
                                   <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
                                   </div>
-                                  <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
+                                  <div class="col-md-6 col-lg-6 mb-3 mb-lg-0 d-none d-md-block">
                                     <picture>
                                         <source srcset="./slides/1.svg" type="image/svg+xml">
                                         <img src="./slides/1.svg" class="img-fluid" alt="image">
@@ -105,7 +105,7 @@
                                   </div>
                                   <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
                                   </div>
-                                  <div class="col-md-6 col-lg-6 mb-3 mb-lg-0">
+                                  <div class="col-md-6 col-lg-6 mb-3 mb-lg-0 d-none d-md-block">
                                     <picture>
                                         <source srcset="./slides/2.svg" type="image/svg+xml">
                                         <img src="./slides/2.svg" class="img-fluid" alt="image">
@@ -137,10 +137,10 @@
             <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
     
             <div class="container">
-              <div class="carousel-caption text-start">
-                <h1>Example headline.</h1>
-                <p>Some representative placeholder content for the first slide of the carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Sign up today</a></p>
+              <div class="carousel-caption">
+                <h1>New Collection</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Browse</a></p>
               </div>
             </div>
           </div>
@@ -149,8 +149,8 @@
     
             <div class="container">
               <div class="carousel-caption">
-                <h1>Another example headline.</h1>
-                <p>Some representative placeholder content for the second slide of the carousel.</p>
+                <h1>On Sale</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                 <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
               </div>
             </div>
@@ -159,10 +159,10 @@
             <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
     
             <div class="container">
-              <div class="carousel-caption text-end">
-                <h1>One more for good measure.</h1>
-                <p>Some representative placeholder content for the third slide of this carousel.</p>
-                <p><a class="btn btn-lg btn-primary" href="#">Browse gallery</a></p>
+              <div class="carousel-caption">
+                <h1>New user bonus</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <p><a class="btn btn-lg btn-primary" href="#">Register</a></p>
               </div>
             </div>
           </div>
@@ -182,32 +182,40 @@
       <div class="col-md-3">
         <a href="#" class="text-decoration-none text-dark">
           <div class="d-flex flex-column align-items-center">
-            <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0">
-            Jeans
+            <div class="overflow-hidden">
+              <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
+            </div>
+            <p class="item-description">Jeans</p>
           </div>
         </a>
       </div>
       <div class="col-md-3">
         <a href="#" class="text-decoration-none text-dark">
           <div class="d-flex flex-column align-items-center">
-            <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0">
-            Jeans
+            <div class="overflow-hidden">
+              <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
+            </div>
+            <p class="item-description">Jeans</p>
           </div>
         </a>
       </div>
       <div class="col-md-3">
         <a href="#" class="text-decoration-none text-dark">
           <div class="d-flex flex-column align-items-center">
-            <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0">
-            Jeans
+            <div class="overflow-hidden">
+              <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
+            </div>
+            <p class="item-description">Jeans</p>
           </div>
         </a>
       </div>
       <div class="col-md-3">
         <a href="#" class="text-decoration-none text-dark">
           <div class="d-flex flex-column align-items-center">
-            <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0">
-            Jeans
+            <div class="overflow-hidden">
+              <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
+            </div>
+            <p class="item-description">Jeans</p>
           </div>
         </a>
       </div>
@@ -215,19 +223,19 @@
   </section>
 </main>
   <div class="container">
-    <footer class="row row-cols-5 py-5 border-top">
-      <div class="col-5">
+    <footer class="row py-5 border-top">
+      <div class="col-md-5">
         <a href="/" class="d-flex align-items-center mb-3 link-dark text-decoration-none">
           <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
         </a>
         <p class="text-muted">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tellus quis urna fringilla volutpat. </p>
         <p class="text-muted">© 2023</p>
       </div>
-      <div class="col-1">
+      <div class="col-md-1">
       </div>
-      <div class="col-2">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
+      <div class="col-md-2">
+        <h5 class="footer-section">Section</h5>
+        <ul class="nav flex-column footer-links">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
@@ -235,9 +243,9 @@
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
         </ul>
       </div>
-      <div class="col-2">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
+      <div class="col-md-2">
+        <h5 class="footer-section">Section</h5>
+        <ul class="nav flex-column footer-links">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>
@@ -245,9 +253,9 @@
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">About</a></li>
         </ul>
       </div>
-      <div class="col-2">
-        <h5>Section</h5>
-        <ul class="nav flex-column">
+      <div class="col-md-2">
+        <h5 class="footer-section">Section</h5>
+        <ul class="nav flex-column footer-links">
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Home</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Features</a></li>
           <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Pricing</a></li>

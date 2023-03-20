@@ -1,5 +1,62 @@
+
+/* Main CSS */
 .box-wrap {
     background: #e9e9e9;
     border-radius: 10px;
     padding: 10px;
+}
+
+p.item-description {
+  font-size: 24px;
+}
+
+img.product-image:hover {
+  transform:scale(1.15);
+  transition-duration: 500ms;
+}
+
+img.product-image {
+  transform:scale(1);
+  transition-duration: 500ms;
+}
+
+.footer-section {
+  text-align: center;
+  margin-top: 23px;
+  margin-bottom: 15px;
+}
+
+.footer-links {
+  align-items: center;
+}
+
+/* BREAKPOINTS */
+
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) { 
+  /* Ugly fix for bootstrap hover nav */
+  .dropdown-menu.show {
+    margin-top: -2vh !important;
   }
+}
+
+/* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) { 
+  .footer-section {
+    text-align: left;
+    margin-top: 0;
+  margin-bottom: 0;
+  }
+  .footer-links {
+    align-items: flex-start;
+  }
+}
+
+/* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) { }
+
+/* X-Large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) { }
+
+/* XX-Large devices (larger desktops, 1400px and up) */
+@media (min-width: 1400px) { }
