@@ -36,7 +36,7 @@ img.product-image {
 @media (min-width: 576px) { 
   /* Ugly fix for bootstrap hover nav */
   .dropdown-menu.show {
-    margin-top: -2vh !important;
+    margin-top: -1vh !important;
   }
 }
 
