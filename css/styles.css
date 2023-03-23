@@ -30,6 +30,11 @@ img.product-image {
   align-items: center;
 }
 
+/* Navbar CSS */
+.nav-item .nav-link:hover {
+  color: grey;
+}
+
 /* BREAKPOINTS */
 
 /* Small devices (landscape phones, 576px and up) */
