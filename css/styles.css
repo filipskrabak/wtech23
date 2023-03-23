@@ -41,13 +41,17 @@ img.product-image {
   filter: invert(100%) sepia(100%) saturate(0%) hue-rotate(288deg) brightness(102%) contrast(102%);
 }
 
+.dropdown-item > .fa-solid {
+  width: 30px;
+}
+
 /* BREAKPOINTS */
 
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) { 
   /* Ugly fix for bootstrap hover nav */
-  .dropdown-menu.show {
-    margin-top: -1vh !important;
+  .nav-dropdown.show {
+    margin-top: -2vh !important;
   }
 }
 

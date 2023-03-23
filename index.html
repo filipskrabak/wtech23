@@ -39,7 +39,16 @@
                         <button class="btn nav-link my-2 my-sm-0 border-0" type="submit" id="searchBarBtn"><span><i class="fa-solid fa-magnifying-glass"></i> Search</span></button>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><i class="fa-solid fa-user"></i> Profile</a>
+                      <div class="dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i> Profile</a>
+
+                        <ul class="dropdown-menu" aria-labelledby="dropdownProfile">
+                          <li><a class="dropdown-item" href="./edit-profile.html"><i class="fa-solid fa-user-pen"></i> Edit details</a></li>
+                          <li><a class="dropdown-item" href="./orders.html"><i class="fa-solid fa-list"></i> My orders</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gauge"></i> Admin dashboard</a></li>
+                          <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Log out</a></li>
+                        </ul>
+                        </div>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
@@ -72,7 +81,7 @@
                     </li>
                     <li class="nav-item dropdown position-static">
                         <a class="nav-link dropdown-toggle" href="#" id="women-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Women</a>
-                        <div class="dropdown-menu w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="women-dropdown">
+                        <div class="dropdown-menu nav-dropdown w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="women-dropdown">
                             <div class="container">
                                 <div class="row mb-4">
                                   <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
@@ -99,7 +108,7 @@
                     </li>
                     <li class="nav-item dropdown position-static">
                         <a class="nav-link dropdown-toggle" href="#" id="women-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Men</a>
-                        <div class="dropdown-menu w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="women-dropdown">
+                        <div class="dropdown-menu nav-dropdown w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="women-dropdown">
                             <div class="container">
                                 <div class="row mb-4">
                                   <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
@@ -254,9 +263,9 @@
       <div class="col-md-2">
         <h5 class="footer-section">User</h5>
         <ul class="nav flex-column footer-links">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Log in</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Register</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Change details</a></li>
+          <li class="nav-item mb-2"><a href="./login.html" class="nav-link p-0 text-muted">Log in</a></li>
+          <li class="nav-item mb-2"><a href="./register.html" class="nav-link p-0 text-muted">Register</a></li>
+          <li class="nav-item mb-2"><a href="./edit-profile.html" class="nav-link p-0 text-muted">Change details</a></li>
         </ul>
       </div>
       <div class="col-md-2">
