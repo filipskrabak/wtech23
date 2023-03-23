@@ -13,7 +13,7 @@
   <!-- FontAwesome Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" 
-    referrerpolicy="no-referrer" />
+    referrerpolicy="no-referrer">
   <!-- Carousel CSS -->
   <link href="./css/carousel.css" rel="stylesheet">
   <!-- Main CSS -->
@@ -29,11 +29,11 @@
                 <img src="./img/sitelogo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
                 Clothing Store
             </a>
-            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target="#collapsibleNavId" aria-controls="collapsibleNavId"
+            <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target=".collapsibleNav"
                 aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <div class="collapse navbar-collapse collapsibleNav">
                 <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                     <li class="nav-item">
                         <button class="btn nav-link my-2 my-sm-0 border-0" type="submit" id="searchBarBtn"><span><i class="fa-solid fa-magnifying-glass"></i> Search</span></button>
@@ -58,7 +58,7 @@
       </div>
     </nav>
     <!-- Search Bar -->
-    <section class="bg-dark d-none" id="searchBar">
+    <div class="bg-dark d-none" id="searchBar">
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6 p-3">
@@ -71,10 +71,10 @@
           </div>
         </div>
       </div>
-    </section>
+    </div>
     <nav class="navbar navbar-expand-sm navbar-light bg-light py-0 py-sm-2">
           <div class="container">
-            <div class="collapse navbar-collapse" id="collapsibleNavId">
+            <div class="collapse navbar-collapse collapsibleNav">
                 <ul class="navbar-nav m-auto mt-2 mt-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
@@ -107,8 +107,8 @@
                         </div>
                     </li>
                     <li class="nav-item dropdown position-static">
-                        <a class="nav-link dropdown-toggle" href="#" id="women-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Men</a>
-                        <div class="dropdown-menu nav-dropdown w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="women-dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="men-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Men</a>
+                        <div class="dropdown-menu nav-dropdown w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="men-dropdown">
                             <div class="container">
                                 <div class="row mb-4">
                                   <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
