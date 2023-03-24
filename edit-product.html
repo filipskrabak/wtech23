@@ -191,20 +191,47 @@
         <div class="col-lg-6">
           <form>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingInput" placeholder="T-shirt">
-              <label for="floatingInput">Name</label>
+              <input type="text" class="form-control" id="nameInput" placeholder="T-shirt">
+              <label for="nameInput">Name</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="text" class="form-control" id="floatingInput" placeholder="black-t-shirt">
-              <label for="floatingInput">Slug</label>
+              <select class="form-select" id="categorySelect" aria-label="Select a category">
+                <option selected>Select a category...</option>
+                <option value="1">Jeans</option>
+                <option value="2">Jackets</option>
+                <option value="3">T-shirts</option>
+              </select>
+              <label for="categorySelect">Clothing category</label>
             </div>
             <div class="form-floating mb-3">
-              <textarea class="form-control" placeholder="Description" id="floatingTextarea2" style="height: 100px"></textarea>
-              <label for="floatingTextarea2">Description</label>
+              <select class="form-select" id="colorSelect" aria-label="Select a color">
+                <option selected>Select a color...</option>
+                <option value="1">Blue</option>
+                <option value="2">Red</option>
+                <option value="3">Black</option>
+              </select>
+              <label for="colorSelect">Color</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="number" class="form-control" id="floatingInput" placeholder="29.99">
-              <label for="floatingInput">Price (EUR)</label>
+              <select class="form-select" id="sizeSelect" aria-label="Select a size">
+                <option selected>Select a size...</option>
+                <option value="1">S</option>
+                <option value="2">M</option>
+                <option value="3">L</option>
+              </select>
+              <label for="sizeSelect">Size</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="slugInput" placeholder="black-t-shirt">
+              <label for="slugInput">Slug</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" placeholder="Description" id="descTextarea2" style="height: 100px"></textarea>
+              <label for="descTextarea2">Description</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" id="priceInput" placeholder="29.99">
+              <label for="priceInput">Price (EUR)</label>
             </div>
             <div class="row">
               <div class="col-md-4">
