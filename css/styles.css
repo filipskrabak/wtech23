@@ -45,6 +45,10 @@ img.product-image {
   width: 30px;
 }
 
+.admin-nav {
+  border-top: 1px solid #212529;
+}
+
 /* BREAKPOINTS */
 
 /* Small devices (landscape phones, 576px and up) */
