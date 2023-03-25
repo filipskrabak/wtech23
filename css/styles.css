@@ -45,6 +45,14 @@ img.product-image {
   filter: invert(20%) sepia(96%) saturate(6884%) hue-rotate(2deg) brightness(105%) contrast(122%);
 }
 
+/* Product CSS */
+
+.product-gallery-slider img {
+  display: block;
+  height: auto;
+  width: 100%
+}
+
 /* Navbar CSS */
 
 .nav-item .nav-link:hover {
