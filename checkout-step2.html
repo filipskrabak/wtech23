@@ -140,33 +140,104 @@
     </nav>
   </header>
   <main>
-    <section class="container mb-5">
-      <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-          <h1 class="mt-5 mb-4 text-center">Login</h1>
-          <form>
-            <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-              <label for="floatingInput">Email address</label>
+    <section class="container mt-5 mb-5">
+        <section class="row justify-content-center">
+            <h1 class="mb-4 text-center">Checkout</h1>
+            <div class="col-md-6 border-bottom border-dark">
+                <div class="container d-flex align-items-center justify-content-between">
+                    <div class="col-md-6">
+                        <p class="fw-bold">Black T-shirt</p>
+                        <p>Size: L</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <p>999.99€</p>
+                    </div>
+                </div>
+                <div class="container d-flex align-items-center  justify-content-between">
+                    <div class="col-md-6">
+                        <p class="fw-bold">Lorem ipsum dolor sit amet, consectetur adipiscing</p>
+                        <p>Size: L</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <p>99999999999.99€</p>
+                    </div>
+                </div>
             </div>
-            <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-              <label for="floatingInput">Password</label>
+        </section>
+        
+        <section class="row mt-3 justify-content-center">
+            <div class="col-md-6 border-bottom border-dark">
+                <div class="container d-flex align-items-center justify-content-between">
+                    <div class="col-md-6">
+                        <p class="fw-bold">Subtotal</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <p>9999999999999.99€</p>
+                    </div>
+                </div>
+                <div class="container d-flex align-items-start justify-content-between">
+                    <div class="col-md-6">
+                        <p class="fw-bold">Shipping method</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">DHL: 2€</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">Slovneská pošta: 2€</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">GLS: 2€</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="container d-flex align-items-center mt-2 justify-content-between">
+                    <div class="col-md-6">
+                        <p class="fw-bold">Total price</p>
+                    </div>
+                    <div class="col-md-6 text-end">
+                        <p>9999999999999.99€</p>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-              <div class="col-md-4">
-                <button type="submit" class="btn btn-primary w-100">Login</button>
-              </div>
+        </section>
+
+        <section class="row mt-3 justify-content-center">
+            <div class="col-md-6 border-bottom border-dark">
+                <div class="container d-flex align-items-start justify-content-between">
+                    <div class="col-md-6 mb-3">
+                        <p class="fw-bold">Payment type</p>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">Cash on delivery</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">Credit/Debit card</label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                            <label class="form-check-label" for="flexRadioDefault1">Paypal</label>
+                        </div>
+                    </div>
+                </div>
             </div>
-          </form>  
-          <div class="row d-flex  justify-content-center">
-            <div class="col-md-4">
-              <h2 class="mt-5 mb-4 text-center">Not a member?</h2>
-              <a name="register-btn" id="register-btn" class="btn btn-outline-primary w-100" href="./register.html" role="button">Register</a>  
+        </section>
+
+        <section class="row mt-3 justify-content-center">
+            <div class="col-md-6">
+                <div class="container d-flex align-items-between justify-content-between">
+                    <div class="form-check mb-3 md-6 col-md-8">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">Accept agreement</label>
+                    </div>
+                    <div class="mb-3 col-md-4">
+                        <button type="submit" class="btn btn-primary w-100">Order</button>
+                    </div>
+                </div>
             </div>
-          </div>
-        </div>
-      </div>
+        </section>
     </section>
   </main>
   <footer class="container">

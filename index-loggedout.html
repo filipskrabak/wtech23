@@ -24,32 +24,26 @@
   <header>
     <!-- Top nav with logo, buttons -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
-      <div class="container">
-        <a class="navbar-brand" href="#">
-            <img src="./img/sitelogo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-            Clothing Store
-        </a>
-        <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target=".collapsibleNav"
-            aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse collapsibleNav">
+        <div class="container">
+          <a class="navbar-brand" href="#">
+              <img src="./img/sitelogo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+              Clothing Store
+          </a>
+          <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target=".collapsibleNav"
+              aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse collapsibleNav">
             <ul class="navbar-nav ms-auto mt-2 mt-lg-0">
                 <li class="nav-item">
                     <button class="btn nav-link my-2 my-sm-0 border-0" type="submit" id="searchBarBtn"><span><i class="fa-solid fa-magnifying-glass"></i> Search</span></button>
                 </li>
                 <li class="nav-item">
-                  <div class="dropdown">
-                    <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i> Profile</a>
-
-                    <ul class="dropdown-menu" aria-labelledby="dropdownProfile">
-                      <li><a class="dropdown-item" href="./edit-profile.html"><i class="fa-solid fa-user-pen"></i> Edit details</a></li>
-                      <li><a class="dropdown-item" href="./orders.html"><i class="fa-solid fa-list"></i> My orders</a></li>
-                      <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gauge"></i> Admin dashboard</a></li>
-                      <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Log out</a></li>
-                    </ul>
-                    </div>
+                    <a class="nav-link" href="./login.html"><i class="fa-solid fa-right-to-bracket"></i> Log in</a>
                 </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="./register.html"><i class="fa-solid fa-user-plus"></i> Register</a>
+              </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
                 </li>
@@ -72,77 +66,78 @@
         </div>
       </div>
     </div>
+    <!-- Main nav -->
     <nav class="navbar navbar-expand-sm navbar-light bg-light py-0 py-sm-2">
-      <div class="container">
-        <div class="collapse navbar-collapse collapsibleNav">
-            <ul class="navbar-nav m-auto mt-2 mt-lg-0">
-              <li class="nav-item">
-                  <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
-              </li>
-              <li class="nav-item dropdown position-static">
-                  <a class="nav-link dropdown-toggle" href="#" id="women-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Women</a>
-                  <div class="dropdown-menu nav-dropdown w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="women-dropdown">
-                      <div class="container">
-                          <div class="row mb-4">
-                            <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                              <h4>Clothing</h4>
-                              <div class="list-group list-group-flush">
-                                <a href="" class="list-group-item list-group-item-action bg-light">T-shirts</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Shirts</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Hoodies</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Jeans</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Vests</a>
-                              </div>
+          <div class="container">
+            <div class="collapse navbar-collapse collapsibleNav">
+                <ul class="navbar-nav m-auto mt-2 mt-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                    </li>
+                    <li class="nav-item dropdown position-static">
+                        <a class="nav-link dropdown-toggle" href="#" id="women-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Women</a>
+                        <div class="dropdown-menu nav-dropdown w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="women-dropdown">
+                            <div class="container">
+                                <div class="row mb-4">
+                                  <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                    <h4>Clothing</h4>
+                                    <div class="list-group list-group-flush">
+                                      <a href="" class="list-group-item list-group-item-action bg-light">T-shirts</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Shirts</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Hoodies</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Jeans</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Vests</a>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
+                                  </div>
+                                  <div class="col-md-6 col-lg-6 mb-3 mb-lg-0 d-none d-md-block">
+                                    <picture>
+                                        <source srcset="./slides/1.svg" type="image/svg+xml">
+                                        <img src="./slides/1.svg" class="img-fluid" alt="image">
+                                      </picture>
+                                  </div>
+                                </div>
                             </div>
-                            <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
+                        </div>
+                    </li>
+                    <li class="nav-item dropdown position-static">
+                        <a class="nav-link dropdown-toggle" href="#" id="men-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Men</a>
+                        <div class="dropdown-menu nav-dropdown w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="men-dropdown">
+                            <div class="container">
+                                <div class="row mb-4">
+                                  <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
+                                    <h4>Clothing</h4>
+                                    <div class="list-group list-group-flush">
+                                      <a href="" class="list-group-item list-group-item-action bg-light">T-shirts</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Shirts</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Hoodies</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Jeans</a>
+                                      <a href="" class="list-group-item list-group-item-action bg-light">Vests</a>
+                                    </div>
+                                  </div>
+                                  <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
+                                  </div>
+                                  <div class="col-md-6 col-lg-6 mb-3 mb-lg-0 d-none d-md-block">
+                                    <picture>
+                                        <source srcset="./slides/2.svg" type="image/svg+xml">
+                                        <img src="./slides/2.svg" class="img-fluid" alt="image">
+                                      </picture>
+                                  </div>
+                                </div>
                             </div>
-                            <div class="col-md-6 col-lg-6 mb-3 mb-lg-0 d-none d-md-block">
-                              <picture>
-                                  <source srcset="./slides/1.svg" type="image/svg+xml">
-                                  <img src="./slides/1.svg" class="img-fluid" alt="image">
-                                </picture>
-                            </div>
-                          </div>
-                      </div>
-                  </div>
-              </li>
-              <li class="nav-item dropdown position-static">
-                  <a class="nav-link dropdown-toggle" href="#" id="men-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Men</a>
-                  <div class="dropdown-menu nav-dropdown w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="men-dropdown">
-                      <div class="container">
-                          <div class="row mb-4">
-                            <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
-                              <h4>Clothing</h4>
-                              <div class="list-group list-group-flush">
-                                <a href="" class="list-group-item list-group-item-action bg-light">T-shirts</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Shirts</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Hoodies</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Jeans</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Vests</a>
-                              </div>
-                            </div>
-                            <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
-                            </div>
-                            <div class="col-md-6 col-lg-6 mb-3 mb-lg-0 d-none d-md-block">
-                              <picture>
-                                  <source srcset="./slides/2.svg" type="image/svg+xml">
-                                  <img src="./slides/2.svg" class="img-fluid" alt="image">
-                                </picture>
-                            </div>
-                          </div>
-                      </div>
-                  </div>
-              </li>
-              <li class="nav-item">
-                  <a class="nav-link" href="#">Sale</a>
-              </li>
-          </ul>
-        </div>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Sale</a>
+                    </li>
+                </ul>
+            </div>
       </div>
     </nav>
   </header>
   <main>
-    <div id="myCarousel" class="carousel slide" data-bs-ride="carousel">
+    <section id="myCarousel" class="carousel slide" data-bs-ride="carousel">
       <div class="carousel-indicators">
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="0" class="active" aria-label="Slide 1" aria-current="true"></button>
         <button type="button" data-bs-target="#myCarousel" data-bs-slide-to="1" aria-label="Slide 2" class=""></button>
@@ -154,13 +149,14 @@
           <div class="container">
             <div class="carousel-caption">
               <h1>New Collection</h1>
-              <p>Take a look at our newest clothing</p>
+              <p>Take a look at our newest spring clothing</p>
               <p><a class="btn btn-lg btn-primary" href="#">Browse</a></p>
             </div>
           </div>
         </div>
         <div class="carousel-item">
-          <img src="./img/slider/collection.png" alt="New Collection">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+  
           <div class="container">
             <div class="carousel-caption">
               <h1>On Sale</h1>
@@ -170,7 +166,8 @@
           </div>
         </div>
         <div class="carousel-item">
-          <img src="./img/slider/collection.png" alt="New Collection">
+          <svg class="bd-placeholder-img" width="100%" height="100%" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" preserveAspectRatio="xMidYMid slice" focusable="false"><rect width="100%" height="100%" fill="#777"></rect></svg>
+  
           <div class="container">
             <div class="carousel-caption">
               <h1>New user bonus</h1>
@@ -188,7 +185,7 @@
         <span class="carousel-control-next-icon" aria-hidden="true"></span>
         <span class="visually-hidden">Next</span>
       </button>
-    </div>
+    </section>
     <section class="container mb-5">
       <h1 class="mb-4">Featured</h1>
       <div class="row featured-items">
@@ -196,7 +193,7 @@
           <a href="#" class="text-decoration-none text-dark">
             <div class="d-flex flex-column align-items-center">
               <div class="overflow-hidden">
-                <img src="./img/jeans.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
+                <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
               </div>
               <p class="item-description">Jeans</p>
             </div>
@@ -206,9 +203,9 @@
           <a href="#" class="text-decoration-none text-dark">
             <div class="d-flex flex-column align-items-center">
               <div class="overflow-hidden">
-                <img src="./img/hoodie.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
+                <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
               </div>
-              <p class="item-description">Hoodies</p>
+              <p class="item-description">Jeans</p>
             </div>
           </a>
         </div>
@@ -216,9 +213,9 @@
           <a href="#" class="text-decoration-none text-dark">
             <div class="d-flex flex-column align-items-center">
               <div class="overflow-hidden">
-                <img src="./img/jacket.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
+                <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
               </div>
-              <p class="item-description">Jackets</p>
+              <p class="item-description">Jeans</p>
             </div>
           </a>
         </div>
@@ -226,9 +223,9 @@
           <a href="#" class="text-decoration-none text-dark">
             <div class="d-flex flex-column align-items-center">
               <div class="overflow-hidden">
-                <img src="./img/sneakers.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
+                <img src="./img/featured-1.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
               </div>
-              <p class="item-description">Sneakers</p>
+              <p class="item-description">Jeans</p>
             </div>
           </a>
         </div>

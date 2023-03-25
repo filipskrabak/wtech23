@@ -140,31 +140,108 @@
     </nav>
   </header>
   <main>
+
     <section class="container mb-5">
       <div class="row d-flex justify-content-center">
-        <div class="col-md-6">
-          <h1 class="mt-5 mb-4 text-center">Login</h1>
+        <h1 class="mt-5 mb-4 text-center">Edit product</h1>
+
+        <div class="col-lg-6 box-wrap">
+          <h5 class="mt-2 mb-2">Add image</h3>
+          <div class="row align-items-center">
+            <div class="col-md-3">
+                <img src="https://placehold.co/1000x1000?text=Upload%20Image" class="w-100" alt="">
+            </div>
+            <div class="col-md-9">
+              <div class="form-floating mb-3">
+                <input type="text" class="form-control" id="floatingInput" placeholder="Alt text">
+                <label for="floatingInput">Alt text</label>
+              </div>
+              <div class="row">
+                <div class="col-md-4">
+                  <button type="submit" class="btn btn-primary w-100">Upload</button>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="row mt-3">
+            <div class="col-md-3 mt-2">
+              <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
+            </div>
+            <div class="col-md-3 mt-2">
+              <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
+            </div>
+            <div class="col-md-3 mt-2">
+              <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
+            </div>
+            <div class="col-md-3 mt-2">
+              <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
+            </div>
+            <div class="col-md-3 mt-2">
+              <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
+            </div>
+            <div class="col-md-3 mt-2">
+              <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
+            </div>
+            <div class="col-md-3 mt-2">
+              <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
           <form>
             <div class="form-floating mb-3">
-              <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com">
-              <label for="floatingInput">Email address</label>
+              <input type="text" class="form-control" id="nameInput" placeholder="T-shirt">
+              <label for="nameInput">Name</label>
             </div>
             <div class="form-floating mb-3">
-              <input type="password" class="form-control" id="floatingPassword" placeholder="Password">
-              <label for="floatingInput">Password</label>
+              <select class="form-select" id="categorySelect" aria-label="Select a category">
+                <option selected>Select a category...</option>
+                <option value="1">Jeans</option>
+                <option value="2">Jackets</option>
+                <option value="3">T-shirts</option>
+              </select>
+              <label for="categorySelect">Clothing category</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select class="form-select" id="colorSelect" aria-label="Select a color">
+                <option selected>Select a color...</option>
+                <option value="1">Blue</option>
+                <option value="2">Red</option>
+                <option value="3">Black</option>
+              </select>
+              <label for="colorSelect">Color</label>
+            </div>
+            <div class="form-floating mb-3">
+              <select class="form-select" id="sizeSelect" aria-label="Select a size">
+                <option selected>Select a size...</option>
+                <option value="1">S</option>
+                <option value="2">M</option>
+                <option value="3">L</option>
+              </select>
+              <label for="sizeSelect">Size</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="text" class="form-control" id="slugInput" placeholder="black-t-shirt">
+              <label for="slugInput">Slug</label>
+            </div>
+            <div class="form-floating mb-3">
+              <textarea class="form-control" placeholder="Description" id="descTextarea2" style="height: 100px"></textarea>
+              <label for="descTextarea2">Description</label>
+            </div>
+            <div class="form-floating mb-3">
+              <input type="number" class="form-control" id="priceInput" placeholder="29.99">
+              <label for="priceInput">Price (EUR)</label>
             </div>
             <div class="row">
               <div class="col-md-4">
-                <button type="submit" class="btn btn-primary w-100">Login</button>
+                <button type="submit" class="btn btn-primary w-100">Save</button>
+              </div>
+              <div class="offset-md-4 col-md-4">
+                <button class="btn btn-outline-primary w-100">Discard and go back</button>
               </div>
             </div>
           </form>  
-          <div class="row d-flex  justify-content-center">
-            <div class="col-md-4">
-              <h2 class="mt-5 mb-4 text-center">Not a member?</h2>
-              <a name="register-btn" id="register-btn" class="btn btn-outline-primary w-100" href="./register.html" role="button">Register</a>  
-            </div>
-          </div>
         </div>
       </div>
     </section>
