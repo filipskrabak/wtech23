@@ -30,6 +30,12 @@ img.product-image {
   align-items: center;
 }
 
+/* CART */
+
+.cart-remove-icon:hover{
+  color: #ff0000;
+}
+
 /* BREAKPOINTS */
 
 /* Small devices (landscape phones, 576px and up) */
