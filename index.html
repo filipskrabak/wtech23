@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>E-shop</title>
+  <title>Clothing Store</title>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -14,8 +14,6 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" 
     referrerpolicy="no-referrer">
-  <!-- Carousel CSS -->
-  <link href="./css/carousel.css" rel="stylesheet">
   <!-- Main CSS -->
   <link href="./css/styles.css" rel="stylesheet">
 </head>
@@ -25,7 +23,7 @@
     <!-- Top nav with logo, buttons -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="./index.html">
             <img src="./img/sitelogo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
             Clothing Store
         </a>
@@ -45,13 +43,13 @@
                     <ul class="dropdown-menu" aria-labelledby="dropdownProfile">
                       <li><a class="dropdown-item" href="./edit-profile.html"><i class="fa-solid fa-user-pen"></i> Edit details</a></li>
                       <li><a class="dropdown-item" href="./orders.html"><i class="fa-solid fa-list"></i> My orders</a></li>
-                      <li><a class="dropdown-item" href="#"><i class="fa-solid fa-gauge"></i> Admin dashboard</a></li>
-                      <li><a class="dropdown-item" href="#"><i class="fa-solid fa-right-from-bracket"></i> Log out</a></li>
+                      <li><a class="dropdown-item" href="./admin-products.html"><i class="fa-solid fa-gauge"></i> Admin dashboard</a></li>
+                      <li><a class="dropdown-item" href="./index-loggedout.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a></li>
                     </ul>
                     </div>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                    <a class="nav-link" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
                 </li>
             </ul>
         </div>
@@ -77,7 +75,7 @@
         <div class="collapse navbar-collapse collapsibleNav">
             <ul class="navbar-nav m-auto mt-2 mt-lg-0">
               <li class="nav-item">
-                  <a class="nav-link active" href="#" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                  <a class="nav-link active" href="./index.html" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
               </li>
               <li class="nav-item dropdown position-static">
                   <a class="nav-link dropdown-toggle" href="#" id="women-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Women</a>
@@ -87,11 +85,11 @@
                             <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                               <h4>Clothing</h4>
                               <div class="list-group list-group-flush">
-                                <a href="" class="list-group-item list-group-item-action bg-light">T-shirts</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Shirts</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Hoodies</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Jeans</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Vests</a>
+                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">T-shirts</a>
+                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Shirts</a>
+                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Hoodies</a>
+                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Jeans</a>
+                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Vests</a>
                               </div>
                             </div>
                             <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
@@ -114,11 +112,11 @@
                             <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                               <h4>Clothing</h4>
                               <div class="list-group list-group-flush">
-                                <a href="" class="list-group-item list-group-item-action bg-light">T-shirts</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Shirts</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Hoodies</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Jeans</a>
-                                <a href="" class="list-group-item list-group-item-action bg-light">Vests</a>
+                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">T-shirts</a>
+                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Shirts</a>
+                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Hoodies</a>
+                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Jeans</a>
+                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Vests</a>
                               </div>
                             </div>
                             <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
@@ -134,7 +132,7 @@
                   </div>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="#">Sale</a>
+                  <a class="nav-link" href="./product-archive.html">Sale</a>
               </li>
           </ul>
         </div>
@@ -155,7 +153,7 @@
             <div class="carousel-caption">
               <h1>New Collection</h1>
               <p>Take a look at our newest clothing</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Browse</a></p>
+              <p><a class="btn btn-lg btn-primary" href="./product-archive.html">Browse</a></p>
             </div>
           </div>
         </div>
@@ -165,7 +163,7 @@
             <div class="carousel-caption">
               <h1>On Sale</h1>
               <p>Don't miss our sale</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Learn more</a></p>
+              <p><a class="btn btn-lg btn-primary" href="./product-archive.html">Learn more</a></p>
             </div>
           </div>
         </div>
@@ -175,7 +173,7 @@
             <div class="carousel-caption">
               <h1>New user bonus</h1>
               <p>Register now and get 10% off.</p>
-              <p><a class="btn btn-lg btn-primary" href="#">Register</a></p>
+              <p><a class="btn btn-lg btn-primary" href="./register.html">Register</a></p>
             </div>
           </div>
         </div>
@@ -193,7 +191,7 @@
       <h1 class="mb-4">Featured</h1>
       <div class="row featured-items">
         <div class="col-md-3">
-          <a href="#" class="text-decoration-none text-dark">
+          <a href="./product-archive.html" class="text-decoration-none text-dark">
             <div class="d-flex flex-column align-items-center">
               <div class="overflow-hidden">
                 <img src="./img/jeans.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
@@ -203,7 +201,7 @@
           </a>
         </div>
         <div class="col-md-3">
-          <a href="#" class="text-decoration-none text-dark">
+          <a href="./product-archive.html" class="text-decoration-none text-dark">
             <div class="d-flex flex-column align-items-center">
               <div class="overflow-hidden">
                 <img src="./img/hoodie.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
@@ -213,7 +211,7 @@
           </a>
         </div>
         <div class="col-md-3">
-          <a href="#" class="text-decoration-none text-dark">
+          <a href="./product-archive.html" class="text-decoration-none text-dark">
             <div class="d-flex flex-column align-items-center">
               <div class="overflow-hidden">
                 <img src="./img/jacket.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
@@ -223,7 +221,7 @@
           </a>
         </div>
         <div class="col-md-3">
-          <a href="#" class="text-decoration-none text-dark">
+          <a href="./product-archive.html" class="text-decoration-none text-dark">
             <div class="d-flex flex-column align-items-center">
               <div class="overflow-hidden">
                 <img src="./img/sneakers.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
@@ -238,7 +236,7 @@
   <footer class="container">
     <div class="row py-5 border-top">
       <div class="col-md-5">
-        <a class="navbar-brand mb-2 d-flex align-items-center" href="#">
+        <a class="navbar-brand mb-2 d-flex align-items-center" href="./index.html">
           <img src="./img/sitelogo.svg" width="30" height="30" class="d-inline-block align-top me-2" alt="">
           Clothing Store
         </a>
@@ -251,9 +249,9 @@
       <div class="col-md-2">
         <h5 class="footer-section">About us</h5>
         <ul class="nav flex-column footer-links">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Shipping</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Terms and conditions</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Payment types</a></li>
+          <li class="nav-item mb-2"><a href="./base-single.html" class="nav-link p-0 text-muted">Shipping</a></li>
+          <li class="nav-item mb-2"><a href="./base-single.html" class="nav-link p-0 text-muted">Terms and conditions</a></li>
+          <li class="nav-item mb-2"><a href="./base-single.html" class="nav-link p-0 text-muted">Payment types</a></li>
         </ul>
       </div>
       <div class="col-md-2">
@@ -267,9 +265,9 @@
       <div class="col-md-2">
         <h5 class="footer-section">Shop</h5>
         <ul class="nav flex-column footer-links">
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Men</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">Women</a></li>
-          <li class="nav-item mb-2"><a href="#" class="nav-link p-0 text-muted">On Sale</a></li>
+          <li class="nav-item mb-2"><a href="./product-archive.html" class="nav-link p-0 text-muted">Men</a></li>
+          <li class="nav-item mb-2"><a href="./product-archive.html" class="nav-link p-0 text-muted">Women</a></li>
+          <li class="nav-item mb-2"><a href="./product-archive.html" class="nav-link p-0 text-muted">On Sale</a></li>
         </ul>
       </div>
     </div>

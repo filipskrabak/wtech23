@@ -72,6 +72,29 @@ img.product-image {
   border-top: 1px solid #212529;
 }
 
+/* Carousel CSS */
+
+.carousel {
+  margin-bottom: 4rem;
+}
+
+.carousel-caption {
+  bottom: 3rem;
+  z-index: 10;
+}
+
+.carousel-item {
+  height: 320px;
+}
+
+.carousel-item > img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  filter: brightness(50%);
+}
+
 /* BREAKPOINTS */
 
 /* Small devices (landscape phones, 576px and up) */
@@ -90,6 +113,12 @@ img.product-image {
   }
   .footer-links {
     align-items: flex-start;
+  }
+  /* Carousel CSS */
+  .carousel-caption p {
+    margin-bottom: 1.25rem;
+    font-size: 1.25rem;
+    line-height: 1.4;
   }
 }
 
