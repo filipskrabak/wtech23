@@ -25,6 +25,8 @@ php artisan optimize
 # Run database migrations
 php artisan migrate --force
 
+php artisan route:clear
+
 # Exit maintenance mode
 php artisan up
 
