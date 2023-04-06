@@ -2,6 +2,8 @@
 
 @section('content')
 
+@include('layouts.carousel')
+
 <section class="container mb-5">
     <h1 class="mb-4">Featured</h1>
     <div class="row featured-items">
