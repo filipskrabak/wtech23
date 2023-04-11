@@ -6,7 +6,7 @@
     </div>
     <div class="carousel-inner">
     <div class="carousel-item active">
-        <img src="./img/slider/collection.png" alt="New Collection">
+        <img src="{{ asset('img/slider/collection.png') }}" alt="New Collection">
         <div class="container">
         <div class="carousel-caption">
             <h1>New Collection</h1>
@@ -16,7 +16,7 @@
         </div>
     </div>
     <div class="carousel-item">
-        <img src="./img/slider/collection.png" alt="New Collection">
+        <img src="{{ asset('img/slider/collection.png') }}" alt="New Collection">
         <div class="container">
         <div class="carousel-caption">
             <h1>On Sale</h1>
@@ -26,7 +26,7 @@
         </div>
     </div>
     <div class="carousel-item">
-        <img src="./img/slider/collection.png" alt="New Collection">
+        <img src="{{ asset('img/slider/collection.png') }}" alt="New Collection">
         <div class="container">
         <div class="carousel-caption">
             <h1>New user bonus</h1>
