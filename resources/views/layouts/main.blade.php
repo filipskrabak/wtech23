@@ -75,7 +75,7 @@
         <div class="collapse navbar-collapse collapsibleNav">
             <ul class="navbar-nav m-auto mt-2 mt-lg-0">
               <li class="nav-item">
-                  <a class="nav-link active" href="./index.html" aria-current="page">Home <span class="visually-hidden">(current)</span></a>
+                  <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/" aria-current="page">Home</a>
               </li>
               <li class="nav-item dropdown position-static">
                   <a class="nav-link dropdown-toggle" href="#" id="women-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Women</a>

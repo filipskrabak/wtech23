@@ -13,6 +13,21 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+// TODO: replace with actual controllers
+
 Route::get('/', function () {
     return view('index');
 });
+
+Route::get('/products', function () {
+    return view('products');
+});
+
+Route::get('/cart', function () {
+    return view('cart');
+});
+
+Route::get('/product', function () {
+    return view('product');
+});
+
