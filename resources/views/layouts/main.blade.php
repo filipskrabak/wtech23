@@ -24,7 +24,7 @@
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container">
         <a class="navbar-brand" href="./index.html">
-            <img src="./img/sitelogo.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+            <img src="{{ asset('img/sitelogo.svg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
             Clothing Store
         </a>
         <button class="navbar-toggler d-lg-none" type="button" data-bs-toggle="collapse" data-bs-target=".collapsibleNav"
@@ -96,8 +96,8 @@
                             </div>
                             <div class="col-md-6 col-lg-6 mb-3 mb-lg-0 d-none d-md-block">
                               <picture>
-                                  <source srcset="./slides/1.svg" type="image/svg+xml">
-                                  <img src="./slides/1.svg" class="img-fluid" alt="image">
+                                  <source srcset="{{ asset('slides/1.svg') }}" type="image/svg+xml">
+                                  <img src="{{ asset('slides/1.svg') }}" class="img-fluid" alt="image">
                                 </picture>
                             </div>
                           </div>
@@ -123,8 +123,8 @@
                             </div>
                             <div class="col-md-6 col-lg-6 mb-3 mb-lg-0 d-none d-md-block">
                               <picture>
-                                  <source srcset="./slides/2.svg" type="image/svg+xml">
-                                  <img src="./slides/2.svg" class="img-fluid" alt="image">
+                                  <source srcset="{{ asset('slides/2.svg') }}" type="image/svg+xml">
+                                  <img src="{{ asset('slides/2.svg') }}" class="img-fluid" alt="image">
                                 </picture>
                             </div>
                           </div>
@@ -146,7 +146,7 @@
     <div class="row py-5 border-top">
       <div class="col-md-5">
         <a class="navbar-brand mb-2 d-flex align-items-center" href="./index.html">
-          <img src="./img/sitelogo.svg" width="30" height="30" class="d-inline-block align-top me-2" alt="">
+          <img src="{{ asset('img/sitelogo.svg') }}" width="30" height="30" class="d-inline-block align-top me-2" alt="">
           Clothing Store
         </a>
         <p class="text-muted">
