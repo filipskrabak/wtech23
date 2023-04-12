@@ -1,7 +1,8 @@
 <?php
 
-use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -24,6 +25,14 @@ Route::get('/cart', function () {
     return view('cart');
 });
 
+// Get all products
 Route::get('/products', [ProductController::class, 'index']);
+
+// Single product
 Route::get('/product/{product}', [ProductController::class, 'show']);
 
+// Show register form (create user)
+Route::get('/register', [UserController::class, 'create']);
+
+// Create new user
+Route::post('/users', [UserController::class, 'store']);
