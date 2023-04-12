@@ -36,6 +36,7 @@
                 <li class="nav-item">
                     <button class="btn nav-link my-2 my-sm-0 border-0" type="submit" id="searchBarBtn"><span><i class="fa-solid fa-magnifying-glass"></i> Search</span></button>
                 </li>
+                @auth
                 <li class="nav-item">
                   <div class="dropdown">
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i> Profile</a>
@@ -44,12 +45,25 @@
                       <li><a class="dropdown-item" href="./edit-profile.html"><i class="fa-solid fa-user-pen"></i> Edit details</a></li>
                       <li><a class="dropdown-item" href="./orders.html"><i class="fa-solid fa-list"></i> My orders</a></li>
                       <li><a class="dropdown-item" href="./admin-products.html"><i class="fa-solid fa-gauge"></i> Admin dashboard</a></li>
-                      <li><a class="dropdown-item" href="./index-loggedout.html"><i class="fa-solid fa-right-from-bracket"></i> Log out</a></li>
+                      <li>
+                        <form class="inline" method="POST" action="/logout">
+                          @csrf 
+                          <button type="submit" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
+                        </form>
+                      </li>
                     </ul>
                     </div>
                 </li>
+                @else
                 <li class="nav-item">
-                    <a class="nav-link" href="./cart.html"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                  <a class="nav-link" href="/login"><i class="fa-solid fa-right-to-bracket"></i> Log in</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="/register"><i class="fa-solid fa-user-plus"></i> Register</a>
+                </li>
+                @endauth
+                <li class="nav-item">
+                    <a class="nav-link" href="/cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
                 </li>
             </ul>
         </div>
