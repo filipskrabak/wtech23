@@ -10,8 +10,9 @@ class ProductController extends Controller
 {
     // Get and show all products
     public function index() {
+
         return view('products.index', [
-            'products' => Product::all()
+            'products' => Product::with('images')->get()
         ]);
     }
 

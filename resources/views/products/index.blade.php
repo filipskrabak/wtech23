@@ -35,9 +35,9 @@
         <div class="col col-lg-3 col-12">
             <div class="input-group mb-3">
             <span class="input-group-text" id="price-from">From</span>
-            <input type="text" class="form-control" placeholder="20€" aria-label="from" aria-describedby="price-from">               
+            <input type="text" class="form-control" placeholder="20€" aria-label="from" aria-describedby="price-from">
             <span class="input-group-text" id="price-to">To</span>
-            <input type="text" class="form-control" placeholder="40€" aria-label="to" aria-describedby="price-to">                
+            <input type="text" class="form-control" placeholder="40€" aria-label="to" aria-describedby="price-to">
             </div>
         </div>
         <div class="col-lg-3 col-12 ms-auto">
@@ -55,38 +55,20 @@
 </div>
 <div class="container mb-5">
     <div class="row row-cols-md-2 justify-content-center align-items-center g-2">
-        <div class="col position-relative mb-2">
-            <img src="https://placeholder.com/1000x1000" class="img-fluid" alt="{product-name}">
-            <div class="row g-2">
-                <div class="col text-truncate fw-bolder">{product-name}, can be truncate if not short enough</div>
-                <div class="col-auto text-end">100.00<span class="price-currency-symbol ms-2">€</span></div>
+        @foreach ($products as $product)
+            <div class="col position-relative mb-2">
+                @foreach ($product->images as $image)
+                    @if ($loop->first)
+                        <img src="/{{$image->path}}/{{$image->name}}" class="img-fluid" alt="{{$image->alt}}">
+                    @endif
+                @endforeach
+                <div class="row g-2">
+                    <div class="col text-truncate fw-bolder">{{$product->name}}</div>
+                    <div class="col-auto text-end">{{$product->price}}<span class="price-currency-symbol ms-2">€</span></div>
+                </div>
+                <a href="/product/{{$product->id}}" class="stretched-link"></a>
             </div>
-            <a href="./product-single.html" class="stretched-link"></a>
-        </div>
-        <div class="col position-relative mb-2">
-            <img src="https://placeholder.com/1000x1000" class="img-fluid" alt="{product-name}">
-            <div class="row g-2">
-                <div class="col text-truncate fw-bolder">{product-name}, can be truncate if not short enough</div>
-                <div class="col-auto text-end">100.00<span class="price-currency-symbol ms-2">€</span></div>
-            </div>
-            <a href="./product-single.html" class="stretched-link"></a>
-        </div>
-        <div class="col position-relative mb-2">
-            <img src="https://placeholder.com/1000x1000" class="img-fluid" alt="{product-name}">
-            <div class="row g-2">
-                <div class="col text-truncate fw-bolder">{product-name}, can be truncate if not short enough</div>
-                <div class="col-auto text-end">100.00<span class="price-currency-symbol ms-2">€</span></div>
-            </div>
-            <a href="./product-single.html" class="stretched-link"></a>
-        </div>
-        <div class="col position-relative mb-2">
-            <img src="https://placeholder.com/1000x1000" class="img-fluid" alt="{product-name}">
-            <div class="row g-2">
-                <div class="col text-truncate fw-bolder">{product-name}, can be truncate if not short enough</div>
-                <div class="col-auto text-end">100.00<span class="price-currency-symbol ms-2">€</span></div>
-            </div>
-            <a href="./product-single.html" class="stretched-link"></a>
-        </div>
+        @endforeach
     </div>
 </div>
 <nav aria-label="Pagination">
