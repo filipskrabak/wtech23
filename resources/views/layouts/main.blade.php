@@ -25,7 +25,7 @@
     <!-- Top nav with logo, buttons -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
       <div class="container">
-        <a class="navbar-brand" href="./index.html">
+        <a class="navbar-brand" href="/">
             <img src="{{ asset('img/sitelogo.svg') }}" width="30" height="30" class="d-inline-block align-top" alt="">
             Clothing Store
         </a>
@@ -45,7 +45,7 @@
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownProfile">
                       <li><a class="dropdown-item" href="./edit-profile.html"><i class="fa-solid fa-user-pen"></i> Edit details</a></li>
-                      <li><a class="dropdown-item" href="./orders.html"><i class="fa-solid fa-list"></i> My orders</a></li>
+                      <li><a class="dropdown-item" href="/orders"><i class="fa-solid fa-list"></i> My orders</a></li>
                       <li><a class="dropdown-item" href="./admin-products.html"><i class="fa-solid fa-gauge"></i> Admin dashboard</a></li>
                       <li>
                         <form class="inline" method="POST" action="/logout">

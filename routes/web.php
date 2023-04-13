@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProductController;
@@ -45,3 +46,6 @@ Route::get('/login', [UserController::class, 'login']);
 
 // Login user
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+
+// Show user orders
+Route::get('/orders', [OrderController::class, 'show']);
