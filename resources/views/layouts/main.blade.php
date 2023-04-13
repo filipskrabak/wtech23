@@ -11,11 +11,13 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet"
     integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
   <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css" 
-    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous" 
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.3.0/css/all.min.css"
+    integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous"
     referrerpolicy="no-referrer">
   <!-- Main CSS -->
   <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+  <!-- Product Gallery slider CSS -->
+  <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
 </head>
 
 <body>
@@ -47,7 +49,7 @@
                       <li><a class="dropdown-item" href="./admin-products.html"><i class="fa-solid fa-gauge"></i> Admin dashboard</a></li>
                       <li>
                         <form class="inline" method="POST" action="/logout">
-                          @csrf 
+                          @csrf
                           <button type="submit" class="dropdown-item"><i class="fa-solid fa-right-from-bracket"></i> Log out</button>
                         </form>
                       </li>
@@ -206,6 +208,14 @@
 
   <script src="https://code.jquery.com/jquery-3.6.4.slim.min.js"
     integrity="sha256-a2yjHM4jnF9f54xUQakjZGaqYs/V1CYvWpoqZzC2/Bw=" crossorigin="anonymous">
+  </script>
+  <!-- TODO: include in product page only -->
+  <script src='https://sachinchoolur.github.io/lightslider/dist/js/lightslider.js'></script>
+  <script>
+    $(window).bind("load", function () {
+      $('#lightSlider').lightSlider({ gallery: true, item: 1, loop: true, slideMargin: 0, thumbItem: 9, adaptiveHeight: true });
+      $('.product-gallery-slider').css('opacity', '1');
+    });
   </script>
 
   <script src="{{ asset('js/main.js') }}"></script>

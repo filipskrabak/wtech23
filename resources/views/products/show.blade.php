@@ -8,45 +8,29 @@
     <div class="row justify-content-center align-items-start g-5">
         <div class="col-md-6">
             <div class="product-gallery-slider" style="opacity:0">
-            <ul id="lightSlider"> 
-                <li data-thumb="https://placeholder.com/1000x1000"> 
-                    <img src="https://placeholder.com/1000x1000" alt=""> 
-                </li> 
-                <li data-thumb="https://placeholder.com/1000x1000"> 
-                    <img src="https://placeholder.com/1000x1000" alt=""> 
-                </li> 
-                <li data-thumb="https://placeholder.com/1000x1000"> 
-                    <img src="https://placeholder.com/1000x1000" alt=""> 
+            <ul id="lightSlider">
+                @if(count($images) > 0)
+                    @foreach ($images as $image)
+                        <li data-thumb="/{{$image->path}}/{{$image->name}}">
+                            <img src="/{{$image->path}}/{{$image->name}}" alt="{{$image->alt}}">
+                        </li>
+                    @endforeach
+                @else
+                <li data-thumb="https://placehold.co/1000x1000?text=No Image Found">
+                    <img src="https://placehold.co/1000x1000?text=No Image Found" alt="No Image Found">
                 </li>
-                <li data-thumb="https://placeholder.com/1000x1000"> 
-                    <img src="https://placeholder.com/1000x1000" alt=""> 
-                </li>
-                <li data-thumb="https://placeholder.com/1000x1000"> 
-                    <img src="https://placeholder.com/1000x1000" alt=""> 
-                </li>
-                <li data-thumb="https://placeholder.com/1000x1000"> 
-                    <img src="https://placeholder.com/1000x1000" alt=""> 
-                </li>
-                <li data-thumb="https://placeholder.com/1000x1000"> 
-                    <img src="https://placeholder.com/1000x1000" alt=""> 
-                </li>
-                <li data-thumb="https://placeholder.com/1000x1000"> 
-                    <img src="https://placeholder.com/1000x1000" alt=""> 
-                </li>
-                <li data-thumb="https://placeholder.com/1000x1000"> 
-                    <img src="https://placeholder.com/1000x1000" alt=""> 
-                </li> 
+                @endif
             </ul></div>
         </div>
         <div class="col-md-6 product-meta">
             <h1>
-                Product Name
+                {{$product->name}}
             </h1>
             <div class="product-desription">
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce vitae tellus quis urna fringilla volutpat. Sed vitae semper nisl. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nunc, vitae aliquet nisl nisl sit amet nisl. Sed euismod, nunc vel tincidunt lacinia, nisl nunc aliquet nunc, vitae aliquet nisl nisl sit amet nisl.</p>
+                <p>{{$product->description}}</p>
             </div>
             <h2>
-                100.00<span class="price-currency-symbol ms-2">€</span>
+                {{$product->price}}<span class="price-currency-symbol ms-2">€</span>
             </h2>
             <div class="input-group mb-3">
                 <label class="input-group-text" for="inputGroupSelect01">Size</label>

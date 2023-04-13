@@ -17,8 +17,11 @@ class ProductController extends Controller
 
     // Show single product
     public function show(Product $product) {
+        $images = $product->images;
+
+
         return view('products.show', [
-            'products' => $product
-        ]);
+            'product' => $product
+        ])->with('images', $images);
     }
 }
