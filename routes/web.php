@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
@@ -22,9 +23,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/cart', function () {
-    return view('cart');
-});
+Route::get('/cart', [CartController::class, 'index']);
 
 // Get all products
 Route::get('/products', [ProductController::class, 'index']);
