@@ -101,11 +101,11 @@
                             <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                               <h4>Clothing</h4>
                               <div class="list-group list-group-flush">
-                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">T-shirts</a>
-                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Shirts</a>
-                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Hoodies</a>
-                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Jeans</a>
-                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Vests</a>
+                                <a href="/products" class="list-group-item list-group-item-action bg-light">T-shirts</a>
+                                <a href="/products" class="list-group-item list-group-item-action bg-light">Shirts</a>
+                                <a href="/products" class="list-group-item list-group-item-action bg-light">Hoodies</a>
+                                <a href="/products" class="list-group-item list-group-item-action bg-light">Jeans</a>
+                                <a href="/products" class="list-group-item list-group-item-action bg-light">Vests</a>
                               </div>
                             </div>
                             <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
@@ -128,11 +128,11 @@
                             <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                               <h4>Clothing</h4>
                               <div class="list-group list-group-flush">
-                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">T-shirts</a>
-                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Shirts</a>
-                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Hoodies</a>
-                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Jeans</a>
-                                <a href="./product-archive.html" class="list-group-item list-group-item-action bg-light">Vests</a>
+                                <a href="/products" class="list-group-item list-group-item-action bg-light">T-shirts</a>
+                                <a href="/products" class="list-group-item list-group-item-action bg-light">Shirts</a>
+                                <a href="/products" class="list-group-item list-group-item-action bg-light">Hoodies</a>
+                                <a href="/products" class="list-group-item list-group-item-action bg-light">Jeans</a>
+                                <a href="/products" class="list-group-item list-group-item-action bg-light">Vests</a>
                               </div>
                             </div>
                             <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
@@ -148,7 +148,7 @@
                   </div>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="./product-archive.html">Sale</a>
+                  <a class="nav-link" href="/products">Sale</a>
               </li>
           </ul>
         </div>
@@ -182,17 +182,17 @@
       <div class="col-md-2">
         <h5 class="footer-section">User</h5>
         <ul class="nav flex-column footer-links">
-          <li class="nav-item mb-2"><a href="./login.html" class="nav-link p-0 text-muted">Log in</a></li>
-          <li class="nav-item mb-2"><a href="./register.html" class="nav-link p-0 text-muted">Register</a></li>
+          <li class="nav-item mb-2"><a href="/login" class="nav-link p-0 text-muted">Log in</a></li>
+          <li class="nav-item mb-2"><a href="/register" class="nav-link p-0 text-muted">Register</a></li>
           <li class="nav-item mb-2"><a href="./edit-profile.html" class="nav-link p-0 text-muted">Change details</a></li>
         </ul>
       </div>
       <div class="col-md-2">
         <h5 class="footer-section">Shop</h5>
         <ul class="nav flex-column footer-links">
-          <li class="nav-item mb-2"><a href="./product-archive.html" class="nav-link p-0 text-muted">Men</a></li>
-          <li class="nav-item mb-2"><a href="./product-archive.html" class="nav-link p-0 text-muted">Women</a></li>
-          <li class="nav-item mb-2"><a href="./product-archive.html" class="nav-link p-0 text-muted">On Sale</a></li>
+          <li class="nav-item mb-2"><a href="/products" class="nav-link p-0 text-muted">Men</a></li>
+          <li class="nav-item mb-2"><a href="/products" class="nav-link p-0 text-muted">Women</a></li>
+          <li class="nav-item mb-2"><a href="/products" class="nav-link p-0 text-muted">On Sale</a></li>
         </ul>
       </div>
     </div>
