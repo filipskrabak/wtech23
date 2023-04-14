@@ -33,6 +33,10 @@ class DatabaseSeeder extends Seeder
             [
                 'name' => 'Gender',
                 'slug' => 'gender'
+            ],
+            [
+                'name' => 'Category',
+                'slug' => 'category'
             ]
         ]);
 
@@ -81,6 +85,22 @@ class DatabaseSeeder extends Seeder
             [
                 'attribute_id' => 3,
                 'value' => 'Female'
+            ],
+            [
+                'attribute_id' => 4,
+                'value' => 'T-Shirt'
+            ],
+            [
+                'attribute_id' => 4,
+                'value' => 'Hoodie'
+            ],
+            [
+                'attribute_id' => 4,
+                'value' => 'Jeans'
+            ],
+            [
+                'attribute_id' => 4,
+                'value' => 'Sneakers'
             ]
         ]);
 
@@ -137,6 +157,10 @@ class DatabaseSeeder extends Seeder
                 'product_id' => 1,
                 'attribute_value_id' => 10,
             ],
+            [
+                'product_id' => 1,
+                'attribute_value_id' => 12,
+            ]
         );
     }
 }
