@@ -1,6 +1,6 @@
 <?php
 
-use App\Models\Variant;
+use App\Models\Product;
 use App\Models\AttributeValue;
 use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
@@ -13,9 +13,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('variants_attributes_values', function (Blueprint $table) {
+        Schema::create('products_attributes_values', function (Blueprint $table) {
             $table->id();
-            $table->foreignIdFor(Variant::class)->constrained()->cascadeOnDelete();
+            $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
             $table->foreignIdFor(AttributeValue::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('variants_attributes_values');
+        Schema::dropIfExists('products_attributes_values');
     }
 };
