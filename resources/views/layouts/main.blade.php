@@ -15,13 +15,13 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous"
     referrerpolicy="no-referrer">
   <!-- Main CSS -->
-  <link href="{{ asset('css/styles.css?v=1') }}" rel="stylesheet">
+  <link href="{{ asset('css/styles.css?v=2') }}" rel="stylesheet">
   <!-- Product Gallery slider CSS -->
   <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
 </head>
 
 <body>
-    <x-flash-message />
+  <x-flash-message />
   <header>
     <!-- Top nav with logo, buttons -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
