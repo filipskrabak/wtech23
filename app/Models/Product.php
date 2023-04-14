@@ -2,8 +2,9 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Factories\HasFactory;
+use App\Models\AttributeValue;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Database\Eloquent\Factories\HasFactory;
 
 class Product extends Model
 {
@@ -13,8 +14,7 @@ class Product extends Model
         return $this->hasMany(ProductImage::class);
     }
 
-    public function attributes() {
+    public function attribute_values() {
         return $this->belongsToMany(AttributeValue::class);
     }
-
 }
