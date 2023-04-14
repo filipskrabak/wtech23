@@ -49,5 +49,11 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 // Show user orders
 Route::get('/orders', [OrderController::class, 'show']);
 
-//Edit user details
+//Show edit user details from
 Route::get('/edit', [UserController::class, 'edit']);
+
+//Edit user details
+Route::post('/edit/details', [UserController::class, 'editDetails']);
+
+//Edit user password
+Route::post('/edit/password', [UserController::class, 'editPassword']);

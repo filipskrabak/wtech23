@@ -65,7 +65,33 @@ class UserController extends Controller
         ])->onlyInput('email');
     }
 
-    public function edit() {
-        return view('users.edit');
+    public function edit(Request $request) {
+        $user = $request->user();
+        return view('users.edit', ['user' => $user]);
+    }
+
+    public function editDetails(Request $request) {
+        $user = $request->user();
+        $request->validate([
+            'email' => ['email', Rule::unique('users', 'email')->ignore($user->id)]
+        ]);
+        //dd(array_filter($request->all()));
+        $user->update(array_filter($request->all()));
+
+        return redirect('/edit')->with('message', 'Your details have been changed.');
+    }
+
+    public function editPassword(Request $request) {
+        $formFields = $request->validate([
+            'password' => 'required|confirmed|min:8'
+        ]);
+
+        $formFields['password'] = bcrypt($formFields['password']);
+
+        $user = $request->user();
+        $user->password = $formFields['password'];
+        $user->save();
+
+        return redirect('/edit')->with('message', 'Your password has been changed.');
     }
 }
