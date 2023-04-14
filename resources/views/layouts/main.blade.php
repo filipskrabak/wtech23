@@ -45,7 +45,7 @@
                     <a class="nav-link dropdown-toggle" href="#" id="dropdownProfile" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa-solid fa-user"></i> Profile</a>
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownProfile">
-                      <li><a class="dropdown-item" href="./edit-profile.html"><i class="fa-solid fa-user-pen"></i> Edit details</a></li>
+                      <li><a class="dropdown-item" href="/edit"><i class="fa-solid fa-user-pen"></i> Edit details</a></li>
                       <li><a class="dropdown-item" href="/orders"><i class="fa-solid fa-list"></i> My orders</a></li>
                       <li><a class="dropdown-item" href="./admin-products.html"><i class="fa-solid fa-gauge"></i> Admin dashboard</a></li>
                       <li>
@@ -184,7 +184,7 @@
         <h5 class="footer-section">User</h5>
         <ul class="nav flex-column footer-links">
             @auth
-                <li class="nav-item mb-2"><a href="./edit-profile.html" class="nav-link p-0 text-muted">Change details</a></li>
+                <li class="nav-item mb-2"><a href="/edit" class="nav-link p-0 text-muted">Edit details</a></li>
                 <li class="nav-item mb-2"><a href="/orders" class="nav-link p-0 text-muted">My orders</a></li>
             @else
                 <li class="nav-item mb-2"><a href="/login" class="nav-link p-0 text-muted">Log in</a></li>

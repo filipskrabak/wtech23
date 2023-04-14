@@ -48,3 +48,6 @@ Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 // Show user orders
 Route::get('/orders', [OrderController::class, 'show']);
+
+//Edit user details
+Route::get('/edit', [UserController::class, 'edit']);

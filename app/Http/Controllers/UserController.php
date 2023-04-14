@@ -64,4 +64,8 @@ class UserController extends Controller
             'email' => 'Invalid email or password!'
         ])->onlyInput('email');
     }
+
+    public function edit() {
+        return view('users.edit');
+    }
 }
