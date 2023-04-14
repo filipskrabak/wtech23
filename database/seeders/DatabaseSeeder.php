@@ -136,7 +136,7 @@ class DatabaseSeeder extends Seeder
         );
 
         // Link products to attributes
-        DB::table('products_attributes_values')->insert(
+        DB::table('products_attributes_values')->insert([
             [
                 'product_id' => 1,
                 'attribute_value_id' => 1,
@@ -161,6 +161,6 @@ class DatabaseSeeder extends Seeder
                 'product_id' => 1,
                 'attribute_value_id' => 12,
             ]
-        );
+        ]);
     }
 }
