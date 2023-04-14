@@ -23,8 +23,8 @@ return new class extends Migration
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');
             $table->integer('role')->default(0);
-            $table->foreignIdFor(Street::class)->constrained();
-            $table->foreignIdFor(Postcode::class)->constrained();
+            $table->foreignIdFor(Street::class)->nullable()->constrained();
+            $table->foreignIdFor(Postcode::class)->nullable()->constrained();
             $table->rememberToken();
             $table->timestamps();
         });
