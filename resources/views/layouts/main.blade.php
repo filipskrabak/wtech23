@@ -182,9 +182,13 @@
       <div class="col-md-2">
         <h5 class="footer-section">User</h5>
         <ul class="nav flex-column footer-links">
-          <li class="nav-item mb-2"><a href="/login" class="nav-link p-0 text-muted">Log in</a></li>
-          <li class="nav-item mb-2"><a href="/register" class="nav-link p-0 text-muted">Register</a></li>
-          <li class="nav-item mb-2"><a href="./edit-profile.html" class="nav-link p-0 text-muted">Change details</a></li>
+            @auth
+                <li class="nav-item mb-2"><a href="./edit-profile.html" class="nav-link p-0 text-muted">Change details</a></li>
+                <li class="nav-item mb-2"><a href="/orders" class="nav-link p-0 text-muted">My orders</a></li>
+            @else
+                <li class="nav-item mb-2"><a href="/login" class="nav-link p-0 text-muted">Log in</a></li>
+                <li class="nav-item mb-2"><a href="/register" class="nav-link p-0 text-muted">Register</a></li>
+            @endif
         </ul>
       </div>
       <div class="col-md-2">
