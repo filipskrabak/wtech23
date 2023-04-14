@@ -47,4 +47,14 @@ class User extends Authenticatable
     public function orders() {
         return $this->hasMany(Order::class);
     }
+
+    //Address relationships
+
+    public function postcode() {
+        return $this->hasOne(Postcode::class);
+    }
+
+    public function street() {
+        return $this->hasOne(Street::class);
+    }
 }
