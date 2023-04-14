@@ -21,17 +21,6 @@ return new class extends Migration
             $table->string('sku', 8);
             $table->timestamps();
         });
-
-        // Insert basic product
-        DB::table('products')->insert(
-            array(
-                'name' => 'Black t-shirt',
-                'slug' => 'black-t-shirt',
-                'price' => 4.99,
-                'description' => 'A basic plain black t-shirt.',
-                'sku' => 'XYZ12345'
-            )
-        );
     }
 
     /**

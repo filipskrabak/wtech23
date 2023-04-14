@@ -21,26 +21,6 @@ return new class extends Migration
             $table->foreignIdFor(Product::class)->constrained()->cascadeOnDelete();
             $table->timestamps();
         });
-
-        // Insert basic img
-        DB::table('product_images')->insert(
-            array(
-                'name' => 'test.png',
-                'path' => 'img',
-                'alt' => 'black t-shirt',
-                'product_id' => 1
-            )
-        );
-
-        // Insert basic img
-        DB::table('product_images')->insert(
-            array(
-                'name' => 'test2.jpg',
-                'path' => 'img',
-                'alt' => 'black t-shirt 2',
-                'product_id' => 1
-            )
-        );
     }
 
     /**
