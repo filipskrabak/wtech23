@@ -28,3 +28,9 @@ $(document).ready(function(){
         }
       })
   })
+
+// Auto-Close BS alert
+setTimeout(function () {
+
+    $('#alert').alert('close');
+}, 3000);

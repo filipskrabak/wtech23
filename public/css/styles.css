@@ -38,6 +38,15 @@ img.product-image {
   margin-right: 1px;
 }
 
+/* Alert */
+#alert {
+  position: absolute;
+  z-index: 1;
+  margin: 10px;
+  right: 0;
+  max-width: 20%;
+}
+
 /* CART */
 
 .cart-remove-icon:hover {

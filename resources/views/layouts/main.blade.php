@@ -15,7 +15,7 @@
     integrity="sha512-SzlrxWUlpfuzQ+pcUCosxcglQRNAq/DZjVsC0lE40xsADsfeQoEypE+enwcOiGjk/bSuGGKHEyjSoQ1zVisanQ==" crossorigin="anonymous"
     referrerpolicy="no-referrer">
   <!-- Main CSS -->
-  <link href="{{ asset('css/styles.css') }}" rel="stylesheet">
+  <link href="{{ asset('css/styles.css?v=1') }}" rel="stylesheet">
   <!-- Product Gallery slider CSS -->
   <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
 </head>
@@ -223,7 +223,7 @@
     });
   </script>
 
-  <script src="{{ asset('js/main.js') }}"></script>
+  <script src="{{ asset('js/main.js?v=1') }}"></script>
 </body>
 
 </html>

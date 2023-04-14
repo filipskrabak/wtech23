@@ -1,7 +1,6 @@
 @if(session()->has('message'))
-    <div class="flash-message">
-        <p>
-            {{session('message')}}
-        </p>
+    <div class="alert alert-success alert-dismissible fade show" role="alert" id="alert">
+        {{session('message')}}
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>
 @endif
