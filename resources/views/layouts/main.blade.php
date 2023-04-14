@@ -21,6 +21,7 @@
 </head>
 
 <body>
+    <x-flash-message />
   <header>
     <!-- Top nav with logo, buttons -->
     <nav class="navbar navbar-expand-sm navbar-dark bg-dark">
