@@ -10,7 +10,7 @@
     <h1 class="mb-4">Featured</h1>
     <div class="row featured-items">
     <div class="col-md-3">
-        <a href="./product-archive.html" class="text-decoration-none text-dark">
+        <a href="/products?category=Jeans" class="text-decoration-none text-dark">
         <div class="d-flex flex-column align-items-center">
             <div class="overflow-hidden">
             <img src="./img/jeans.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
@@ -20,7 +20,7 @@
         </a>
     </div>
     <div class="col-md-3">
-        <a href="./product-archive.html" class="text-decoration-none text-dark">
+        <a href="/products?category=Hoodies" class="text-decoration-none text-dark">
         <div class="d-flex flex-column align-items-center">
             <div class="overflow-hidden">
             <img src="./img/hoodie.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
@@ -30,17 +30,17 @@
         </a>
     </div>
     <div class="col-md-3">
-        <a href="./product-archive.html" class="text-decoration-none text-dark">
+        <a href="/products?category=T-Shirts" class="text-decoration-none text-dark">
         <div class="d-flex flex-column align-items-center">
             <div class="overflow-hidden">
             <img src="./img/jacket.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
             </div>
-            <p class="item-description">Jackets</p>
+            <p class="item-description">T-Shirts</p>
         </div>
         </a>
     </div>
     <div class="col-md-3">
-        <a href="./product-archive.html" class="text-decoration-none text-dark">
+        <a href="/products?category=Sneakers" class="text-decoration-none text-dark">
         <div class="d-flex flex-column align-items-center">
             <div class="overflow-hidden">
             <img src="./img/sneakers.png" alt="" class="w-100 mt-4 mt-md-0 product-image">

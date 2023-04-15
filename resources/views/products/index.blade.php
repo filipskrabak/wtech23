@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row justify-content-center align-items-center">
-        <div class="col"><h1>T-Shirts</h1></div>
+        <div class="col"><h1 class="mt-3">T-Shirts</h1></div>
         <div class="col-auto text-end"><span class="result-counter">{{@count($products)}}</span> results</div>
     </div>
 </div>
@@ -88,6 +88,12 @@
 </div>
 <div class="container mb-5">
     <div class="row row-cols-md-2 justify-content-center align-items-center g-2">
+        @if(@count($products) == 0)
+            <div class="alert alert-danger mt-5" role="alert">
+                No products found for your filters.
+            </div>
+        @endif
+
         @foreach ($products as $product)
             <div class="col position-relative mb-2">
                 @foreach ($product->images as $image)
