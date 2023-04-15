@@ -108,7 +108,7 @@
 </div>
 
 <div class="container">
-    {{$products->links()}}
+    {{$products->withQueryString()->links()}}
 </div>
 
 @endsection
