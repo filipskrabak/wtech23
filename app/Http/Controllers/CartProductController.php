@@ -34,6 +34,11 @@ class CartProductController extends Controller
     */
     public function store(Request $request, $id)
     {
+        // TODO: Unauthenticated
+        if(Auth::id() == null) {
+            dd("WIP: support for guests");
+        }
+
         $cartProduct = new CartProduct;
 
         $cartProduct->user_id = $request->user()->id;
