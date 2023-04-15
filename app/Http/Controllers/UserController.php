@@ -6,6 +6,7 @@ use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
+use App\Models\Postcode;
 
 class UserController extends Controller
 {
@@ -72,11 +73,13 @@ class UserController extends Controller
 
     public function editDetails(Request $request) {
         $user = $request->user();
-        $request->validate([
-            'email' => ['email', Rule::unique('users', 'email')->ignore($user->id)]
+        $formFields = $request->validate([
+            'email' => ['email', Rule::unique('users', 'email')->ignore($user->id)],
+            'postcode' => ['nullable', Rule::exists('postcodes', 'postcode')],
+            'street' => ['nullable', Rule::exists('streets', 'name')]
         ]);
-        //dd(array_filter($request->all()));
-        $user->update(array_filter($request->all()));
+        $formFields = array_filter($request->all());
+        $user->update($formFields);
 
         return redirect('/edit')->with('message', 'Your details have been changed.');
     }
