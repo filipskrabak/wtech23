@@ -12,4 +12,19 @@ class Attribute extends Model
     public function attribute_values() {
         return $this->hasMany(AttributeValue::class);
     }
+
+    static public function getAttributeValuesBySlug($attributeSlug)
+    {
+        // Retrieve the attribute by its slug
+        $attribute = Attribute::where('slug', $attributeSlug)->first();
+
+        if (!$attribute) {
+            // If the attribute doesn't exist, return an empty array
+            return [];
+        }
+
+        $attributeValues = $attribute->attribute_values;
+
+        return $attributeValues;
+    }
 }

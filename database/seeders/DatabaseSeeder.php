@@ -111,7 +111,8 @@ class DatabaseSeeder extends Seeder
                 'slug' => 'black-t-shirt',
                 'price' => 4.99,
                 'description' => 'A basic plain black t-shirt.',
-                'sku' => 'XYZ12345'
+                'sku' => 'XYZ12345',
+                'created_at' => \DateTime::createFromFormat('U', mt_rand(1262055681,1681522096))
             ]
         );
 
@@ -132,6 +133,50 @@ class DatabaseSeeder extends Seeder
                 'path' => 'img',
                 'alt' => 'black t-shirt 2',
                 'product_id' => 1
+            ]
+        );
+
+        // Insert basic product
+        DB::table('products')->insert(
+            [
+                'name' => 'Blue t-shirt',
+                'slug' => 'blue-t-shirt',
+                'price' => 18.99,
+                'description' => 'A basic plain blue t-shirt.',
+                'sku' => 'XYZ12357',
+                'created_at' => \DateTime::createFromFormat('U', mt_rand(1262055681,1681522096))
+            ]
+        );
+
+        // Insert basic img
+        DB::table('product_images')->insert(
+            [
+                'name' => 'blue-tshirt.png',
+                'path' => 'img',
+                'alt' => 'blue t-shirt',
+                'product_id' => 2
+            ]
+        );
+
+        // Insert basic product
+        DB::table('products')->insert(
+            [
+                'name' => 'Red hoodie',
+                'slug' => 'red-hoodie',
+                'price' => 48.99,
+                'description' => 'A basic plain red hoodie.',
+                'sku' => 'XYZ45628',
+                'created_at' => \DateTime::createFromFormat('U', mt_rand(1262055681,1681522096))
+            ]
+        );
+
+        // Insert basic img
+        DB::table('product_images')->insert(
+            [
+                'name' => 'red-hoodie.png',
+                'path' => 'img',
+                'alt' => 'red hoodie',
+                'product_id' => 3
             ]
         );
 
@@ -160,6 +205,34 @@ class DatabaseSeeder extends Seeder
             [
                 'product_id' => 1,
                 'attribute_value_id' => 12,
+            ],
+            [
+                'product_id' => 2,
+                'attribute_value_id' => 7,
+            ],
+            [
+                'product_id' => 2,
+                'attribute_value_id' => 10,
+            ],
+            [
+                'product_id' => 2,
+                'attribute_value_id' => 12,
+            ],
+            [
+                'product_id' => 3,
+                'attribute_value_id' => 5,
+            ],
+            [
+                'product_id' => 3,
+                'attribute_value_id' => 9,
+            ],
+            [
+                'product_id' => 3,
+                'attribute_value_id' => 11,
+            ],
+            [
+                'product_id' => 3,
+                'attribute_value_id' => 13,
             ]
         ]);
     }
