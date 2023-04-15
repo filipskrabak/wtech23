@@ -102,11 +102,11 @@
                             <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                               <h4>Clothing</h4>
                               <div class="list-group list-group-flush">
-                                <a href="/products" class="list-group-item list-group-item-action bg-light">T-shirts</a>
-                                <a href="/products" class="list-group-item list-group-item-action bg-light">Shirts</a>
-                                <a href="/products" class="list-group-item list-group-item-action bg-light">Hoodies</a>
-                                <a href="/products" class="list-group-item list-group-item-action bg-light">Jeans</a>
-                                <a href="/products" class="list-group-item list-group-item-action bg-light">Vests</a>
+                                <a href="/products?gender=Women&category=T-Shirts" class="list-group-item list-group-item-action bg-light">T-shirts</a>
+                                <a href="/products?gender=Women&category=Shirts" class="list-group-item list-group-item-action bg-light">Shirts</a>
+                                <a href="/products?gender=Women&category=Hoodies" class="list-group-item list-group-item-action bg-light">Hoodies</a>
+                                <a href="/products?gender=Women&category=Jeans" class="list-group-item list-group-item-action bg-light">Jeans</a>
+                                <a href="/products?gender=Women&category=Sneakers" class="list-group-item list-group-item-action bg-light">Sneakers</a>
                               </div>
                             </div>
                             <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
@@ -129,11 +129,11 @@
                             <div class="col-md-6 col-lg-3 mb-3 mb-lg-0">
                               <h4>Clothing</h4>
                               <div class="list-group list-group-flush">
-                                <a href="/products" class="list-group-item list-group-item-action bg-light">T-shirts</a>
-                                <a href="/products" class="list-group-item list-group-item-action bg-light">Shirts</a>
-                                <a href="/products" class="list-group-item list-group-item-action bg-light">Hoodies</a>
-                                <a href="/products" class="list-group-item list-group-item-action bg-light">Jeans</a>
-                                <a href="/products" class="list-group-item list-group-item-action bg-light">Vests</a>
+                                <a href="/products?gender=Men&category=T-Shirts" class="list-group-item list-group-item-action bg-light">T-shirts</a>
+                                <a href="/products?gender=Men&category=Shirts" class="list-group-item list-group-item-action bg-light">Shirts</a>
+                                <a href="/products?gender=Men&category=Hoodies" class="list-group-item list-group-item-action bg-light">Hoodies</a>
+                                <a href="/products?gender=Men&category=Jeans" class="list-group-item list-group-item-action bg-light">Jeans</a>
+                                <a href="/products?gender=Men&category=Sneakers" class="list-group-item list-group-item-action bg-light">Sneakers</a>
                               </div>
                             </div>
                             <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">

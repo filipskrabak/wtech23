@@ -80,19 +80,19 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'attribute_id' => 3,
-                'value' => 'Male'
+                'value' => 'Men'
             ],
             [
                 'attribute_id' => 3,
-                'value' => 'Female'
+                'value' => 'Women'
             ],
             [
                 'attribute_id' => 4,
-                'value' => 'T-Shirt'
+                'value' => 'T-Shirts'
             ],
             [
                 'attribute_id' => 4,
-                'value' => 'Hoodie'
+                'value' => 'Hoodies'
             ],
             [
                 'attribute_id' => 4,
@@ -101,6 +101,10 @@ class DatabaseSeeder extends Seeder
             [
                 'attribute_id' => 4,
                 'value' => 'Sneakers'
+            ],
+            [
+                'attribute_id' => 4,
+                'value' => 'Shirts'
             ]
         ]);
 
