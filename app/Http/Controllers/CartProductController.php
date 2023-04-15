@@ -5,12 +5,26 @@ namespace App\Http\Controllers;
 use App\Models\CartProduct;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Auth;
 
 class CartProductController extends Controller
 {
     //Show cart
     public function index(){
-        return view('cart');
+        // TODO: Unauthenticated
+        if(Auth::id() == null) {
+            dd("WIP: support for guests");
+        }
+
+        $allCartProducts = CartProduct::get();
+
+        $products = $allCartProducts->filter(function($cartProduct) {
+            return $cartProduct->user->id === Auth::id();
+        });
+
+        return view('cart', [
+            'cartproducts' => $products
+        ]);
     }
 
     /**
@@ -25,6 +39,8 @@ class CartProductController extends Controller
         $cartProduct->user_id = $request->user()->id;
         $cartProduct->product_id = $id;
 
+        $cartProduct->size = $request->input('size');
+
         // TODO
         //$cartProduct->pcs = 1;
 
@@ -35,5 +51,5 @@ class CartProductController extends Controller
     }
 
     //remove item
-    //increase/decreas pcs
+    //increase/decrease pcs
 }
