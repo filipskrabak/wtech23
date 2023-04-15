@@ -19,6 +19,7 @@ return new class extends Migration
             $table->double('price');
             $table->string('description', 512);
             $table->string('sku', 8);
+            $table->fulltext(['name', 'description']);
             $table->timestamps();
         });
     }

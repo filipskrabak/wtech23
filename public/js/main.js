@@ -18,7 +18,7 @@ $(document).ready(function(){
         $( "div", this ).first().addClass('show')
       }
     })
-  
+
     $('.dropdown').on("mouseleave", function() {
         if($(window).width() > 576) {
           $( "a", this ).first().removeClass('show')

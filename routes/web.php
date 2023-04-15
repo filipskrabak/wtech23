@@ -29,6 +29,9 @@ Route::get('/cart', [CartProductController::class, 'index']);
 // Get all products with filters
 Route::get('/products', [ProductController::class, 'index']);
 
+// Get all products with filters
+Route::post('/search', [ProductController::class, 'search']);
+
 // Single product
 Route::get('/product/{product:slug}', [ProductController::class, 'show']);
 

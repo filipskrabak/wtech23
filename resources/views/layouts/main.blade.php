@@ -77,11 +77,12 @@
       <div class="container">
         <div class="row justify-content-center">
           <div class="col-md-6 p-3">
-            <form action="/search" method="GET">
-              <div class="form-floating">
-                <input type="text" class="form-control" id="floatingSearch" placeholder="Black T-shirt...">
-                <label for="floatingSearch">Black T-shirt...</label>
-              </div>
+            <form action="/search" method="POST">
+                @csrf
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingSearch" placeholder="Black T-shirt..." name="search">
+                    <label for="floatingSearch">Black T-shirt...</label>
+                </div>
             </form>
           </div>
         </div>
