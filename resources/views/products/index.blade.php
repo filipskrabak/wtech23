@@ -6,7 +6,7 @@
 
 <div class="container">
     <div class="row justify-content-center align-items-center">
-        <div class="col"><h1 class="mt-3">T-Shirts</h1></div>
+        <div class="col"><h1 class="mt-3">{{old('category') ?: 'All products'}}</h1></div>
         <div class="col-auto text-end"><span class="result-counter">{{@count($products)}}</span> results</div>
     </div>
 </div>
@@ -107,7 +107,7 @@
                     <div class="col text-truncate fw-bolder">{{$product->name}}</div>
                     <div class="col-auto text-end">{{$product->price}}<span class="price-currency-symbol ms-2">€</span></div>
                 </div>
-                <a href="/product/{{$product->id}}" class="stretched-link"></a>
+                <a href="/product/{{$product->slug}}" class="stretched-link"></a>
             </div>
         @endforeach
     </div>

@@ -11,7 +11,7 @@
         <div class="carousel-caption">
             <h1>New Collection</h1>
             <p>Take a look at our newest clothing</p>
-            <p><a class="btn btn-lg btn-primary" href="./product-archive.html">Browse</a></p>
+            <p><a class="btn btn-lg btn-primary" href="/products?order=newest">Browse</a></p>
         </div>
         </div>
     </div>
@@ -21,7 +21,7 @@
         <div class="carousel-caption">
             <h1>On Sale</h1>
             <p>Don't miss our sale</p>
-            <p><a class="btn btn-lg btn-primary" href="./product-archive.html">Learn more</a></p>
+            <p><a class="btn btn-lg btn-primary" href="/products?price-to=10">Learn more</a></p>
         </div>
         </div>
     </div>
@@ -31,7 +31,7 @@
         <div class="carousel-caption">
             <h1>New user bonus</h1>
             <p>Register now and get 10% off.</p>
-            <p><a class="btn btn-lg btn-primary" href="./register.html">Register</a></p>
+            <p><a class="btn btn-lg btn-primary" href="/register">Register</a></p>
         </div>
         </div>
     </div>

@@ -149,7 +149,7 @@
                   </div>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/products">Sale</a>
+                  <a class="nav-link" href="/products?price-to=10">Sale</a>
               </li>
           </ul>
         </div>
@@ -195,9 +195,9 @@
       <div class="col-md-2">
         <h5 class="footer-section">Shop</h5>
         <ul class="nav flex-column footer-links">
-          <li class="nav-item mb-2"><a href="/products" class="nav-link p-0 text-muted">Men</a></li>
-          <li class="nav-item mb-2"><a href="/products" class="nav-link p-0 text-muted">Women</a></li>
-          <li class="nav-item mb-2"><a href="/products" class="nav-link p-0 text-muted">On Sale</a></li>
+          <li class="nav-item mb-2"><a href="/products?gender=Men" class="nav-link p-0 text-muted">Men</a></li>
+          <li class="nav-item mb-2"><a href="/products?gender=Women" class="nav-link p-0 text-muted">Women</a></li>
+          <li class="nav-item mb-2"><a href="/products?price-to=10" class="nav-link p-0 text-muted">On Sale</a></li>
         </ul>
       </div>
     </div>

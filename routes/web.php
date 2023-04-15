@@ -29,7 +29,7 @@ Route::get('/cart', [CartController::class, 'index']);
 Route::get('/products', [ProductController::class, 'index']);
 
 // Single product
-Route::get('/product/{product}', [ProductController::class, 'show']);
+Route::get('/product/{product:slug}', [ProductController::class, 'show']);
 
 // Show register form (create user)
 Route::get('/register', [UserController::class, 'create']);
