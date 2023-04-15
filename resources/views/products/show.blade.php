@@ -36,12 +36,13 @@
                 @csrf
                 <div class="input-group mb-3">
                     <label class="input-group-text" for="inputGroupSelect01">Size</label>
-                    <select class="form-select" id="inputGroupSelect01" name="size">
+                    <select class="form-select w-50" id="inputGroupSelect01" name="size">
                         @foreach ($sizes as $size)
                             <option  @selected(old('size') == $size->value)>{{$size->value}}</option>
                         @endforeach
                     </select>
-
+                    <span class="input-group-text" id="pcs">Pcs</span>
+                    <input type="text" class="form-control" placeholder="1" aria-label="to" aria-describedby="pcs" name="pcs" value="1">
                 </div>
                 <div class="d-grid gap-2">
                     <button type="submit" id="cartAddBtn" class="btn btn-primary">

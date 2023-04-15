@@ -45,9 +45,7 @@ class CartProductController extends Controller
         $cartProduct->product_id = $id;
 
         $cartProduct->size = $request->input('size');
-
-        // TODO
-        //$cartProduct->pcs = 1;
+        $cartProduct->pcs = $request->input('pcs');
 
         $cartProduct->save();
 

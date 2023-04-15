@@ -49,12 +49,12 @@
             <div class="col-lg-2 col-md-3 col-5 d-flex align-items-center">
                 <div class="input-group mx-auto">
                 <button type="button" class="btn btn-outline-secondary minus-btn">-</button>
-                <input type="text" class="form-control text-center qty-input" value="1">
+                <input type="text" class="form-control text-center qty-input" value="{{$cartproduct->pcs}}">
                 <button type="button" class="btn btn-outline-secondary plus-btn">+</button>
                 </div>
             </div>
             <div class="col-lg-1 col-md-auto col-4">
-                <p class="total-price my-0">TODO €</p>
+                <p class="total-price my-0">{{$cartproduct->pcs*$cartproduct->product->price}} €</p>
             </div>
         </div>
     @endforeach
