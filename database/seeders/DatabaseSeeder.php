@@ -212,6 +212,10 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'product_id' => 2,
+                'attribute_value_id' => 3,
+            ],
+            [
+                'product_id' => 2,
                 'attribute_value_id' => 7,
             ],
             [

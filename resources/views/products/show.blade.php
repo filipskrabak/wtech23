@@ -34,11 +34,12 @@
             </h2>
             <div class="input-group mb-3">
                 <label class="input-group-text" for="inputGroupSelect01">Size</label>
-                <select class="form-select" id="inputGroupSelect01">
-                  <option value="1">S</option>
-                  <option value="2">M</option>
-                  <option value="3">L</option>
+                <select class="form-select" id="inputGroupSelect01" name="size">
+                    @foreach ($sizes as $size)
+                        <option  @selected(old('size') == $size->value)>{{$size->value}}</option>
+                    @endforeach
                 </select>
+
               </div>
             <div class="d-grid gap-2">
                 <button type="button" name="cartadd" id="cartAddBtn" class="btn btn-primary">

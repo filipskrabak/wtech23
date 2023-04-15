@@ -86,10 +86,14 @@ class ProductController extends Controller
     // Show single product
     public function show(Product $product) {
         $images = $product->images;
+        $allAttributes = $product->attribute_values;
 
+        $sizeAttributes = $allAttributes->filter(function($attribute) {
+            return $attribute->attribute->name === 'Size';
+        });
 
         return view('products.show', [
             'product' => $product
-        ])->with('images', $images);
+        ])->with('images', $images)->with('sizes', $sizeAttributes);
     }
 }
