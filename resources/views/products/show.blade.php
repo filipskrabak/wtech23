@@ -32,20 +32,23 @@
             <h2>
                 {{$product->price}}<span class="price-currency-symbol ms-2">€</span>
             </h2>
-            <div class="input-group mb-3">
-                <label class="input-group-text" for="inputGroupSelect01">Size</label>
-                <select class="form-select" id="inputGroupSelect01" name="size">
-                    @foreach ($sizes as $size)
-                        <option  @selected(old('size') == $size->value)>{{$size->value}}</option>
-                    @endforeach
-                </select>
+            <form action="/cart/{{$product->id}}" method="POST">
+                @csrf
+                <div class="input-group mb-3">
+                    <label class="input-group-text" for="inputGroupSelect01">Size</label>
+                    <select class="form-select" id="inputGroupSelect01" name="size">
+                        @foreach ($sizes as $size)
+                            <option  @selected(old('size') == $size->value)>{{$size->value}}</option>
+                        @endforeach
+                    </select>
 
-              </div>
-            <div class="d-grid gap-2">
-                <button type="button" name="cartadd" id="cartAddBtn" class="btn btn-primary">
-                    Add to Cart
-                </button>
-            </div>
+                </div>
+                <div class="d-grid gap-2">
+                    <button type="submit" id="cartAddBtn" class="btn btn-primary">
+                        Add to Cart
+                    </button>
+                </div>
+            </form>
         </div>
     </div>
   </div>

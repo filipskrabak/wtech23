@@ -1,10 +1,11 @@
 <?php
 
-use App\Http\Controllers\CartController;
-use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\CartProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,7 +24,7 @@ Route::get('/', function () {
     return view('index');
 });
 
-Route::get('/cart', [CartController::class, 'index']);
+Route::get('/cart', [CartProductController::class, 'index']);
 
 // Get all products with filters
 Route::get('/products', [ProductController::class, 'index']);
@@ -57,3 +58,6 @@ Route::post('/edit/details', [UserController::class, 'editDetails']);
 
 //Edit user password
 Route::post('/edit/password', [UserController::class, 'editPassword']);
+
+// Add Product to Cart
+Route::post('/cart/{id}', [CartProductController::class, 'store']);
