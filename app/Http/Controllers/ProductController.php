@@ -12,8 +12,14 @@ use Illuminate\Database\Eloquent\Collection;
 class ProductController extends Controller
 {
     // Get and show all products
-    public function index(Request $request, $searchProducts = null) {
-        $products = $searchProducts == null ? Product::with('attribute_values') : $searchProducts;
+    public function index(Request $request) {
+        $products = Product::with('attribute_values');
+
+        $searchReq = $request->input('search');
+
+        if($searchReq) {
+            $products = Product::query()->whereFullText(['name', 'description'], $searchReq);
+        }
 
         $attrSlugs = Attribute::pluck('id', 'slug');
 
@@ -83,12 +89,6 @@ class ProductController extends Controller
         return view('products.index', [
             'products' => $products->paginate(10)
         ])->with('genders', $genders)->with('categories', $categories)->with('sizes', $sizes)->with('colors', $colors);
-    }
-
-    public function search(Request $request) {
-        $search = $request->get('search');
-
-        return $this->index(new Request([]), Product::query()->whereFullText(['name', 'description'], $search));
     }
 
     // Show single product

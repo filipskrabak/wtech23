@@ -12,6 +12,10 @@
 </div>
 <div class="container py-3 border-bottom">
     <form method="GET" action="">
+        @if(request('search'))
+            <input type="hidden" name="search" value="{{ request('search') }}">
+        @endif
+
         <div class="row row-cols-6 justify-content-center align-items-center g-2">
             <div class="col col-lg-2 col-6">
                 <div class="input-group mb-3">
