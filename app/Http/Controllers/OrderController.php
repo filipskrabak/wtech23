@@ -35,20 +35,19 @@ class OrderController extends Controller
             'country' => 'required',
         ]);
 
-        $order = $request->user()->orders()->create([
-            'name' => $request->input('name'),
-            'surname' => $request->input('surname'),
-            'email' => $request->input('email'),
-            'phone' => $request->input('phone'),
-            'street' => $request->input('street'),
-            'postcode' => $request->input('postcode'),
-            'city' => $request->input('city'),
-            'country' => $request->input('country'),
-            'status' => 'pending',
-            'price' => '0',
-        ]);
-
         if(Auth::id() == null) {
+            $order = Order::create([
+                'name' => $request->input('name'),
+                'surname' => $request->input('surname'),
+                'email' => $request->input('email'),
+                'phone' => $request->input('phone'),
+                'street' => $request->input('street'),
+                'postcode' => $request->input('postcode'),
+                'city' => $request->input('city'),
+                'country' => $request->input('country'),
+                'status' => 'pending',
+                'price' => '0',
+            ]);
             $cart = session()->get('cart', []);
             $total = 0;
 
@@ -66,6 +65,19 @@ class OrderController extends Controller
             session()->forget('cart');
         }
         else {
+            $order = $request->user()->orders()->create([
+                'name' => $request->input('name'),
+                'surname' => $request->input('surname'),
+                'email' => $request->input('email'),
+                'phone' => $request->input('phone'),
+                'street' => $request->input('street'),
+                'postcode' => $request->input('postcode'),
+                'city' => $request->input('city'),
+                'country' => $request->input('country'),
+                'status' => 'pending',
+                'price' => '0',
+            ]);
+
             $cartProducts = CartProduct::get()->filter(function($cartProduct) {
                 return $cartProduct->user->id === Auth::id();
             });
