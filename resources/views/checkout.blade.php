@@ -17,6 +17,7 @@
             </div>
         </div>
         <form method="POST" action="/orders">
+        @csrf
             <div id="step-1">
             <div class="row">
                 <div class="col-lg-6">
