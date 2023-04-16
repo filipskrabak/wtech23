@@ -61,3 +61,9 @@ Route::post('/edit/password', [UserController::class, 'editPassword']);
 
 // Add Product to Cart
 Route::post('/cart/{id}', [CartProductController::class, 'store']);
+
+// Remove Product from Cart
+Route::delete('/cart/{id}', [CartProductController::class, 'destroy']);
+
+// Update Product in Cart
+Route::put('/cart/{id}', [CartProductController::class, 'update']);
