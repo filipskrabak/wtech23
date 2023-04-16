@@ -42,7 +42,7 @@
                         @endforeach
                     </select>
                     <span class="input-group-text" id="pcs">Pcs</span>
-                    <input type="text" class="form-control" placeholder="1" aria-label="to" aria-describedby="pcs" name="pcs" value="1">
+                    <input type="number" class="form-control" placeholder="1" aria-label="to" aria-describedby="pcs" name="pcs" value="1" min="1">
                 </div>
                 <div class="d-grid gap-2">
                     <button type="submit" id="cartAddBtn" class="btn btn-primary">
