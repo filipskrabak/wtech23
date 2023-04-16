@@ -95,7 +95,7 @@
                   <a class="nav-link {{ Request::is('/') ? 'active' : '' }}" href="/" aria-current="page">Home</a>
               </li>
               <li class="nav-item dropdown position-static">
-                  <a class="nav-link dropdown-toggle" href="#" id="women-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Women</a>
+                  <a class="nav-link dropdown-toggle {{ app('request')->input('gender') == "Women" ? 'active' : '' }}" href="#" id="women-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Women</a>
                   <div class="dropdown-menu nav-dropdown w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="women-dropdown">
                       <div class="container">
                           <div class="row mb-4">
@@ -106,7 +106,7 @@
                                 <a href="/products?gender=Women&category=Shirts" class="list-group-item list-group-item-action bg-light">Shirts</a>
                                 <a href="/products?gender=Women&category=Hoodies" class="list-group-item list-group-item-action bg-light">Hoodies</a>
                                 <a href="/products?gender=Women&category=Jeans" class="list-group-item list-group-item-action bg-light">Jeans</a>
-                                <a href="/products?gender=Women&category=Sneakers" class="list-group-item list-group-item-action bg-light">Sneakers</a>
+                                <a href="/products?gender=Women&category=Jackets" class="list-group-item list-group-item-action bg-light">Jackets</a>
                               </div>
                             </div>
                             <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
@@ -122,7 +122,7 @@
                   </div>
               </li>
               <li class="nav-item dropdown position-static">
-                  <a class="nav-link dropdown-toggle" href="#" id="men-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Men</a>
+                  <a class="nav-link dropdown-toggle {{ app('request')->input('gender') == "Men" ? 'active' : '' }}" href="#" id="men-dropdown" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Men</a>
                   <div class="dropdown-menu nav-dropdown w-100 mt-0 border-0 rounded-0 bg-light" aria-labelledby="men-dropdown">
                       <div class="container">
                           <div class="row mb-4">
@@ -133,7 +133,7 @@
                                 <a href="/products?gender=Men&category=Shirts" class="list-group-item list-group-item-action bg-light">Shirts</a>
                                 <a href="/products?gender=Men&category=Hoodies" class="list-group-item list-group-item-action bg-light">Hoodies</a>
                                 <a href="/products?gender=Men&category=Jeans" class="list-group-item list-group-item-action bg-light">Jeans</a>
-                                <a href="/products?gender=Men&category=Sneakers" class="list-group-item list-group-item-action bg-light">Sneakers</a>
+                                <a href="/products?gender=Men&category=Jackets" class="list-group-item list-group-item-action bg-light">Jackets</a>
                               </div>
                             </div>
                             <div class="col-lg-3 d-none d-lg-block mb-3 mb-lg-0">
@@ -149,7 +149,7 @@
                   </div>
               </li>
               <li class="nav-item">
-                  <a class="nav-link" href="/products?price-to=10">Sale</a>
+                  <a class="nav-link  {{ app('request')->input('price-to') == 10 ? 'active' : '' }}" href="/products?price-to=10">Sale</a>
               </li>
           </ul>
         </div>
@@ -162,7 +162,7 @@
   <footer class="container">
     <div class="row py-5 border-top">
       <div class="col-md-5">
-        <a class="navbar-brand mb-2 d-flex align-items-center" href="./index.html">
+        <a class="navbar-brand mb-2 d-flex align-items-center" href="/">
           <img src="{{ asset('img/sitelogo.svg') }}" width="30" height="30" class="d-inline-block align-top me-2" alt="">
           Clothing Store
         </a>

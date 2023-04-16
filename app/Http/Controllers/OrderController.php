@@ -17,7 +17,7 @@ class OrderController extends Controller
     // Show user orders
     public function show(Request $request){
         $orders = $request->user()->orders()->get();
-        
+
         return view('orders', [
             'orders'=> $orders
         ]);
@@ -96,5 +96,7 @@ class OrderController extends Controller
             //delete all cart products
             CartProduct::where('user_id', Auth::id())->delete();
         }
+        // TODO: redirect to order view
+        return redirect('/cart')->with('message', 'Order successfully placed.');
     }
 }

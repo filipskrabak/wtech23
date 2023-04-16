@@ -30,22 +30,22 @@
         </a>
     </div>
     <div class="col-md-3">
-        <a href="/products?category=T-Shirts" class="text-decoration-none text-dark">
+        <a href="/products?category=Jackets" class="text-decoration-none text-dark">
         <div class="d-flex flex-column align-items-center">
             <div class="overflow-hidden">
             <img src="./img/jacket.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
             </div>
-            <p class="item-description">T-Shirts</p>
+            <p class="item-description">Jackets</p>
         </div>
         </a>
     </div>
     <div class="col-md-3">
-        <a href="/products?category=Sneakers" class="text-decoration-none text-dark">
+        <a href="/products?category=T-Shirts" class="text-decoration-none text-dark">
         <div class="d-flex flex-column align-items-center">
             <div class="overflow-hidden">
-            <img src="./img/sneakers.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
+            <img src="./img/t-shirt.png" alt="" class="w-100 mt-4 mt-md-0 product-image">
             </div>
-            <p class="item-description">Sneakers</p>
+            <p class="item-description">T-Shirts</p>
         </div>
         </a>
     </div>
