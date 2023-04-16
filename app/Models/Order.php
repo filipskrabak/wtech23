@@ -12,4 +12,12 @@ class Order extends Model
     public function products(){
         return $this->hasMany(OrderProducts::class);
     }
+
+    public function postcode() {
+        return $this->hasOne(Postcode::class);
+    }
+
+    public function street() {
+        return $this->hasOne(Street::class);
+    }
 }

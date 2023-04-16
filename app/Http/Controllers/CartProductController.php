@@ -18,9 +18,9 @@ class CartProductController extends Controller
             return view('cart', [
                 'cartproducts' => $products,
             ]);
-            //dd("WIP: support for guests");
         }
 
+        //get all cart products which belogs to user
         $allCartProducts = CartProduct::get();
 
         $products = $allCartProducts->filter(function($cartProduct) {

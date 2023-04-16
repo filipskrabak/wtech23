@@ -41,7 +41,7 @@
                     </div>
                 @enderror
             </div>
-            <div class="row">
+            <div class="row justify-content-center">
                 <div class="col-md-4">
                 <button type="submit" class="btn btn-primary w-100">Register</button>
                 </div>
