@@ -100,7 +100,7 @@ class DatabaseSeeder extends Seeder
             ],
             [
                 'attribute_id' => 4,
-                'value' => 'Sneakers'
+                'value' => 'Jackets'
             ],
             [
                 'attribute_id' => 4,
@@ -184,6 +184,91 @@ class DatabaseSeeder extends Seeder
             ]
         );
 
+        //New stuff
+        DB::table('products')->insert(
+            [
+                'name' => 'Black hoodie',
+                'slug' => 'black-hoodie',
+                'price' => 49.99,
+                'description' => 'A basic plain black hoodie.',
+                'sku' => 'XYZ66666',
+                'created_at' => \DateTime::createFromFormat('U', mt_rand(1262055681,1681522096))
+            ]
+        );
+
+        // Insert basic img
+        DB::table('product_images')->insert(
+            [
+                'name' => 'black-hoodie.png',
+                'path' => 'img',
+                'alt' => 'black hoodie',
+                'product_id' => 4
+            ]
+        );
+
+        DB::table('products')->insert(
+            [
+                'name' => 'Black jacket',
+                'slug' => 'black-jacket',
+                'price' => 88.99,
+                'description' => 'A basic plain black jacket.',
+                'sku' => 'XYZ77777',
+                'created_at' => \DateTime::createFromFormat('U', mt_rand(1262055681,1681522096))
+            ]
+        );
+
+        // Insert basic img
+        DB::table('product_images')->insert(
+            [
+                'name' => 'black-jacket.png',
+                'path' => 'img',
+                'alt' => 'black jacket',
+                'product_id' => 5
+            ]
+        );
+
+        DB::table('products')->insert(
+            [
+                'name' => 'Blue jeans',
+                'slug' => 'blue-jeans',
+                'price' => 33.99,
+                'description' => 'A basic plain blue jeans.',
+                'sku' => 'XYZ88888',
+                'created_at' => \DateTime::createFromFormat('U', mt_rand(1262055681,1681522096))
+            ]
+        );
+
+        // Insert basic img
+        DB::table('product_images')->insert(
+            [
+                'name' => 'blue-jeans.png',
+                'path' => 'img',
+                'alt' => 'blue jeans',
+                'product_id' => 6
+            ]
+        );
+
+        DB::table('products')->insert(
+            [
+                'name' => 'Black shirt',
+                'slug' => 'black-shirt',
+                'price' => 36.99,
+                'description' => 'A basic plain black shirt.',
+                'sku' => 'XYZ99999',
+                'created_at' => \DateTime::createFromFormat('U', mt_rand(1262055681,1681522096))
+            ]
+        );
+
+        // Insert basic img
+        DB::table('product_images')->insert(
+            [
+                'name' => 'shirt.png',
+                'path' => 'img',
+                'alt' => 'black shirt',
+                'product_id' => 7
+            ]
+        );
+
         // Link products to attributes
         DB::table('attribute_value_product')->insert([
             [
@@ -241,7 +326,145 @@ class DatabaseSeeder extends Seeder
             [
                 'product_id' => 3,
                 'attribute_value_id' => 13,
+            ],
+            //HERE
+            [
+                'product_id' => 4,
+                'attribute_value_id' => 1,
+            ],
+            [
+                'product_id' => 4,
+                'attribute_value_id' => 2,
+            ],
+            [
+                'product_id' => 4,
+                'attribute_value_id' => 3,
+            ],
+            [
+                'product_id' => 4,
+                'attribute_value_id' => 6,
+            ],
+            [
+                'product_id' => 4,
+                'attribute_value_id' => 10,
+            ],
+            [
+                'product_id' => 4,
+                'attribute_value_id' => 13,
+            ],
+            [
+                'product_id' => 5,
+                'attribute_value_id' => 1,
+            ],
+            [
+                'product_id' => 5,
+                'attribute_value_id' => 2,
+            ],
+            [
+                'product_id' => 5,
+                'attribute_value_id' => 3,
+            ],
+            [
+                'product_id' => 5,
+                'attribute_value_id' => 6,
+            ],
+            [
+                'product_id' => 5,
+                'attribute_value_id' => 11,
+            ],
+            [
+                'product_id' => 5,
+                'attribute_value_id' => 15,
+            ],
+            [
+                'product_id' => 6,
+                'attribute_value_id' => 1,
+            ],
+            [
+                'product_id' => 6,
+                'attribute_value_id' => 2,
+            ],
+            [
+                'product_id' => 6,
+                'attribute_value_id' => 3,
+            ],
+            [
+                'product_id' => 6,
+                'attribute_value_id' => 7,
+            ],
+            [
+                'product_id' => 6,
+                'attribute_value_id' => 11,
+            ],
+            [
+                'product_id' => 6,
+                'attribute_value_id' => 14,
+            ],
+            [
+                'product_id' => 7,
+                'attribute_value_id' => 1,
+            ],
+            [
+                'product_id' => 7,
+                'attribute_value_id' => 2,
+            ],
+            [
+                'product_id' => 7,
+                'attribute_value_id' => 3,
+            ],
+            [
+                'product_id' => 7,
+                'attribute_value_id' => 6,
+            ],
+            [
+                'product_id' => 7,
+                'attribute_value_id' => 10,
+            ],
+            [
+                'product_id' => 7,
+                'attribute_value_id' => 16,
             ]
+        ]);
+
+        DB::table('countries')->insert([
+            'name' => 'Slovensko'
+        ]);
+
+        DB::table('regions')->insert([
+            'name' => 'Bratislavský kraj',
+            'country_id' => 1
+        ]);
+
+        DB::table('cities')->insert([
+            'name' => 'Bratislava',
+            'region_id' => 1
+        ]);
+
+        DB::table('districts')->insert([
+            'name' => 'Petržalka',
+            'city_id' => 1
+        ]);
+
+        DB::table('postcodes')->insert([
+            'postcode' => '851 01',
+            'district_id' => 1
+        ]);
+
+        DB::table('postcodes')->insert([
+            'postcode' => '851 04',
+            'district_id' => 1
+        ]);
+
+        DB::table('streets')->insert([
+            'name' => 'Andrusovova',
+            'house_number' => 11,
+            'district_id' => 1
+        ]);
+
+        DB::table('streets')->insert([
+            'name' => 'A. Gwerkovej',
+            'house_number' => 15,
+            'district_id' => 1
         ]);
     }
 }
