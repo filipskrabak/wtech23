@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use App\Models\Postcode;
+use App\Models\Street;
 
 class UserController extends Controller
 {
@@ -87,7 +88,7 @@ class UserController extends Controller
         }
 
         if (array_key_exists('street', $formFields)){
-            $user->postcode_id = (Postcode::where('street', $formFields['street'])->first()->id);
+            $user->street_id = (Street::where('name', $formFields['street'])->first()->id);
             $user->save();
             unset($formFields['street']);
         }
