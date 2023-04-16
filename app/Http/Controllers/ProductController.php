@@ -87,7 +87,7 @@ class ProductController extends Controller
         }
 
         return view('products.index', [
-            'products' => $products->paginate(10)
+            'products' => $products->paginate(6)
         ])->with('genders', $genders)->with('categories', $categories)->with('sizes', $sizes)->with('colors', $colors);
     }
 
