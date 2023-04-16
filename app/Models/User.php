@@ -23,6 +23,8 @@ class User extends Authenticatable
         'email',
         'phone',
         'password',
+        'postcode',
+        'street'
     ];
 
     /**
@@ -51,10 +53,10 @@ class User extends Authenticatable
     //Address relationships
 
     public function postcode() {
-        return $this->hasOne(Postcode::class);
+        return $this->belongsTo(Postcode::class);
     }
 
     public function street() {
-        return $this->hasOne(Street::class);
+        return $this->belongsTo(Street::class);
     }
 }

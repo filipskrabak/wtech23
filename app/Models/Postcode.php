@@ -9,7 +9,7 @@ class Postcode extends Model
 {
     use HasFactory;
 
-    public function disctrict(){
+    public function district(){
         return $this->belongsTo(District::class);
     }
 }

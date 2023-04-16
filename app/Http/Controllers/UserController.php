@@ -78,7 +78,20 @@ class UserController extends Controller
             'postcode' => ['nullable', Rule::exists('postcodes', 'postcode')],
             'street' => ['nullable', Rule::exists('streets', 'name')]
         ]);
-        $formFields = array_filter($request->all());
+        $formFields = array_filter($formFields);
+
+        if (array_key_exists('postcode', $formFields)){
+            $user->postcode_id = (Postcode::where('postcode', $formFields['postcode'])->first()->id);
+            $user->save();
+            unset($formFields['postcode']);
+        }
+
+        if (array_key_exists('street', $formFields)){
+            $user->postcode_id = (Postcode::where('street', $formFields['street'])->first()->id);
+            $user->save();
+            unset($formFields['street']);
+        }
+
         $user->update($formFields);
 
         return redirect('/edit')->with('message', 'Your details have been changed.');

@@ -36,8 +36,8 @@
           <div class="row">
             <div class="col-lg-3">
               <div class="form-floating mb-3">
-                <input type="text" class="form-control @error('postcode') is-invalid @enderror" id="postcodeInput" @isset($user->street()->name)
-                value="{{$user->postcode()->name}}"@endisset placeholder="Pezinská" name="postcode">
+                <input type="text" class="form-control @error('postcode') is-invalid @enderror" id="postcodeInput" @isset($user->postcode->postcode)
+                value="{{$user->postcode->postcode}}"@endisset placeholder="Pezinská" name="postcode">
                 <label for="postcodeInput">Postcode</label>
 
                 @error('postcode')
@@ -49,8 +49,8 @@
             </div>
             <div class="col-lg-9">
               <div class="form-floating mb-3">
-                <input type="text" class="form-control @error('street') is-invalid @enderror" id="streetInput" @isset($user->street()->name)
-                value="{{$user->postcode()->name}}"@endisset placeholder="Pezinská" name="street">
+                <input type="text" class="form-control @error('street') is-invalid @enderror" id="streetInput" @isset($user->street->name)
+                value="{{$user->street->name}}"@endisset placeholder="Pezinská" name="street">
                 <label for="streetInput">Street</label>
 
                 @error('street')

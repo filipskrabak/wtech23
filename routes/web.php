@@ -42,16 +42,16 @@ Route::post('/users', [UserController::class, 'store']);
 Route::post('/logout', [UserController::class, 'logout']);
 
 // Show login form
-Route::get('/login', [UserController::class, 'login']);
+Route::get('/login', [UserController::class, 'login'])->name('login');
 
 // Login user
 Route::post('/users/authenticate', [UserController::class, 'authenticate']);
 
 // Show user orders
-Route::get('/orders', [OrderController::class, 'show']);
+Route::get('/orders', [OrderController::class, 'show'])->middleware('auth');
 
 //Show edit user details from
-Route::get('/edit', [UserController::class, 'edit']);
+Route::get('/edit', [UserController::class, 'edit'])->middleware('auth');
 
 //Edit user details
 Route::post('/edit/details', [UserController::class, 'editDetails']);
