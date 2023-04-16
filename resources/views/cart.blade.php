@@ -100,7 +100,7 @@
     </div>
     <div class="row justify-content-end align-items-center">
         <div class="col-md-4 col-12 pb-5 d-grid gap-2">
-            <a href="./checkout-step1.html" class="btn btn-primary">Checkout</a>
+            <a href="/checkout" class="btn btn-primary">Checkout</a>
         </div>
     </div>
 </div>

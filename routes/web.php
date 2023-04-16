@@ -6,6 +6,7 @@ use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartProductController;
+use App\Http\Controllers\CheckoutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,11 +21,16 @@ use App\Http\Controllers\CartProductController;
 
 // TODO: replace with actual controllers
 
+
 Route::get('/', function () {
     return view('index');
 });
 
+// Show cart
 Route::get('/cart', [CartProductController::class, 'index']);
+
+// Show checkout
+Route::get('/checkout', [CheckoutController::class, 'create']);
 
 // Get all products with filters
 Route::get('/products', [ProductController::class, 'index']);
@@ -67,3 +73,8 @@ Route::delete('/cart/{id}', [CartProductController::class, 'destroy']);
 
 // Update Product in Cart
 Route::put('/cart/{id}', [CartProductController::class, 'update']);
+
+// Create new order
+Route::post('/orders', [OrderController::class, 'store']);
+
+// TODO: Show order
