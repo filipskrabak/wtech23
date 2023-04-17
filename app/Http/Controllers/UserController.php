@@ -76,6 +76,9 @@ class UserController extends Controller
         $user = $request->user();
         $formFields = $request->validate([
             'email' => ['email', Rule::unique('users', 'email')->ignore($user->id)],
+            'name' => 'nullable|max:32',
+            'surname' => 'nullable|max:32',
+            'phone' => 'nullable|max:15',
             'postcode' => ['nullable', Rule::exists('postcodes', 'postcode')],
             'street' => ['nullable', Rule::exists('streets', 'name')]
         ]);
