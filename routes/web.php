@@ -39,19 +39,19 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::get('/product/{product:slug}', [ProductController::class, 'show']);
 
 // Show register form (create user)
-Route::get('/register', [UserController::class, 'create']);
+Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
 // Create new user
 Route::post('/users', [UserController::class, 'store']);
 
 // Logout user
-Route::post('/logout', [UserController::class, 'logout']);
+Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
 
 // Show login form
-Route::get('/login', [UserController::class, 'login'])->name('login');
+Route::get('/login', [UserController::class, 'login'])->middleware('guest')->name('login');
 
 // Login user
-Route::post('/users/authenticate', [UserController::class, 'authenticate']);
+Route::post('/users/authenticate', [UserController::class, 'authenticate'])->middleware('guest');
 
 // Show user orders
 Route::get('/orders', [OrderController::class, 'show'])->middleware('auth');
@@ -60,10 +60,10 @@ Route::get('/orders', [OrderController::class, 'show'])->middleware('auth');
 Route::get('/edit', [UserController::class, 'edit'])->middleware('auth');
 
 //Edit user details
-Route::post('/edit/details', [UserController::class, 'editDetails']);
+Route::post('/edit/details', [UserController::class, 'editDetails'])->middleware('auth');
 
 //Edit user password
-Route::post('/edit/password', [UserController::class, 'editPassword']);
+Route::post('/edit/password', [UserController::class, 'editPassword'])->middleware('auth');
 
 // Add Product to Cart
 Route::post('/cart/{id}', [CartProductController::class, 'store']);
