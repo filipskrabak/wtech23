@@ -79,7 +79,7 @@
           <div class="col-md-6 p-3">
             <form action="/products" method="GET">
                 <div class="form-floating">
-                    <input type="text" class="form-control" id="floatingSearch" placeholder="Black T-shirt..." name="search">
+                    <input type="text" class="form-control" id="floatingSearch" placeholder="Black T-shirt..." name="search" value="{{ request('search') }}">
                     <label for="floatingSearch">Black T-shirt...</label>
                 </div>
             </form>
