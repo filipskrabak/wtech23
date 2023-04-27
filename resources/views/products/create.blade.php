@@ -55,48 +55,49 @@
       </div>
 
       <div class="col-lg-6">
-        <form>
+        <form method="POST" action="/products">
+            @csrf
           <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="nameInput" placeholder="T-shirt">
+            <input type="text" class="form-control" id="nameInput" placeholder="T-shirt" name="name">
             <label for="nameInput">Name</label>
           </div>
-          <div class="form-floating mb-3">
-            <select class="form-select" id="categorySelect" aria-label="Select a category">
-              <option selected>Select a category...</option>
-              <option value="1">Jeans</option>
-              <option value="2">Jackets</option>
-              <option value="3">T-shirts</option>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect03">Gender</label>
+            <select class="form-select" id="inputGroupSelect03" name="gender">
+                <option>Any</option>
+                @foreach ($genders as $gender)
+                    <option @selected(old('gender') == $gender->value)>{{$gender->value}}</option>
+                @endforeach
             </select>
-            <label for="categorySelect">Clothing category</label>
+          </div>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect04">Category</label>
+            <select class="form-select" id="inputGroupSelect04" name="category">
+                <option>Any</option>
+                @foreach ($categories as $cat)
+                    <option @selected(old('category') == $cat->value)>{{$cat->value}}</option>
+                @endforeach
+            </select>
+           </div>
+          <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect01">Size</label>
+            <select class="form-select" id="inputGroupSelect01" name="size">
+                <option>Any</option>
+                @foreach ($sizes as $size)
+                    <option  @selected(old('size') == $size->value)>{{$size->value}}</option>
+                @endforeach
+            </select>
           </div>
           <div class="form-floating mb-3">
-            <select class="form-select" id="colorSelect" aria-label="Select a color">
-              <option selected>Select a color...</option>
-              <option value="1">Blue</option>
-              <option value="2">Red</option>
-              <option value="3">Black</option>
-            </select>
-            <label for="colorSelect">Color</label>
-          </div>
-          <div class="form-floating mb-3">
-            <select class="form-select" id="sizeSelect" aria-label="Select a size">
-              <option selected>Select a size...</option>
-              <option value="1">S</option>
-              <option value="2">M</option>
-              <option value="3">L</option>
-            </select>
-            <label for="sizeSelect">Size</label>
-          </div>
-          <div class="form-floating mb-3">
-            <input type="text" class="form-control" id="slugInput" placeholder="black-t-shirt">
+            <input type="text" class="form-control" id="slugInput" placeholder="black-t-shirt" name="slug">
             <label for="slugInput">Slug</label>
           </div>
           <div class="form-floating mb-3">
-            <textarea class="form-control" placeholder="Description" id="descTextarea2" style="height: 100px"></textarea>
+            <textarea class="form-control" placeholder="Description" id="descTextarea2" style="height: 100px" name="description"></textarea>
             <label for="descTextarea2">Description</label>
           </div>
           <div class="form-floating mb-3">
-            <input type="number" class="form-control" id="priceInput" placeholder="29.99">
+            <input type="number" class="form-control" id="priceInput" placeholder="29.99" step="0.01" name="price">
             <label for="priceInput">Price (EUR)</label>
           </div>
           <div class="row justify-content-between">
@@ -104,7 +105,7 @@
               <button type="submit" class="btn btn-primary w-100">Save</button>
             </div>
             <div class="col-md-auto pb-2">
-              <button class="btn btn-outline-primary w-100">Discard and go back</button>
+              <a href="/dashboard" class="btn btn-outline-primary w-100">Discard and go back</a>
             </div>
           </div>
         </form>

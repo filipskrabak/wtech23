@@ -107,6 +107,13 @@ class ProductController extends Controller
 
     // Create new product view
     public function create() {
-        return view('products.create');
+        // Get the attribute values
+        $genders = Attribute::getAttributeValuesBySlug('gender');
+        $categories = Attribute::getAttributeValuesBySlug('category');
+        $sizes = Attribute::getAttributeValuesBySlug('size');
+        $colors = Attribute::getAttributeValuesBySlug('color');
+
+
+        return view('products.create')->with('genders', $genders)->with('categories', $categories)->with('sizes', $sizes)->with('colors', $colors);
     }
 }
