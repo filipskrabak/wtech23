@@ -11,46 +11,42 @@
     <div class="row d-flex justify-content-center">
       <h1 class="mt-5 mb-4 text-center">Add product</h1>
 
+      @error('image')
+      <div class="alert alert-danger">{{ $message }}</div>
+      @enderror
+
       <div class="col-lg-6 box-wrap mb-5">
         <h3 class="mt-2 mb-3">Add image</h3>
-        <div class="row align-items-center">
-          <div class="col-md-3">
-              <img src="https://placehold.co/1000x1000?text=Upload%20Image" class="w-100" alt="">
-          </div>
-          <div class="col-md-9">
-            <div class="form-floating mb-3 mt-3 mt-md-0">
-              <input type="text" class="form-control" id="floatingInput" placeholder="Alt text">
-              <label for="floatingInput">Image description</label>
+        <form action="/products/create-image" method="POST" enctype="multipart/form-data">
+            @csrf
+            <div class="row align-items-center">
+                <div class="col-md-3">
+                    <label for="img-input">
+                        <img src="https://placehold.co/1000x1000?text=Upload%20Image" class="w-100" alt="">
+                    </label>
+                    <input id="img-input" type="file" class="d-none" name="image">
+                </div>
+                <div class="col-md-9">
+                    <div class="form-floating mb-3 mt-3 mt-md-0">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Alt text">
+                    <label for="floatingInput">Image description</label>
+                    </div>
+                    <div class="row">
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary w-100">Upload</button>
+                    </div>
+                    </div>
+                </div>
             </div>
-            <div class="row">
-              <div class="col-md-4">
-                <button type="submit" class="btn btn-primary w-100">Upload</button>
-              </div>
-            </div>
-          </div>
-        </div>
+        </form>
         <div class="row mt-3">
-          <div class="col-md-3 mt-2">
-            <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
-          </div>
-          <div class="col-md-3 mt-2">
-            <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
-          </div>
-          <div class="col-md-3 mt-2">
-            <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
-          </div>
-          <div class="col-md-3 mt-2">
-            <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
-          </div>
-          <div class="col-md-3 mt-2">
-            <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
-          </div>
-          <div class="col-md-3 mt-2">
-            <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
-          </div>
-          <div class="col-md-3 mt-2">
-            <img src="https://placeholder.com/1000x1000" class="w-100" alt="">
-          </div>
+            @if(Session::has('images'))
+            @foreach(Session::get('images') as $image)
+                <div class="col-md-3 mt-2">
+                    <img src="{{asset('img/upload')}}/{{ $image }}" class="w-100" alt="">
+                </div>
+            @endforeach
+            @endif
         </div>
       </div>
 

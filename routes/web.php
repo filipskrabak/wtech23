@@ -44,6 +44,9 @@ Route::get('/products/create', [ProductController::class, 'create']);
 // Store single product
 Route::post('/products', [ProductController::class, 'store']);
 
+// Store image for product
+Route::post('/products/create-image', [ProductController::class, 'storeImage']);
+
 // Show register form (create user)
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 

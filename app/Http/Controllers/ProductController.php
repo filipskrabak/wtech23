@@ -149,4 +149,19 @@ class ProductController extends Controller
 
         return redirect('/product/' . $product->slug);
     }
+
+    public function storeImage(Request $request) {
+        $request->validate([
+            'image' => 'required|image|mimes:jpeg,png,jpg|max:2048',
+        ]);
+
+        $imageName = pathinfo($request->image->getClientOriginalName(), PATHINFO_FILENAME).'-'.time().'.'.$request->image->extension();
+
+        $request->image->move(public_path('img/upload'), $imageName);
+
+        $request->session()->push('images', $imageName);
+
+        return back()
+            ->with('message','Image has been uploaded.');
+    }
 }
