@@ -64,27 +64,35 @@
           <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect03">Gender</label>
             <select class="form-select" id="inputGroupSelect03" name="gender">
-                <option>Any</option>
+                <option disabled>Select...</option>
                 @foreach ($genders as $gender)
-                    <option @selected(old('gender') == $gender->value)>{{$gender->value}}</option>
+                    <option value="{{$gender->id}}" @selected(old('gender') == $gender->value)>{{$gender->value}}</option>
                 @endforeach
             </select>
           </div>
           <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect04">Category</label>
             <select class="form-select" id="inputGroupSelect04" name="category">
-                <option>Any</option>
+                <option disabled>Select...</option>
                 @foreach ($categories as $cat)
-                    <option @selected(old('category') == $cat->value)>{{$cat->value}}</option>
+                    <option value="{{$cat->id}}" @selected(old('category') == $cat->value)>{{$cat->value}}</option>
                 @endforeach
             </select>
            </div>
           <div class="input-group mb-3">
+            <label class="input-group-text" for="inputGroupSelect02">Color</label>
+            <select class="form-select" id="inputGroupSelect02" name="color">
+                <option disabled>Select...</option>
+                @foreach ($colors as $color)
+                    <option value="{{$color->id}}" @selected(old('color') == $color->value)>{{$color->value}}</option>
+                @endforeach
+            </select>
+          </div>
+          <div class="input-group mb-3">
             <label class="input-group-text" for="inputGroupSelect01">Size</label>
-            <select class="form-select" id="inputGroupSelect01" name="size">
-                <option>Any</option>
+            <select class="form-select" id="inputGroupSelect01" name="size[]" multiple>
                 @foreach ($sizes as $size)
-                    <option  @selected(old('size') == $size->value)>{{$size->value}}</option>
+                    <option value="{{$size->id}}" @selected(old('size') == $size->value)>{{$size->value}}</option>
                 @endforeach
             </select>
           </div>

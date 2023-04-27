@@ -18,7 +18,7 @@ return new class extends Migration
             $table->string('slug', 32)->unique();
             $table->double('price');
             $table->string('description', 512);
-            $table->string('sku', 8);
+            $table->string('sku', 8)->nullable();
             $table->fulltext(['name', 'description']);
             $table->timestamps();
         });

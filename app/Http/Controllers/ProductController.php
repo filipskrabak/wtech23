@@ -116,4 +116,37 @@ class ProductController extends Controller
 
         return view('products.create')->with('genders', $genders)->with('categories', $categories)->with('sizes', $sizes)->with('colors', $colors);
     }
+
+    // Store new product
+    public function store(Request $request) {
+        $validated = $request->validate([
+            'name' => ['required'],
+            'slug' => ['required'],
+            'price' => ['required'],
+            'description' => ['required'],
+        ]);
+
+        //dd($validated);
+
+        $product = new Product;
+        $product->name = $request->input('name');
+        $product->slug = $request->input('slug');
+        $product->price = $request->input('price');
+        $product->description = $request->input('description');
+        $product->save();
+
+        // Attach the attribute values
+        $allAttributes = array();
+
+
+
+        $allAttributes = array_merge($allAttributes, request('size'));
+        array_push($allAttributes, request('color'));
+        array_push($allAttributes, request('gender'));
+        array_push($allAttributes, request('category'));
+
+        $product->attribute_values()->attach($allAttributes);
+
+        return redirect('/product/' . $product->slug);
+    }
 }
