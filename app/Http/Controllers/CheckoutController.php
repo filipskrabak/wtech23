@@ -11,7 +11,7 @@ use App\Models\Order;
 use App\Models\Postcode;
 use App\Models\Street;
 
-class CheckoutController extends Controller 
+class CheckoutController extends Controller
 {
     public function create() {
         if(Auth::id() == null) {

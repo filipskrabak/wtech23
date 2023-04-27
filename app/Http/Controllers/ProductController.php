@@ -104,4 +104,9 @@ class ProductController extends Controller
             'product' => $product
         ])->with('images', $images)->with('sizes', $sizeAttributes);
     }
+
+    // Create new product view
+    public function create() {
+        return view('products.create');
+    }
 }

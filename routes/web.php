@@ -38,6 +38,9 @@ Route::get('/products', [ProductController::class, 'index']);
 // Single product
 Route::get('/product/{product:slug}', [ProductController::class, 'show']);
 
+// Create new product
+Route::get('/products/create', [ProductController::class, 'create']);
+
 // Show register form (create user)
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 
