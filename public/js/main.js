@@ -34,3 +34,12 @@ setTimeout(function () {
 
     $('#alert').alert('close');
 }, 3000);
+
+
+// rewrite for arrow function
+document.querySelector("#img-input").onchange = evt => {
+    const [file] = document.querySelector("#img-input").files
+    if (file) {
+        document.querySelector("#img-preview").src = URL.createObjectURL(file)
+    }
+  }

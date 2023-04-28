@@ -47,6 +47,9 @@ Route::post('/products', [ProductController::class, 'store']);
 // Store image for product
 Route::post('/products/create-image', [ProductController::class, 'storeImage']);
 
+// Destroy image
+Route::delete('/products/destroy-image', [ProductController::class, 'destroyImage']);
+
 // Show register form (create user)
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');
 

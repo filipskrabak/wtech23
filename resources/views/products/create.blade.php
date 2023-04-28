@@ -20,21 +20,17 @@
         <form action="/products/create-image" method="POST" enctype="multipart/form-data">
             @csrf
             <div class="row align-items-center">
-                <div class="col-md-3">
-                    <label for="img-input">
-                        <img src="https://placehold.co/1000x1000?text=Upload%20Image" class="w-100" alt="">
-                    </label>
-                    <input id="img-input" type="file" class="d-none" name="image">
-                </div>
-                <div class="col-md-9">
-                    <div class="form-floating mb-3 mt-3 mt-md-0">
-                    <input type="text" class="form-control" id="floatingInput" placeholder="Alt text">
-                    <label for="floatingInput">Image description</label>
+                <div class="col-md-12">
+                    <div class="d-flex align-items-center justify-content-center">
+                        <label for="img-input">
+                            <div class="image-container-preview">
+                                <img src="https://placehold.co/1000x1000?text=Upload%20Image" id="img-preview" class="img-fluid" alt="">
+                            </div>
+                        </label>
+                        <input id="img-input" type="file" class="d-none" name="image">
                     </div>
-                    <div class="row">
-                    <div class="col-md-4">
-                        <button type="submit" class="btn btn-primary w-100">Upload</button>
-                    </div>
+                    <div class="d-flex align-items-center justify-content-center">
+                        <button type="submit" class="btn btn-primary mt-2 upload-btn">Upload</button>
                     </div>
                 </div>
             </div>
@@ -43,7 +39,15 @@
             @if(Session::has('images'))
             @foreach(Session::get('images') as $image)
                 <div class="col-md-3 mt-2">
-                    <img src="{{asset('img/upload')}}/{{ $image }}" class="w-100" alt="">
+                    <div class="image-container-uploaded">
+                        <img src="{{asset('img/upload')}}/{{ $image }}" class="img-fluid" alt="">
+                    </div>
+                    <form action="/products/destroy-image" method="POST">
+                        @method('DELETE')
+                        @csrf
+                        <input type="hidden" name="image" value="{{ $image }}">
+                        <button type="submit" class="btn btn-danger w-100 mt-3">Delete</button>
+                    </form>
                 </div>
             @endforeach
             @endif

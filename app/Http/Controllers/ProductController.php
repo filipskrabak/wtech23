@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Models\AttributeValue;
 use App\Http\Controllers\Controller;
 use Illuminate\Database\Eloquent\Collection;
+use Illuminate\Support\Facades\File;
 
 class ProductController extends Controller
 {
@@ -126,7 +127,13 @@ class ProductController extends Controller
             'description' => ['required'],
         ]);
 
-        //dd($validated);
+        // Get images from session
+        $images = $request->session()->get('images');
+
+        // If image session is empty, return back with error
+        if(empty($images)) {
+            return back()->with('error', 'Please upload at least one image.');
+        }
 
         $product = new Product;
         $product->name = $request->input('name');
@@ -138,14 +145,24 @@ class ProductController extends Controller
         // Attach the attribute values
         $allAttributes = array();
 
-
-
         $allAttributes = array_merge($allAttributes, request('size'));
         array_push($allAttributes, request('color'));
         array_push($allAttributes, request('gender'));
         array_push($allAttributes, request('category'));
 
         $product->attribute_values()->attach($allAttributes);
+
+        // Attach the images
+        foreach ($images as $image) {
+            $product->images()->create([
+                'name' => $image,
+                'path' => 'img/upload',
+                'alt' => $image
+            ]);
+        }
+
+        // Clear the session
+        $request->session()->forget('images');
 
         return redirect('/product/' . $product->slug);
     }
@@ -163,5 +180,25 @@ class ProductController extends Controller
 
         return back()
             ->with('message','Image has been uploaded.');
+    }
+
+    public function destroyImage(Request $request) {
+        $imageName = $request->input('image');
+
+        $images = $request->session()->get('images');
+
+        // unset by image name in value
+        if (($key = array_search($imageName, $images)) !== false) {
+            unset($images[$key]);
+        }
+
+        $request->session()->put('images', $images); // Set the array again
+
+
+        // delete image from public folder
+        File::delete(public_path('img/upload/' . $imageName));
+
+        return back()
+            ->with('message','Image has been deleted.');
     }
 }

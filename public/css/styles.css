@@ -70,7 +70,22 @@ img.product-image {
     padding: 20px;
 }
 
-.image-container img {
+.image-container-preview {
+    height: 142px;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.image-container-uploaded {
+    height: 142px;
+    overflow: hidden;
+}
+
+.upload-btn {
+    width: 142px;
+}
+
+.image-container img,.image-container-preview img {
     width: 100%;
     height: 100%;
     object-fit: contain; /* scale the image while preserving its aspect ratio */
