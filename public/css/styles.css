@@ -85,7 +85,7 @@ img.product-image {
     width: 142px;
 }
 
-.image-container img,.image-container-preview img {
+.image-container img {
     width: 100%;
     height: 100%;
     object-fit: contain; /* scale the image while preserving its aspect ratio */

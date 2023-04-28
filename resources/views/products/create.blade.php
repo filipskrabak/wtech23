@@ -17,11 +17,11 @@
 
       <div class="col-lg-6 box-wrap mb-5">
         <h3 class="mt-2 mb-3">Add image</h3>
-        <form action="/products/create-image" method="POST" enctype="multipart/form-data">
-            @csrf
-            <div class="row align-items-center">
-                <div class="col-md-12">
-                    <div class="d-flex align-items-center justify-content-center">
+        <div class="row mt-3">
+            <div class="col-md-3 mt-2">
+                <form action="/products/create-image" method="POST" enctype="multipart/form-data">
+                    @csrf
+                    <div class="d-flex align-items-start justify-content-start">
                         <label for="img-input">
                             <div class="image-container-preview">
                                 <img src="https://placehold.co/1000x1000?text=Upload%20Image" id="img-preview" class="img-fluid" alt="">
@@ -29,13 +29,11 @@
                         </label>
                         <input id="img-input" type="file" class="d-none" name="image">
                     </div>
-                    <div class="d-flex align-items-center justify-content-center">
+                    <div class="d-flex align-items-start justify-content-start">
                         <button type="submit" class="btn btn-primary mt-2 upload-btn">Upload</button>
                     </div>
-                </div>
+                </form>
             </div>
-        </form>
-        <div class="row mt-3">
             @if(Session::has('images'))
             @foreach(Session::get('images') as $image)
                 <div class="col-md-3 mt-2">
@@ -46,7 +44,7 @@
                         @method('DELETE')
                         @csrf
                         <input type="hidden" name="image" value="{{ $image }}">
-                        <button type="submit" class="btn btn-danger w-100 mt-3">Delete</button>
+                        <button type="submit" class="btn btn-danger w-100 mt-2">Delete</button>
                     </form>
                 </div>
             @endforeach
