@@ -124,7 +124,7 @@ class DatabaseSeeder extends Seeder
         DB::table('product_images')->insert(
             [
                 'name' => 'test.png',
-                'path' => 'img',
+                'path' => 'img/upload',
                 'alt' => 'black t-shirt',
                 'product_id' => 1
             ]
@@ -134,7 +134,7 @@ class DatabaseSeeder extends Seeder
         DB::table('product_images')->insert(
             [
                 'name' => 'test2.jpg',
-                'path' => 'img',
+                'path' => 'img/upload',
                 'alt' => 'black t-shirt 2',
                 'product_id' => 1
             ]
@@ -156,7 +156,7 @@ class DatabaseSeeder extends Seeder
         DB::table('product_images')->insert(
             [
                 'name' => 'blue-tshirt.png',
-                'path' => 'img',
+                'path' => 'img/upload',
                 'alt' => 'blue t-shirt',
                 'product_id' => 2
             ]
@@ -178,7 +178,7 @@ class DatabaseSeeder extends Seeder
         DB::table('product_images')->insert(
             [
                 'name' => 'red-hoodie.png',
-                'path' => 'img',
+                'path' => 'img/upload',
                 'alt' => 'red hoodie',
                 'product_id' => 3
             ]
@@ -200,7 +200,7 @@ class DatabaseSeeder extends Seeder
         DB::table('product_images')->insert(
             [
                 'name' => 'black-hoodie.png',
-                'path' => 'img',
+                'path' => 'img/upload',
                 'alt' => 'black hoodie',
                 'product_id' => 4
             ]
@@ -221,7 +221,7 @@ class DatabaseSeeder extends Seeder
         DB::table('product_images')->insert(
             [
                 'name' => 'black-jacket.png',
-                'path' => 'img',
+                'path' => 'img/upload',
                 'alt' => 'black jacket',
                 'product_id' => 5
             ]
@@ -242,7 +242,7 @@ class DatabaseSeeder extends Seeder
         DB::table('product_images')->insert(
             [
                 'name' => 'blue-jeans.png',
-                'path' => 'img',
+                'path' => 'img/upload',
                 'alt' => 'blue jeans',
                 'product_id' => 6
             ]
@@ -263,7 +263,7 @@ class DatabaseSeeder extends Seeder
         DB::table('product_images')->insert(
             [
                 'name' => 'shirt.png',
-                'path' => 'img',
+                'path' => 'img/upload',
                 'alt' => 'black shirt',
                 'product_id' => 7
             ]

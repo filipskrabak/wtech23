@@ -5,8 +5,9 @@ use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
-use App\Http\Controllers\CartProductController;
 use App\Http\Controllers\CheckoutController;
+use App\Http\Controllers\CartProductController;
+use App\Http\Controllers\DashboardProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -39,16 +40,22 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::get('/product/{product:slug}', [ProductController::class, 'show']);
 
 // Create new product view
-Route::get('/products/create', [ProductController::class, 'create']);
+Route::get('/dashboard/products/create', [DashboardProductController::class, 'create']);
 
 // Store single product
-Route::post('/products', [ProductController::class, 'store']);
+Route::post('/dashboard/products', [DashboardProductController::class, 'store']);
+
+// Edit single product
+Route::get('/dashboard/products/{product:slug}/edit', [DashboardProductController::class, 'edit']);
+
+// Update single product
+Route::put('/dashboard/products/{product:slug}', [DashboardProductController::class, 'update'])->name('products.update');
 
 // Store image for product
-Route::post('/products/create-image', [ProductController::class, 'storeImage']);
+Route::post('/dashboard/products/create-image', [DashboardProductController::class, 'storeImage']);
 
 // Destroy image
-Route::delete('/products/destroy-image', [ProductController::class, 'destroyImage']);
+Route::delete('/dashboard/products/destroy-image', [DashboardProductController::class, 'destroyImage']);
 
 // Show register form (create user)
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');

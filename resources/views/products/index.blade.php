@@ -7,7 +7,7 @@
 <div class="container">
     <div class="row justify-content-center align-items-center">
         <div class="col"><h1 class="mt-3">{{app('request')->input('search') ?: (old('category') ?: 'All products')}}</h1></div>
-        <div class="col-auto text-end"><span class="result-counter">{{@count($products)}}</span> results</div>
+        <div class="col-auto text-end"><span class="result-counter">{{$products->total()}}</span> results</div>
     </div>
 </div>
 <div class="container py-3 border-bottom">
