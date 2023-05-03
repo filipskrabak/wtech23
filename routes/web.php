@@ -1,13 +1,13 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\CartController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CartProductController;
 use App\Http\Controllers\DashboardProductController;
+use App\Policies\User;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,22 +40,22 @@ Route::get('/products', [ProductController::class, 'index']);
 Route::get('/product/{product:slug}', [ProductController::class, 'show']);
 
 // Create new product view
-Route::get('/dashboard/products/create', [DashboardProductController::class, 'create']);
+Route::get('/dashboard/products/create', [DashboardProductController::class, 'create'])->can('admin', User::class);
 
 // Store single product
-Route::post('/dashboard/products', [DashboardProductController::class, 'store']);
+Route::post('/dashboard/products', [DashboardProductController::class, 'store'])->can('admin', User::class);
 
 // Edit single product
-Route::get('/dashboard/products/{product:slug}/edit', [DashboardProductController::class, 'edit']);
+Route::get('/dashboard/products/{product:slug}/edit', [DashboardProductController::class, 'edit'])->can('admin', User::class);
 
 // Update single product
-Route::put('/dashboard/products/{product:slug}', [DashboardProductController::class, 'update'])->name('products.update');
+Route::put('/dashboard/products/{product:slug}', [DashboardProductController::class, 'update'])->can('admin', User::class)->name('products.update');
 
 // Store image for product
-Route::post('/dashboard/products/create-image', [DashboardProductController::class, 'storeImage']);
+Route::post('/dashboard/products/create-image', [DashboardProductController::class, 'storeImage'])->can('admin', User::class);
 
 // Destroy image
-Route::delete('/dashboard/products/destroy-image', [DashboardProductController::class, 'destroyImage']);
+Route::delete('/dashboard/products/destroy-image', [DashboardProductController::class, 'destroyImage'])->can('admin', User::class);
 
 // Show register form (create user)
 Route::get('/register', [UserController::class, 'create'])->middleware('guest');

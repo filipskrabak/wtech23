@@ -8,6 +8,7 @@ use Illuminate\Validation\Rule;
 use App\Http\Controllers\Controller;
 use App\Models\Postcode;
 use App\Models\Street;
+use App\Policies\UserPolicy;
 
 class UserController extends Controller
 {
