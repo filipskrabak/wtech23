@@ -1,14 +1,15 @@
 <?php
 
+use App\Policies\User;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
-use App\Http\Controllers\CartProductController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\CartProductController;
 use App\Http\Controllers\DashboardProductController;
-use App\Policies\User;
+use App\Http\Controllers\DashboardAttributeValueController;
 
 /*
 |--------------------------------------------------------------------------
@@ -117,6 +118,9 @@ Route::middleware('can:admin, App\Models\User')->group(function () {
         //Show all users
         Route::get('/dashboard/users', 'users');
 
+        // Show all attribute values
+        Route::get('/dashboard/attribute-values', 'attributes')->name('dashboard.attribute-values.index');
+
     });
 
     //DashboardProductController routes
@@ -148,6 +152,26 @@ Route::middleware('can:admin, App\Models\User')->group(function () {
 
         // Destroy image in the DB
         Route::delete('/dashboard/products/edit/destroy-image/{image}', 'destroyImageDB')->name('products.destroyImageDB');
+    });
+
+    //DashboardAttributeController routes
+    Route::controller(DashboardAttributeValueController::class)->group(function () {
+
+        // Create new attribute value view
+        Route::get('/dashboard/attribute-values/create',  'create');
+
+        // Store single attribute value
+        Route::post('/dashboard/attribute-values', 'store');
+
+        // Edit single attribute value
+        Route::get('/dashboard/attribute-values/{attributeValue}/edit',  'edit');
+
+        // Update single attribute value
+        Route::put('/dashboard/attribute-values/{attributeValue}', 'update')->name('attribute-values.update');
+
+        // Delete single attribute value
+        Route::delete('/dashboard/attribute-values/{attributeValue}', 'destroy')->name('attribute-values.destroy');
+
     });
 });
 

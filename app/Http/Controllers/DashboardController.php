@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use App\Models\Product;
 use Illuminate\Http\Request;
+use App\Models\AttributeValue;
 use App\Http\Controllers\Controller;
 
 class DashboardController extends Controller
@@ -17,5 +18,10 @@ class DashboardController extends Controller
     public function users(){
         $users = User::all();
         return view('dashboard.users')->with('users', $users);
+    }
+
+    public function attributes() {
+        $attributes = AttributeValue::all();
+        return view('dashboard.attribute-values.index')->with('attributes', $attributes);
     }
 }
