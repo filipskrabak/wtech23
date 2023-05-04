@@ -8,7 +8,9 @@
     <div class="row d-flex justify-content-center">
         <div class="col-md-6">
         <h1 class="mt-5 mb-4 text-center">Checkout</h1>
-        <div class="row mb-3 checkout-border align-items-center">
+        @auth
+        @else
+        <div class="row mb-3 checkout-border align-items-center not-logged-in-bar">
             <div class="col-md-8">
                 <p class="pt-1">Returning customer? Logged in users have the option to save their billing address</p>
             </div>
@@ -16,6 +18,7 @@
                 <button type="submit" class="btn btn-primary w-100">Log In</button>
             </div>
         </div>
+        @endif
         <form method="POST" action="/orders">
         @csrf
             <div id="step-1">

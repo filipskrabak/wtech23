@@ -20,7 +20,11 @@
   <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
 </head>
 
-<body>
+<body class="@auth
+    logged-in
+@else
+    not-logged-in
+@endif">
   <x-flash-message />
   <header>
     <!-- Top nav with logo, buttons -->
