@@ -66,6 +66,7 @@ class CartProductController extends Controller
         }
         $cartProduct = CartProduct::where('product_id', $id)
                         ->where('size', $request->input('size'))
+                        ->where('user_id', $request->user()->id)
                         ->first();
 
         if (!$cartProduct) {
@@ -113,6 +114,10 @@ class CartProductController extends Controller
             $cart = array_map(function($cartProduct) use($id, $request) {
                 if($cartProduct->product_id == $id && $cartProduct->size == $request->input('size')) {
                     $cartProduct->pcs = $request->input('pcs');
+
+                    if ($cartProduct->pcs == 0) {
+                        return null; // Remove product from cart
+                    }
                 }
 
                 return $cartProduct;
@@ -126,6 +131,11 @@ class CartProductController extends Controller
 
         $cartProduct->pcs = $request->input('pcs');
 
-        $cartProduct->save();
+        if ($cartProduct->pcs == 0) {
+            // Delete the cart product
+            $cartProduct->delete();
+        } else {
+            $cartProduct->save();
+        }
     }
 }

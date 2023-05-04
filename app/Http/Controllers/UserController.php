@@ -9,12 +9,39 @@ use App\Http\Controllers\Controller;
 use App\Models\Postcode;
 use App\Models\Street;
 use App\Policies\UserPolicy;
+use App\Models\CartProduct;
 
 class UserController extends Controller
 {
     // Show register form
     public function create() {
         return view('users.register');
+    }
+
+    //Save Cart from Session to DB after logging in
+    public function saveCart(Request $request) {
+        $user = $request->user();
+        $cart = session()->get('cart', []);
+        foreach($cart as $sessionCartProduct) {
+            $cartProduct = CartProduct::where('product_id', $sessionCartProduct->product_id)
+                        ->where('size', $sessionCartProduct->size)
+                        ->where('user_id', $request->user()->id)
+                        ->first();
+            if (!$cartProduct) {
+                // Create a new CartProduct instance inf not found in cart already.
+                $cartProduct = new CartProduct;
+                $cartProduct->product_id = $sessionCartProduct->product_id;
+                $cartProduct->user_id = $request->user()->id;
+                $cartProduct->size = $sessionCartProduct->size;
+                $cartProduct->pcs = 0;
+            }
+
+            $cartProduct->pcs += $sessionCartProduct->pcs;
+
+            $cartProduct->save();
+        }
+        session()->forget('cart');
+        return redirect('/')->with('message', 'Cart saved!');
     }
 
     // Create a new user
@@ -32,6 +59,8 @@ class UserController extends Controller
 
         // Login
         auth()->login($user);
+
+        $this->saveCart($request);
 
         return redirect('/')->with('message', 'Registration successful! You are now logged in.');
     }
@@ -58,7 +87,7 @@ class UserController extends Controller
 
         if(auth()->attempt($formFields)) {
             $request->session()->regenerate();
-
+            $this->saveCart($request);
             return redirect('/')->with('message', 'You are now logged in.');
         }
 
