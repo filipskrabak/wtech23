@@ -150,6 +150,12 @@ class UserController extends Controller
         $user->save();
 
         $users = User::all();
-        return redirect('/dashboard/users')->with('users', $users);
+        return redirect('/dashboard/users')->with('users', $users)->with('message', 'Role has been changed to ' . ($user->role ? 'admin.' : 'user.'));
+    }
+
+    public function destroy(User $user){
+        $user->delete();
+        $users = User::all();
+        return redirect('/dashboard/users')->with('users', $users)->with('message', 'User has been permanently removed.');
     }
 }

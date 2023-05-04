@@ -31,7 +31,7 @@
                         <input id="img-input" type="file" class="d-none" name="image">
                     </div>
                     <div class="d-flex align-items-start justify-content-start">
-                        <button type="submit" class="btn btn-primary mt-2 upload-btn">Upload</button>
+                        <button type="submit" class="btn btn-primary mt-2 upload-btn"><i class="fa-solid fa-upload"></i> Upload</button>
                     </div>
                 </form>
             </div>
@@ -45,7 +45,7 @@
                             @method('DELETE')
                             @csrf
                             <input type="hidden" name="image" value="{{ $image->id }}">
-                            <button type="submit" class="btn btn-danger w-100 mt-2">Delete</button>
+                            <button type="submit" class="btn btn-danger w-100 mt-2"><i class="fa-solid fa-trash"></i> Delete</button>
                         </form>
                     </div>
                 @endforeach

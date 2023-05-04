@@ -102,6 +102,12 @@ Route::controller(OrderController::class)->group(function () {
 //Admin routes
 Route::middleware('can:admin, App\Models\User')->group(function () {
 
+    // Admin User routes
+    Route::controller(UserController::class)->group(function () {
+        // Delete user
+        Route::delete('/users/{user}', 'destroy');
+    });
+
     //DashboardController routes
     Route::controller(DashboardController::class)->group(function () {
 
@@ -110,6 +116,7 @@ Route::middleware('can:admin, App\Models\User')->group(function () {
 
         //Show all users
         Route::get('/dashboard/users', 'users');
+
     });
 
     //DashboardProductController routes
