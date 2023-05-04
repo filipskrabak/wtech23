@@ -27,73 +27,98 @@ Route::get('/', function () {
     return view('index');
 });
 
-// Show cart
-Route::get('/cart', [CartProductController::class, 'index']);
+//User controller routes
+Route::controller(UserController::class)->group(function (){
+
+    Route::middleware('guest')->group(function () {
+        // Show register form (create user)
+        Route::get('/register', 'create');
+
+        // Show login form
+        Route::get('/login', 'login')->name('login');
+
+        // Login user
+        Route::post('/users/authenticate', 'authenticate');
+
+        // Create new user
+        Route::post('/users', 'store');
+    });
+
+    Route::middleware('auth')->group(function () {
+        // Logout user
+        Route::post('/logout', 'logout');
+
+        //Show edit user details from
+        Route::get('/edit', 'edit');
+
+        //Edit user details
+        Route::post('/edit/details', 'editDetails');
+
+        //Edit user password
+        Route::post('/edit/password', 'editPassword');
+    });
+});
+
+//ProductController routes
+Route::controller(ProductController::class)->group(function () {
+    // Get all products with filters
+    Route::get('/products', 'index');
+
+    // Single product
+    Route::get('/product/{product:slug}', 'show');
+});
+
+//CartProductController routes
+Route::controller(CartProductController::class)->group(function () {
+    // Show cart
+    Route::get('/cart', 'index');
+
+    // Add Product to Cart
+    Route::post('/cart/{id}', 'store');
+
+    // Remove Product from Cart
+    Route::delete('/cart/{id}', 'destroy');
+
+    // Update Product in Cart
+    Route::put('/cart/{id}', 'update');
+});
 
 // Show checkout
 Route::get('/checkout', [CheckoutController::class, 'create']);
 
-// Get all products with filters
-Route::get('/products', [ProductController::class, 'index']);
+//OrderController routes
+Route::controller(OrderController::class)->group(function () {
+    // Show user orders
+    Route::get('/orders', 'show')->middleware('auth');
 
-// Single product
-Route::get('/product/{product:slug}', [ProductController::class, 'show']);
+    // Create new order
+    Route::post('/orders', 'store');
+});
 
-// Create new product view
-Route::get('/dashboard/products/create', [DashboardProductController::class, 'create'])->can('admin', User::class);
+//Admin routes
+Route::middleware('can:admin, App\Models\User')->group(function () {
 
-// Store single product
-Route::post('/dashboard/products', [DashboardProductController::class, 'store'])->can('admin', User::class);
+    //DashboardProductController routes
+    Route::controller(DashboardProductController::class)->group(function () {
+        // Create new product view
+        Route::get('/dashboard/products/create',  'create');
 
-// Edit single product
-Route::get('/dashboard/products/{product:slug}/edit', [DashboardProductController::class, 'edit'])->can('admin', User::class);
+        // Store single product
+        Route::post('/dashboard/products', 'store');
 
-// Update single product
-Route::put('/dashboard/products/{product:slug}', [DashboardProductController::class, 'update'])->can('admin', User::class)->name('products.update');
+        // Edit single product
+        Route::get('/dashboard/products/{product:slug}/edit',  'edit');
 
-// Store image for product
-Route::post('/dashboard/products/create-image', [DashboardProductController::class, 'storeImage'])->can('admin', User::class);
+        // Update single product
+        Route::put('/dashboard/products/{product:slug}', 'update')->name('products.update');
 
-// Destroy image
-Route::delete('/dashboard/products/destroy-image', [DashboardProductController::class, 'destroyImage'])->can('admin', User::class);
+        // Store image for product
+        Route::post('/dashboard/products/create-image', 'storeImage');
 
-// Show register form (create user)
-Route::get('/register', [UserController::class, 'create'])->middleware('guest');
+        // Destroy image
+        Route::delete('/dashboard/products/destroy-image', 'destroyImage');
+    });
+});
 
-// Create new user
-Route::post('/users', [UserController::class, 'store']);
-
-// Logout user
-Route::post('/logout', [UserController::class, 'logout'])->middleware('auth');
-
-// Show login form
-Route::get('/login', [UserController::class, 'login'])->middleware('guest')->name('login');
-
-// Login user
-Route::post('/users/authenticate', [UserController::class, 'authenticate'])->middleware('guest');
-
-// Show user orders
-Route::get('/orders', [OrderController::class, 'show'])->middleware('auth');
-
-//Show edit user details from
-Route::get('/edit', [UserController::class, 'edit'])->middleware('auth');
-
-//Edit user details
-Route::post('/edit/details', [UserController::class, 'editDetails'])->middleware('auth');
-
-//Edit user password
-Route::post('/edit/password', [UserController::class, 'editPassword'])->middleware('auth');
-
-// Add Product to Cart
-Route::post('/cart/{id}', [CartProductController::class, 'store']);
-
-// Remove Product from Cart
-Route::delete('/cart/{id}', [CartProductController::class, 'destroy']);
-
-// Update Product in Cart
-Route::put('/cart/{id}', [CartProductController::class, 'update']);
-
-// Create new order
-Route::post('/orders', [OrderController::class, 'store']);
 
 // TODO: Show order
