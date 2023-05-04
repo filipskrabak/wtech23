@@ -24,7 +24,9 @@
                 <th scope="col">Date</th>
                 <th scope="col">Price</th>
                 <th scope="col">Status</th>
+                @can('admin', App\Models\User::class)
                 <th scope="col"></th>
+                @endcan
             </tr>
         </thead>
         <tbody>
@@ -53,8 +55,6 @@
                         </form>
                     </div>
                 </td>
-                @else
-                <td>{{$order->status}}</td>
                 @endcan
             </tr>
             @endforeach
