@@ -12,10 +12,8 @@
                 <a class="nav-link"  href="/dashboard/orders">Orders</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link"  href="#">Categories</a>
-                </li>
-                <li class="nav-item">
                 <a class="nav-link"  href="/dashboard/attribute-values">Attribute Values</a>
+                </li>
             </ul>
         </div>
     </div>
