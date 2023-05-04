@@ -57,9 +57,6 @@ Route::controller(UserController::class)->group(function (){
 
         //Edit user password
         Route::post('/edit/password', 'editPassword');
-
-        //Change user role
-        Route::put('/users/{user:id}/role', 'changeRole');
     });
 });
 
@@ -104,6 +101,9 @@ Route::middleware('can:admin, App\Models\User')->group(function () {
 
     // Admin User routes
     Route::controller(UserController::class)->group(function () {
+        //Change user role
+        Route::put('/users/{user:id}/role', 'changeRole');
+
         // Delete user
         Route::delete('/users/{user}', 'destroy');
     });
@@ -117,6 +117,8 @@ Route::middleware('can:admin, App\Models\User')->group(function () {
         //Show all users
         Route::get('/dashboard/users', 'users');
 
+        //Show all orders
+        Route::get('/dashboard/orders', 'orders');
     });
 
     //DashboardProductController routes
