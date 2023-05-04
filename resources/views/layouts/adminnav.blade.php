@@ -6,7 +6,7 @@
                 <a class="nav-link" href="/dashboard/products">Products</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link" href="./admin-users.html">Users</a>
+                <a class="nav-link" href="/dashboard/users">Users</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link"  href="./admin-orders.html">Orders</a>

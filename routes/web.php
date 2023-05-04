@@ -57,6 +57,9 @@ Route::controller(UserController::class)->group(function (){
 
         //Edit user password
         Route::post('/edit/password', 'editPassword');
+
+        //Change user role
+        Route::put('/users/{user:id}/role', 'changeRole');
     });
 });
 
@@ -104,6 +107,9 @@ Route::middleware('can:admin, App\Models\User')->group(function () {
 
         // Show all products
         Route::get('/dashboard/products', 'products');
+
+        //Show all users
+        Route::get('/dashboard/users', 'users');
     });
 
     //DashboardProductController routes

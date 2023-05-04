@@ -144,4 +144,12 @@ class UserController extends Controller
 
         return redirect('/edit')->with('message', 'Your password has been changed.');
     }
+
+    public function changeRole(User $user){
+        $user->role = !$user->role;
+        $user->save();
+
+        $users = User::all();
+        return redirect('/dashboard/users')->with('users', $users);
+    }
 }
