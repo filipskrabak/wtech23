@@ -3,7 +3,7 @@
         <div class="collapse navbar-collapse collapsibleNav" id="navbarNav" >
             <ul class="navbar-nav">
                 <li class="nav-item">
-                <a class="nav-link" href="./admin-products.html">Products</a>
+                <a class="nav-link" href="/dashboard/products">Products</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link" href="./admin-users.html">Users</a>

@@ -6,6 +6,7 @@ use App\Http\Controllers\OrderController;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CheckoutController;
 use App\Http\Controllers\CartProductController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DashboardProductController;
 use App\Policies\User;
 
@@ -98,8 +99,16 @@ Route::controller(OrderController::class)->group(function () {
 //Admin routes
 Route::middleware('can:admin, App\Models\User')->group(function () {
 
+    //DashboardController routes
+    Route::controller(DashboardController::class)->group(function () {
+
+        // Show all products
+        Route::get('/dashboard/products', 'products');
+    });
+
     //DashboardProductController routes
     Route::controller(DashboardProductController::class)->group(function () {
+
         // Create new product view
         Route::get('/dashboard/products/create',  'create');
 
