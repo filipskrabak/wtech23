@@ -156,10 +156,10 @@
           </div>
           <div class="row justify-content-between">
             <div class="col-md-4 pb-2">
-              <button type="submit" class="btn btn-primary w-100">Save</button>
+              <button type="submit" class="btn btn-success w-100"><i class="fa-solid fa-floppy-disk"></i> Save</button>
             </div>
             <div class="col-md-auto pb-2">
-              <a href="/dashboard" class="btn btn-outline-primary w-100">Discard and go back</a>
+              <a href="/dashboard/products" class="btn btn-outline-danger w-100"><i class="fa-solid fa-trash"></i> Discard and go back</a>
             </div>
           </div>
         </form>

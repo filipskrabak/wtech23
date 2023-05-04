@@ -121,11 +121,20 @@ Route::middleware('can:admin, App\Models\User')->group(function () {
         // Update single product
         Route::put('/dashboard/products/{product:slug}', 'update')->name('products.update');
 
-        // Store image for product
+        // Delete single product
+        Route::delete('/dashboard/products/{product:slug}', 'destroy')->name('products.destroy');
+
+        // Store image for product (session)
         Route::post('/dashboard/products/create-image', 'storeImage');
 
-        // Destroy image
+        // Destroy image (session)
         Route::delete('/dashboard/products/destroy-image', 'destroyImage');
+
+        // Store image in the DB
+        Route::post('/dashboard/products/{product:slug}/edit/create-image', 'storeImageDB')->name('products.storeImageDB');
+
+        // Destroy image in the DB
+        Route::delete('/dashboard/products/edit/destroy-image/{image}', 'destroyImageDB')->name('products.destroyImageDB');
     });
 });
 
