@@ -20,6 +20,15 @@ class DatabaseSeeder extends Seeder
         //     'email' => 'test@example.com',
         // ]);
 
+        // Create default admin user with pass '12345678'
+        DB::table('users')->insert([
+            'name' => 'Test',
+            'surname' => 'User',
+            'email' => 'test@test.com',
+            'role' => 1,
+            'password' => bcrypt('12345678')
+        ]);
+
         // Insert needed attributes
         DB::table('attributes')->insert([
             [
