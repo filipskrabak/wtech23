@@ -9,7 +9,7 @@
                 <a class="nav-link" href="/dashboard/users">Users</a>
                 </li>
                 <li class="nav-item">
-                <a class="nav-link"  href="./admin-orders.html">Orders</a>
+                <a class="nav-link"  href="/dashboard/orders">Orders</a>
                 </li>
                 <li class="nav-item">
                 <a class="nav-link"  href="#">Categories</a>

@@ -31,6 +31,7 @@
                 <td>{{$user->email}}</td>
                 <td>@if($user->role) Admin @else User @endif</td>
                 <td>
+                    @if(Auth::user()->id != $user->id)
                     <div class="container d-flex justify-content-end">
                         @if($user->role)
                         <form method="POST" action="/users/{{$user->id}}/role">
@@ -51,6 +52,7 @@
                         <button class="btn btn-sm btn-danger"><i class="fa-solid fa-xmark me-1"></i>Delete</button>
                         </form>
                     </div>
+                    @endif
                 </td>
             </tr>
             @endforeach

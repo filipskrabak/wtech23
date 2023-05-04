@@ -7,6 +7,7 @@ use App\Models\Product;
 use Illuminate\Http\Request;
 use App\Models\AttributeValue;
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 
 class DashboardController extends Controller
 {
@@ -23,5 +24,10 @@ class DashboardController extends Controller
     public function attributes() {
         $attributes = AttributeValue::all();
         return view('dashboard.attribute-values.index')->with('attributes', $attributes);
+    }
+
+    public function orders(){
+        $orders = Order::all();
+        return view('orders')->with('orders', $orders);
     }
 }
