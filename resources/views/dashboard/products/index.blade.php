@@ -31,6 +31,7 @@
                 <td>{{$product->price}}</td>
                 <td>
                     <div class="container d-flex justify-content-end">
+                        <a href="/product/{{$product->slug}}" class="btn btn-sm btn-primary">View</a>
                         <a href="/dashboard/products/{{$product->slug}}/edit" class="btn btn-sm btn-primary mx-2">Edit</a>
                         <form method="POST" action="/dashboard/products/{{$product->slug}}">
                             @csrf
