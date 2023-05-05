@@ -26,6 +26,7 @@
                 <th scope="col">Status</th>
                 @can('admin', App\Models\User::class)
                 <th scope="col"></th>
+                <th scope="col"></th>
                 @endcan
             </tr>
         </thead>
@@ -41,19 +42,27 @@
 
                 @can('admin', App\Models\User::class)
                 <td>
-                    <div class="container d-flex justify-content-end">
-                        <select class="form-select m-2" id="categorySelect2" aria-label="Select order status">
+                    <form method="POST" action="/orders/{{$order->id}}">
+                        @csrf
+                        @method('DELETE')
+
+                        <div class="input-group input-group-sm">
+                        <select class="form-select form-select-sm" id="categorySelect2" aria-label="Select order status">
                             <option disabled selected>Select status</option>
                             <option value="1">Shipped</option>
                             <option value="2">Cancelled</option>
                             <option value="3">Settled</option>
                         </select>
-                        <form method="POST" action="/orders/{{$order->id}}">
-                            @csrf
-                            @method('DELETE')
-                            <button class="btn btn-sm btn-danger"><i class="fa-solid fa-xmark me-1"></i>Delete</button>
-                        </form>
-                    </div>
+                        <button class="btn  btn-outline-primary"><i class="fa-solid fa-xmark me-1"></i> Change</button>
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <form method="POST" action="/orders/{{$order->id}}">
+                        @csrf
+                        @method('DELETE')
+                        <button class="btn btn-sm btn-danger"><i class="fa-solid fa-xmark me-1"></i> Delete</button>
+                    </form>
                 </td>
                 @endcan
             </tr>
