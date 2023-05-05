@@ -97,12 +97,17 @@ class ProductController extends Controller
         $images = $product->images;
         $allAttributes = $product->attribute_values;
 
+        // Get most 4 relevant products (same attribute values in category attribute)
+        $relevantProducts = Product::whereHas('attribute_values', function($q) use($allAttributes) {
+            $q->whereIn('attribute_value_id', $allAttributes->pluck('pivot')->pluck('attribute_value_id'));
+        })->where('id', '!=', $product->id)->limit(4)->get();
+
         $sizeAttributes = $allAttributes->filter(function($attribute) {
             return $attribute->attribute->name === 'Size';
         });
 
         return view('products.show', [
             'product' => $product
-        ])->with('images', $images)->with('sizes', $sizeAttributes);
+        ])->with('images', $images)->with('sizes', $sizeAttributes)->with('relevantProducts', $relevantProducts);
     }
 }

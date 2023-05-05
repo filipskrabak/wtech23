@@ -63,6 +63,13 @@ img.product-image {
   width: 100%
 }
 
+.image-container-similar {
+    height: 360px; /* set the desired height */
+    overflow: hidden;
+    background-color: #e8e8e8;
+    padding: 20px;
+}
+
 .image-container {
     height: 600px; /* set the desired height */
     overflow: hidden;

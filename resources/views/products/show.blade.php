@@ -60,38 +60,26 @@
         </div>
     </div>
     <div class="row row-cols-lg-4 row-cols-md-2 g-3 my-3 related-products-row">
+        @forelse ($relevantProducts as $relevantProduct)
         <div class="col position-relative">
-            <img src="https://placeholder.com/1000x1000" class="img-fluid" alt="{product-name}">
+            @foreach ($relevantProduct->images as $image)
+            @if ($loop->first)
+                <div class="image-container-similar mt-3 d-flex align-items-center">
+                    <img src="/{{$image->path}}/{{$image->name}}" class="img-fluid" alt="{{$image->alt}}">
+                </div>
+            @endif
+            @endforeach
             <div class="row g-2">
-                <div class="col text-truncate fw-bolder">{product-name}, can be truncate if not short enough</div>
-                <div class="col-auto text-end">100.00<span class="price-currency-symbol ms-2">€</span></div>
+                <div class="col text-truncate fw-bolder">{{$relevantProduct->name}}</div>
+                <div class="col-auto text-end">{{$relevantProduct->price}}<span class="price-currency-symbol ms-2">€</span></div>
             </div>
-            <a href="#" class="stretched-link"></a>
+            <a href="/product/{{$relevantProduct->slug}}" class="stretched-link"></a>
         </div>
-        <div class="col position-relative">
-            <img src="https://placeholder.com/1000x1000" class="img-fluid" alt="{product-name}">
-            <div class="row g-2">
-                <div class="col text-truncate fw-bolder">{product-name}, can be truncate if not short enough</div>
-                <div class="col-auto text-end">100.00<span class="price-currency-symbol ms-2">€</span></div>
-            </div>
-            <a href="#" class="stretched-link"></a>
+        @empty
+        <div class="col">
+            <p>No similar products found</p>
         </div>
-        <div class="col position-relative">
-            <img src="https://placeholder.com/1000x1000" class="img-fluid" alt="{product-name}">
-            <div class="row g-2">
-                <div class="col text-truncate fw-bolder">{product-name}, can be truncate if not short enough</div>
-                <div class="col-auto text-end">100.00<span class="price-currency-symbol ms-2">€</span></div>
-            </div>
-            <a href="#" class="stretched-link"></a>
-        </div>
-        <div class="col position-relative">
-            <img src="https://placeholder.com/1000x1000" class="img-fluid" alt="{product-name}">
-            <div class="row g-2">
-                <div class="col text-truncate fw-bolder">{product-name}, can be truncate if not short enough</div>
-                <div class="col-auto text-end">100.00<span class="price-currency-symbol ms-2">€</span></div>
-            </div>
-            <a href="#" class="stretched-link"></a>
-        </div>
+        @endforelse
     </div>
 </div>
 
