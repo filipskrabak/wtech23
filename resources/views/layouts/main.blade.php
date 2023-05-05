@@ -72,7 +72,9 @@
                 </li>
                 @endauth
                 <li class="nav-item">
-                    <a class="nav-link" href="/cart"><i class="fa-solid fa-cart-shopping"></i> Cart</a>
+                    <a class="nav-link" href="/cart"><i class="fa-solid fa-cart-shopping"></i>
+                        Cart @if ($cartCount > 0) {{ "(".$cartCount.")" }} @endif
+                    </a>
                 </li>
             </ul>
         </div>

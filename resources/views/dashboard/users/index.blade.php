@@ -61,4 +61,8 @@
     </table>
 </section>
 
+<div class="container">
+    {{$users->withQueryString()->links()}}
+</div>
+
 @endsection

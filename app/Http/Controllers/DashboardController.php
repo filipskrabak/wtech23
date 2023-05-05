@@ -12,22 +12,23 @@ use App\Models\Order;
 class DashboardController extends Controller
 {
     public function products(){
-        $products = Product::all();
+        // Paginated products
+        $products = Product::paginate(10);
         return view('dashboard.products.index')->with('products', $products);
     }
 
     public function users(){
-        $users = User::all();
-        return view('dashboard.users')->with('users', $users);
+        $users = User::paginate(10);
+        return view('dashboard.users.index')->with('users', $users);
     }
 
     public function attributes() {
-        $attributes = AttributeValue::all();
+        $attributes = AttributeValue::paginate(10);
         return view('dashboard.attribute-values.index')->with('attributes', $attributes);
     }
 
     public function orders(){
-        $orders = Order::all();
-        return view('orders')->with('orders', $orders);
+        $orders = Order::paginate(10);
+        return view('orders.index')->with('orders', $orders);
     }
 }

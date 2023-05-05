@@ -91,7 +91,10 @@ Route::get('/checkout', [CheckoutController::class, 'create']);
 //OrderController routes
 Route::controller(OrderController::class)->group(function () {
     // Show user orders
-    Route::get('/orders', 'show')->middleware('auth');
+    Route::get('/orders', 'index')->middleware('auth');
+
+    // Show order details
+    Route::get('/orders/{order}', 'show')->name('orders.show');
 
     // Create new order
     Route::post('/orders', 'store');
@@ -116,7 +119,7 @@ Route::middleware('can:admin, App\Models\User')->group(function () {
         Route::get('/dashboard/products', 'products');
 
         //Show all users
-        Route::get('/dashboard/users', 'users');
+        Route::get('/dashboard/users', 'users')->name('dashboard.users.index');
 
         // Show all attribute values
         Route::get('/dashboard/attribute-values', 'attributes')->name('dashboard.attribute-values.index');

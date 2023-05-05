@@ -47,4 +47,8 @@
     </table>
 </section>
 
+<div class="container">
+    {{$products->withQueryString()->links()}}
+</div>
+
 @endsection

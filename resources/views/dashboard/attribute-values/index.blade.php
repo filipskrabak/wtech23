@@ -46,4 +46,8 @@
     </table>
 </section>
 
+<div class="container">
+    {{$attributes->withQueryString()->links()}}
+</div>
+
 @endsection

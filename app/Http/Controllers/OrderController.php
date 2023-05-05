@@ -15,11 +15,34 @@ use App\Models\Street;
 class OrderController extends Controller
 {
     // Show user orders
-    public function show(Request $request){
-        $orders = $request->user()->orders()->get();
+    public function index(Request $request){
+        $orders = $request->user()->orders()->paginate(10);
 
-        return view('orders', [
+        return view('orders.index', [
             'orders'=> $orders
+        ]);
+    }
+
+    // Show order details
+    public function show(Order $order) {
+        // Check if user is authorized to view order
+        if($order->user_id != null && ((Auth::check() && Auth::user()->id != $order->user_id && Auth::user()->role == 0) || !Auth::check())) {
+            // redirect to /
+            return redirect("/");
+        }
+
+        $orderProducts = $order->products;
+
+        // calculate price for the order
+        $total = 0;
+        foreach($orderProducts as $orderProduct) {
+            $total += $orderProduct->price * $orderProduct->pivot->pcs;
+        }
+
+        return view('orders.show', [
+            'order' => $order,
+            'orderProducts' => $orderProducts,
+            'total' => $total
         ]);
     }
 
@@ -96,7 +119,7 @@ class OrderController extends Controller
             //delete all cart products
             CartProduct::where('user_id', Auth::id())->delete();
         }
-        // TODO: redirect to order view
-        return redirect('/cart')->with('message', 'Order successfully placed.');
+        // Redirect to order view
+        return redirect()->route('orders.show', ['order' => $order]);
     }
 }

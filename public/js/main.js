@@ -1,33 +1,31 @@
-$(document).ready(function(){
-    $('#searchBarBtn').on("click",(function(e){
-      if($('#searchBar').hasClass("d-none")) {
-        $('#searchBar').removeClass("d-none");
-        $('#floatingSearch').focus();
-      }
-      else {
-        $('#searchBar').addClass("d-none");
-      }
+document.querySelector('#searchBarBtn').addEventListener('click', function(e) {
+    if(document.querySelector('#searchBar').classList.contains('d-none')) {
+        document.querySelector('#searchBar').classList.remove('d-none');
+        document.querySelector('#floatingSearch').focus();
+    }
+    else {
+        document.querySelector('#searchBar').classList.add('d-none');
+    }
+})
 
-    }));
-
-    $('.dropdown').on("mouseenter", function() {
-      if($(window).width() > 576) {
-        $( "a", this ).first().addClass('show')
-        $( "a", this ).first().attr("aria-expanded","true");
-        $( "div", this ).first().attr("data-bs-popper","none");
-        $( "div", this ).first().addClass('show')
-      }
-    })
-
-    $('.dropdown').on("mouseleave", function() {
-        if($(window).width() > 576) {
-          $( "a", this ).first().removeClass('show')
-          $( "a", this ).first().attr("aria-expanded","false");
-          $( "div", this ).first().removeAttr("data-bs-popper","none");
-          $( "div", this ).first().removeClass('show')
+document.querySelectorAll('.dropdown').forEach(function(element) {
+    element.addEventListener('mouseenter', function() {
+        if(window.innerWidth > 576) {
+            element.querySelector('a').classList.add('show');
+            element.querySelector('a').setAttribute('aria-expanded', 'true');
+            element.querySelector('div').setAttribute('data-bs-popper', 'none');
+            element.querySelector('div').classList.add('show');
         }
-      })
-  })
+    })
+    element.addEventListener('mouseleave', function() {
+        if(window.innerWidth > 576) {
+            element.querySelector('a').classList.remove('show');
+            element.querySelector('a').setAttribute('aria-expanded', 'false');
+            element.querySelector('div').removeAttribute('data-bs-popper', 'none');
+            element.querySelector('div').classList.remove('show');
+        }
+    })
+})
 
 // Auto-Close BS alert
 setTimeout(function () {
@@ -35,8 +33,6 @@ setTimeout(function () {
     $('#alert').alert('close');
 }, 3000);
 
-
-// rewrite for arrow function
 document.querySelector("#img-input").onchange = evt => {
     const [file] = document.querySelector("#img-input").files
     if (file) {
