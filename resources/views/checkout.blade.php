@@ -61,7 +61,6 @@
                     <div class="form-floating mb-3">
                     <input type="text" class="form-control @error('postcode') is-invalid @enderror" id="floatingPostcode" value="" name="postcode" placeholder="Pezinská">
                     <label for="floatingPostcode">Postcode</label>
-                    <ul id="postcode-suggestions"></ul>
                     @error('postcode')
                     <div class="invalid-feedback">
                         {{$message}}
@@ -80,7 +79,10 @@
                     @enderror
                     </div>
                 </div>
-                </div>
+            </div>
+            <div class="row mb-0">
+                <ul id="postcode-suggestions"></ul>
+            </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control @error('country') is-invalid @enderror" id="floatingCountry" value="" name="country" placeholder="Pezinská">
                 <label for="floatingCountry">Country</label>
@@ -252,20 +254,33 @@
     });
 
     const postcodeInput = document.getElementById('floatingPostcode');
+    const cityInput = document.getElementById('floatingCity');
+    const suggestionsList = document.getElementById('postcode-suggestions');
     postcodeInput.addEventListener('input', fetchPostcodeSuggestions);
 
     async function fetchPostcodeSuggestions() {
-        const postcode = postcodeInput.value;
+        const filledpostcode = postcodeInput.value;
         const response = await fetch('/checkout/postcode', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             },
-            body: JSON.stringify({ postcode })
+            body: JSON.stringify({ filledpostcode })
         });
         const suggestions = await response.json();
         console.log(suggestions); // Log the retrieved suggestions to the console
+        suggestionsList.innerHTML = '';
+        suggestions.forEach(suggestion => {
+        const suggestionElement = document.createElement('li');
+        suggestionElement.textContent = suggestion['postcode'] + ' ' + suggestion['city'] + ' - ' + suggestion['district'];
+        suggestionElement.addEventListener('click', () => {
+            postcodeInput.value = suggestion['postcode'];
+            cityInput.value = suggestion['city'];
+            suggestionsList.innerHTML = '';
+        });
+        suggestionsList.appendChild(suggestionElement);
+        });
     }
 </script>
 

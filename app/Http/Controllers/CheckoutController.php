@@ -39,13 +39,17 @@ class CheckoutController extends Controller
     //checkPostcode() function - return all postcodes from database begging with $postcode
     public function checkPostcode(Request $request){
         $postcode = $request->input('postcode');
-        $postcodes = Postcode::where('postcode', 'LIKE', $postcode.'%')->take(10)->get();
-        response()->json($postcodes);
+        $postcodes = Postcode::select('postcode', 'districts.name as district', 'cities.name as city')
+                    ->join('districts', 'districts.id', '=', 'postcodes.district_id')
+                    ->join('cities', 'cities.id', '=', 'districts.city_id')
+                    ->where('postcode', 'LIKE', $postcode.'%')->take(10)->get();
+        return response()->json($postcodes);
+
     }
 
     public function checkStreet(Request $request){
         $street = $request->input('street');
-        $streets = Street::where('street', 'LIKE', $street.'%')->take(10)->get();
-        response()->json($streets);
+        $streets = Street::select('street')->where('street', 'LIKE', $street.'%')->take(10)->get();
+        return response()->json($streets);
     }
 }
