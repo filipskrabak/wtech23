@@ -18,6 +18,7 @@
   <link href="{{ asset('css/styles.css?v=2') }}" rel="stylesheet">
   <!-- Product Gallery slider CSS -->
   <link rel='stylesheet' href='https://sachinchoolur.github.io/lightslider/dist/css/lightslider.css'>
+  <link rel="icon" href="/img/sitelogo.svg" type="image/svg+xml">
 </head>
 
 <body class="@auth
