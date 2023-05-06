@@ -183,9 +183,9 @@
       <div class="col-md-2">
         <h5 class="footer-section">About us</h5>
         <ul class="nav flex-column footer-links">
-          <li class="nav-item mb-2"><a href="./base-single.html" class="nav-link p-0 text-muted">Shipping</a></li>
-          <li class="nav-item mb-2"><a href="./base-single.html" class="nav-link p-0 text-muted">Terms and conditions</a></li>
-          <li class="nav-item mb-2"><a href="./base-single.html" class="nav-link p-0 text-muted">Payment types</a></li>
+          <li class="nav-item mb-2"><a href="./shipping" class="nav-link p-0 text-muted">Shipping</a></li>
+          <li class="nav-item mb-2"><a href="./terms" class="nav-link p-0 text-muted">Terms and conditions</a></li>
+          <li class="nav-item mb-2"><a href="./payment" class="nav-link p-0 text-muted">Payment options</a></li>
         </ul>
       </div>
       <div class="col-md-2">

@@ -180,5 +180,19 @@ Route::middleware('can:admin, App\Models\User')->group(function () {
     });
 });
 
+// Shipping methods page
+Route::get('/shipping', function () {
+    return view('shipping');
+});
+
+//Terms and conditions page
+Route::get('/terms', function () {
+    return view('terms');
+});
+
+//Payment methods page
+Route::get('/payment', function () {
+    return view('payment');
+});
 
 // TODO: Show order
