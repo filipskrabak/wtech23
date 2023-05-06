@@ -200,14 +200,19 @@
                     <div class="row mt-3 justify-content-center">
                         <div class="col">
                             <div class="container d-flex align-items-between justify-content-between">
-                                <div class="form-check mb-3 md-6 col-md-8">
-                                    <input class="form-check-input" type="checkbox" value="" id="agreement" required>
+                                <div class="form-check mb-3 col-md-8">
+                                    <input class="form-check-input" type="checkbox" value="" name="agreement" id="agreement" required>
                                     <label class="form-check-label" for="agreement">Accept agreement</label>
                                 </div>
-                                <div class="mb-3 col-md-4">
-                                    <button type="submit" class="btn btn-primary w-100">Order</button>
-                                </div>
                             </div>
+                        </div>
+                    </div>
+                    <div class="row mt-3 justify-content-center">
+                        <div class="mb-3 col-md-6">
+                            <button  type="button" id="checkout-previous" class="btn btn-light">Back</a>
+                        </div>
+                        <div class="mb-3 col-md-6">
+                            <button type="submit" class="btn btn-primary w-100">Order</button>
                         </div>
                     </div>
             </div>
@@ -216,9 +221,32 @@
     </div>
 </section>
 <script>
+    function validateForm() {
+        let formValid = true;
+        const inputs = document.querySelectorAll("#step-1 input");
+        inputs.forEach((input) => {
+            if (input.value === "") {
+                input.classList.add("is-invalid");
+                formValid = false;
+            } else if (input.name === 'email' && !/\S+@\S+\.\S+/.test(input.value)) { //copied from stackoverflow: https://stackoverflow.com/questions/46155/how-can-i-validate-an-email-address-in-javascript 
+                input.classList.add('is-invalid');
+                formIsValid = false;
+            } else {
+                input.classList.remove("is-invalid");
+            }
+        });
+        return formValid;
+    }
     document.getElementById('checkout-next').addEventListener('click', function() {
-        document.getElementById('step-1').style.display = 'none';
-        document.getElementById('step-2').style.display = 'block';
+        if(validateForm()){
+            document.getElementById('step-1').style.display = 'none';
+            document.getElementById('step-2').style.display = 'block';
+        }
+    });
+    document.getElementById('checkout-previous').addEventListener('click', function() {
+        document.getElementById('step-1').style.display = 'block';
+        document.getElementById('step-2').style.display = 'none';
+        document.getElementById('agreement').checked = false;
     });
 </script>
 
