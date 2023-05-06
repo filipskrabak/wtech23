@@ -57,13 +57,13 @@ img.product-image {
 
 /* Checkout CSS */
 
-#postcode-suggestions li {
+#address-suggestions li, #postcode-suggestions li {
   list-style: none;
   border-bottom: solid 1px #ddd;
   padding: 10px;
   cursor: pointer;
 }
-#postcode-suggestions li:last-child {
+#address-suggestions li:last-child, #postcode-suggestions li:last-child {
   border-bottom: none;
   margin-bottom: 15px;
 }

@@ -57,6 +57,9 @@
                 @enderror
             </div>
             <div class="row">
+                <ul id="address-suggestions" class="mb-0"></ul>
+            </div>
+            <div class="row">
                 <div class="col-lg-3">
                     <div class="form-floating mb-3">
                     <input type="text" class="form-control @error('postcode') is-invalid @enderror" id="floatingPostcode" value="" name="postcode" placeholder="Pezinská">
@@ -253,9 +256,12 @@
         document.getElementById('agreement').checked = false;
     });
 
+    const addressInput = document.getElementById('floatingAddress');
     const postcodeInput = document.getElementById('floatingPostcode');
     const cityInput = document.getElementById('floatingCity');
-    const suggestionsList = document.getElementById('postcode-suggestions');
+    const addressSuggestionsList = document.getElementById('address-suggestions');
+    const postcodeSuggestionsList = document.getElementById('postcode-suggestions');
+    addressInput.addEventListener('input', fetchAddressSuggestions);
     postcodeInput.addEventListener('input', fetchPostcodeSuggestions);
 
     async function fetchPostcodeSuggestions() {
@@ -269,16 +275,39 @@
             body: JSON.stringify({ postcode })
         });
         const suggestions = await response.json();
-        suggestionsList.innerHTML = '';
+        postcodeSuggestionsList.innerHTML = '';
         suggestions.forEach(suggestion => {
         const suggestionElement = document.createElement('li');
         suggestionElement.textContent = suggestion['postcode'] + ' ' + suggestion['city'] + ' - ' + suggestion['district'];
         suggestionElement.addEventListener('click', () => {
             postcodeInput.value = suggestion['postcode'];
             cityInput.value = suggestion['city'];
-            suggestionsList.innerHTML = '';
+            postcodeSuggestionsList.innerHTML = '';
         });
-        suggestionsList.appendChild(suggestionElement);
+        postcodeSuggestionsList.appendChild(suggestionElement);
+        });
+    }
+
+    async function fetchAddressSuggestions(){
+        const street = addressInput.value;
+        const response = await fetch('/checkout/street', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            },
+            body: JSON.stringify({ street })
+        });
+        const suggestions = await response.json();
+        addressSuggestionsList.innerHTML = '';
+        suggestions.forEach(suggestion => {
+        const suggestionElement = document.createElement('li');
+        suggestionElement.textContent = suggestion['name'];
+        suggestionElement.addEventListener('click', () => {
+            addressInput.value = suggestion['name'];
+            addressSuggestionsList.innerHTML = '';
+        });
+        addressSuggestionsList.appendChild(suggestionElement);
         });
     }
 </script>

@@ -49,7 +49,7 @@ class CheckoutController extends Controller
 
     public function checkStreet(Request $request){
         $street = $request->input('street');
-        $streets = Street::select('street')->where('street', 'LIKE', $street.'%')->take(10)->get();
+        $streets = Street::select('name', 'house_number')->where('name', 'LIKE', $street.'%')->take(10)->get();
         return response()->json($streets);
     }
 }
