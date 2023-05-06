@@ -63,6 +63,10 @@ img.product-image {
   padding: 10px;
   cursor: pointer;
 }
+#postcode-suggestions li:last-child {
+  border-bottom: none;
+  margin-bottom: 15px;
+}
 
 /* Product CSS */
 

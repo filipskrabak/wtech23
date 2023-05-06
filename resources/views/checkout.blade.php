@@ -81,7 +81,7 @@
                 </div>
             </div>
             <div class="row">
-                <ul id="postcode-suggestions mb-0"></ul>
+                <ul id="postcode-suggestions" class="mb-0"></ul>
             </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control @error('country') is-invalid @enderror" id="floatingCountry" value="" name="country" placeholder="Pezinská">
@@ -259,14 +259,14 @@
     postcodeInput.addEventListener('input', fetchPostcodeSuggestions);
 
     async function fetchPostcodeSuggestions() {
-        const filledpostcode = postcodeInput.value;
+        const postcode = postcodeInput.value;
         const response = await fetch('/checkout/postcode', {
             method: 'POST',
             headers: {
             'Content-Type': 'application/json',
             'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
             },
-            body: JSON.stringify({ filledpostcode })
+            body: JSON.stringify({ postcode })
         });
         const suggestions = await response.json();
         suggestionsList.innerHTML = '';
