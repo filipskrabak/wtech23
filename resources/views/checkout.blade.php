@@ -269,7 +269,6 @@
             body: JSON.stringify({ filledpostcode })
         });
         const suggestions = await response.json();
-        console.log(suggestions); // Log the retrieved suggestions to the console
         suggestionsList.innerHTML = '';
         suggestions.forEach(suggestion => {
         const suggestionElement = document.createElement('li');
