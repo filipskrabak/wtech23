@@ -105,25 +105,22 @@
     </div>
 </div>
 <script>
-    let minusButtons = document.querySelectorAll('.minus-btn');
-    let plusButtons = document.querySelectorAll('.plus-btn');
-    let removeButtons = document.querySelectorAll('.cart-item-remove-btn');
 
-    minusButtons.forEach(button => {
-    button.addEventListener('click', decreasePcs);
-    });
-
-    plusButtons.forEach(button => {
-    button.addEventListener('click', increasePcs);
-    });
-
-    removeButtons.forEach(button => {
-        button.addEventListener('click', removeCartItem);
+    document.querySelector('main').addEventListener('click', (event) => {
+    if (event.target.matches('.minus-btn')) {
+        decreasePcs(event);
+    }
+    if (event.target.matches('.plus-btn')) {
+        increasePcs(event);
+    }
+    if (event.target.matches('.cart-item-remove-btn')) {
+        removeCartItem(event);
+    }
     });
 
     function increasePcs(event) {
-        let id = this.getAttribute('data-id');
-        let size = this.getAttribute('data-size');
+        let id = event.target.getAttribute('data-id');
+        let size = event.target.getAttribute('data-size');
         let inputEl = event.target.parentElement.querySelector('.qty-input');
         let pcs = parseInt(inputEl.value);
         let newPcs = pcs + 1;
@@ -132,8 +129,8 @@
     }
 
     function decreasePcs(event) {
-        let id = this.getAttribute('data-id');
-        let size = this.getAttribute('data-size');
+        let id = event.target.getAttribute('data-id');
+        let size = event.target.getAttribute('data-size');
         let inputEl = event.target.parentElement.querySelector('.qty-input');
         let pcs = parseInt(inputEl.value);
         if (pcs > 1) {
@@ -144,7 +141,6 @@
     }
 
     function updateCart(productId, qty, size) {
-        console.log(productId, qty, size);
         fetch(`/cart/${productId}`, {
             method: 'PUT',
             headers: {
@@ -154,7 +150,10 @@
             body: JSON.stringify({size: size, pcs: qty})
         })
         .then(response => {
-            if (!response.ok) {
+            if(response.ok){
+                updateContent();
+            }
+            else {
             console.log('Failed to update cart');
             }
         })
@@ -162,8 +161,8 @@
     }
 
     function removeCartItem(event) {
-        let id = this.getAttribute('data-id');
-        let size = this.getAttribute('data-size');
+        let id = event.target.getAttribute('data-id');
+        let size = event.target.getAttribute('data-size');
 
         fetch(`/cart/${id}?size=${size}`, {
             method: 'DELETE',
@@ -173,13 +172,30 @@
         })
         .then(response => {
             if (response.ok) {
-                this.parentElement.parentElement.remove();
+                event.target.parentElement.parentElement.remove();
             } else {
                 console.log('Failed to remove cart item');
             }
         })
         .catch(error => console.error(error));
     }
+
+    const updateContent = async () => {
+        try {
+            const response = await fetch('/cart');
+            if (response.ok) {
+            const data = await response.text();
+            const parser = new DOMParser();
+            const dataDocument = parser.parseFromString(data, 'text/html');
+            const mainElement = document.querySelector('main');
+            mainElement.innerHTML = dataDocument.querySelector('main').innerHTML;
+            } else {
+            console.error('Response not ok');
+            }
+        } catch (error) {
+            console.error(error);
+        }
+    };
 </script>
 
 @endsection

@@ -97,12 +97,14 @@ class CartProductController extends Controller
             });
 
             session()->put('cart', $cart);
+            return response(200);
         }
         $cartProduct = CartProduct::where('product_id', $id)
                         ->where('size', $request->input('size'))
                         ->first();
 
         $cartProduct->delete();
+        return response(200);
     }
 
     //update item
@@ -124,6 +126,7 @@ class CartProductController extends Controller
             }, $cart);
 
             session()->put('cart', $cart);
+            return response(200);
         }
         $cartProduct = CartProduct::where('product_id', $id)
                         ->where('size', $request->input('size'))
@@ -137,5 +140,6 @@ class CartProductController extends Controller
         } else {
             $cartProduct->save();
         }
+        return response(200);
     }
 }
