@@ -80,8 +80,8 @@
                     </div>
                 </div>
             </div>
-            <div class="row mb-0">
-                <ul id="postcode-suggestions"></ul>
+            <div class="row">
+                <ul id="postcode-suggestions mb-0"></ul>
             </div>
             <div class="form-floating mb-3">
                 <input type="text" class="form-control @error('country') is-invalid @enderror" id="floatingCountry" value="" name="country" placeholder="Pezinská">
