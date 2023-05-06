@@ -56,6 +56,7 @@ class OrderController extends Controller
             'postcode' => 'required',
             'city' => 'required',
             'country' => 'required',
+            'agreement' => 'required',
         ]);
 
         if(Auth::id() == null) {

@@ -151,15 +151,15 @@
                                 <div class="col-md-6">
                                     <p class="fw-bold">Shipping method</p>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="shipppingMethod" id="shipping1">
+                                        <input class="form-check-input" type="radio" name="shipppingMethod" id="shipping1" value="DHL">
                                         <label class="form-check-label" for="shipping1">DHL: 2€</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="shipppingMethod" id="shipping2">
+                                        <input class="form-check-input" type="radio" name="shipppingMethod" id="shipping2" value="SP">
                                         <label class="form-check-label" for="shipping2">Slovneská pošta: 2€</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="shipppingMethod" id="shipping3">
+                                        <input class="form-check-input" type="radio" name="shipppingMethod" id="shipping3" value="GLS">
                                         <label class="form-check-label" for="shipping3">GLS: 2€</label>
                                     </div>
                                 </div>
@@ -181,15 +181,15 @@
                                 <div class="col-md-6 mb-3">
                                     <p class="fw-bold">Payment type</p>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="PaymentMethod" id="payment1">
+                                        <input class="form-check-input" type="radio" name="PaymentMethod" id="payment1" value="cod">
                                         <label class="form-check-label" for="payment1">Cash on delivery</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="PaymentMethod" id="payment2">
+                                        <input class="form-check-input" type="radio" name="PaymentMethod" id="payment2" value="card">
                                         <label class="form-check-label" for="payment2">Credit/Debit card</label>
                                     </div>
                                     <div class="form-check">
-                                        <input class="form-check-input" type="radio" name="PaymentMethod" id="payment3">
+                                        <input class="form-check-input" type="radio" name="PaymentMethod" id="payment3" value="paypal">
                                         <label class="form-check-label" for="payment3">Paypal</label>
                                     </div>
                                 </div>
@@ -201,7 +201,7 @@
                         <div class="col">
                             <div class="container d-flex align-items-between justify-content-between">
                                 <div class="form-check mb-3 col-md-8">
-                                    <input class="form-check-input" type="checkbox" value="" name="agreement" id="agreement" required>
+                                    <input class="form-check-input" type="checkbox" value="agreement" name="agreement" id="agreement" required>
                                     <label class="form-check-label" for="agreement">Accept agreement</label>
                                 </div>
                             </div>
