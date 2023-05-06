@@ -25,46 +25,86 @@
             <div class="row">
                 <div class="col-lg-6">
                     <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingName" value="{{$user->name ?? '' }}" name="name" placeholder="Pezinská">
+                    <input type="text" class="form-control @error('name') is-invalid @enderror" id="floatingName" value="{{$user->name ?? '' }}" name="name" placeholder="Pezinská">
                     <label for="floatingName">Name</label>
+                    @error('name')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                     </div>
                 </div>
                 <div class="col-lg-6">
                     <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingSurname" value="{{$user->surname ?? '' }}" name="surname" placeholder="Pezinská">
+                    <input type="text" class="form-control @error('surname') is-invalid @enderror" id="floatingSurname" value="{{$user->surname ?? '' }}" name="surname" placeholder="Pezinská">
                     <label for="floatingSurname">Surname</label>
+                    @error('surname')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                     </div>
                 </div>
                 </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingAddress" value="" name="street" placeholder="Pezinská">
+                <input type="text" class="form-control @error('street') is-invalid @enderror" id="floatingAddress" value="" name="street" placeholder="Pezinská">
                 <label for="floatingAddress">Address and number</label>
+                @error('street')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
             <div class="row">
                 <div class="col-lg-3">
                     <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingPostcode" value="" name="postcode" placeholder="Pezinská">
+                    <input type="text" class="form-control @error('postcode') is-invalid @enderror" id="floatingPostcode" value="" name="postcode" placeholder="Pezinská">
                     <label for="floatingPostcode">Postcode</label>
+                    @error('postcode')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                     </div>
                 </div>
                 <div class="col-lg-9">
                     <div class="form-floating mb-3">
-                    <input type="text" class="form-control" id="floatingCity" value="" name="city" placeholder="Pezinská">
+                    <input type="text" class="form-control @error('city') is-invalid @enderror" id="floatingCity" value="" name="city" placeholder="Pezinská">
                     <label for="floatingCity">City</label>
+                    @error('city')
+                    <div class="invalid-feedback">
+                        {{$message}}
+                    </div>
+                    @enderror
                     </div>
                 </div>
                 </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingCountry" value="" name="country" placeholder="Pezinská">
+                <input type="text" class="form-control @error('country') is-invalid @enderror" id="floatingCountry" value="" name="country" placeholder="Pezinská">
                 <label for="floatingCountry">Country</label>
+                @error('country')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control" id="floatingPhone" value="{{$user->phone ?? '' }}" name="phone" placeholder="Pezinská">
+                <input type="text" class="form-control @error('phone') is-invalid @enderror" id="floatingPhone" value="{{$user->phone ?? '' }}" name="phone" placeholder="Pezinská">
                 <label for="floatingPhone">Phone</label>
+                @error('phone')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
             <div class="form-floating mb-3">
-                <input type="email" class="form-control" id="floatingEmail" value="{{$user->email ?? '' }}" name="email"placeholder="Pezinská">
+                <input type="email" class="form-control @error('email') is-invalid @enderror" id="floatingEmail" value="{{$user->email ?? '' }}" name="email" placeholder="Pezinská">
                 <label for="floatingEmail">Email</label>
+                @error('email')
+                <div class="invalid-feedback">
+                    {{$message}}
+                </div>
+                @enderror
             </div>
             <div class="row d-flex justify-content-end">
             <div class="col-md-4 d-grid">
