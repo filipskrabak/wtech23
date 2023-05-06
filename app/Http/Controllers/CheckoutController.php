@@ -13,7 +13,7 @@ use App\Models\Street;
 
 class CheckoutController extends Controller
 {
-    public function create() {
+    public function index() {
         if(Auth::id() == null) {
             $products = session()->get('cart', []);
             return view('checkout', [
@@ -36,67 +36,16 @@ class CheckoutController extends Controller
         ]);
     }
 
-    public function store(Request $request) {
-        $request->validate([
-            'name' => 'required',
-            'surname' => 'required',
-            'email' => 'required|email',
-            'phone' => 'required',
-            'street' => 'required',
-            'postcode' => 'required',
-            'city' => 'required',
-            'country' => 'required',
-        ]);
+    //checkPostcode() function - return all postcodes from database begging with $postcode
+    public function checkPostcode(Request $request){
+        $postcode = $request->input('postcode');
+        $postcodes = Postcode::where('postcode', 'LIKE', $postcode.'%')->take(10)->get();
+        response()->json($postcodes);
+    }
 
-        $order = $request->user()->orders()->create([
-            'name' => $request->input('name'),
-            'surname' => $request->input('surname'),
-            'email' => $request->input('email'),
-            'phone' => $request->input('phone'),
-            'street' => $request->input('street'),
-            'postcode' => $request->input('postcode'),
-            'city' => $request->input('city'),
-            'country' => $request->input('country'),
-            'status' => 'pending',
-        ]);
-
-        if(Auth::id() == null) {
-            $cart = session()->get('cart', []);
-            $total = 0;
-
-            foreach($cart as $cartProduct) {
-                $total += $cartProduct->product->price * $cartProduct->pcs;
-                $order->products()->create([
-                    'product_id' => $cartProduct->product_id,
-                    'size' => $cartProduct->size,
-                    'pcs' => $cartProduct->pcs,
-                ]);
-            }
-
-            $order->total = $total;
-            $order->save();
-
-            session()->forget('cart');
-        }
-        else {
-            $cartProducts = CartProduct::get()->filter(function($cartProduct) {
-                return $cartProduct->user->id === Auth::id();
-            });
-            $total = 0;
-
-            foreach($cartProducts as $cartProduct) {
-                $total += $cartProduct->product->price * $cartProduct->pcs;
-                $order->products()->create([
-                    'product_id' => $cartProduct->product_id,
-                    'size' => $cartProduct->size,
-                    'pcs' => $cartProduct->pcs,
-                ]);
-            }
-            $order->total = $total;
-            $order->save();
-
-            //delete all cart products
-            CartProduct::where('user_id', Auth::id())->delete();
-        }
+    public function checkStreet(Request $request){
+        $street = $request->input('street');
+        $streets = Street::where('street', 'LIKE', $street.'%')->take(10)->get();
+        response()->json($streets);
     }
 }

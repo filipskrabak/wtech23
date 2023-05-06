@@ -86,7 +86,16 @@ Route::controller(CartProductController::class)->group(function () {
 });
 
 // Show checkout
-Route::get('/checkout', [CheckoutController::class, 'create']);
+Route::controller(CheckoutController::class)->group(function () {
+    // Show checkout
+    Route::get('/checkout', 'index');
+
+    // check if postcode is valid
+    Route::post('/checkout/postcode', 'checkPostcode');
+
+    // check if street is valid
+    Route::post('/checkout/street', 'checkStreet');
+});
 
 //OrderController routes
 Route::controller(OrderController::class)->group(function () {

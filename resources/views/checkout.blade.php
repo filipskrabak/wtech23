@@ -49,6 +49,7 @@
             <div class="form-floating mb-3">
                 <input type="text" class="form-control @error('street') is-invalid @enderror" id="floatingAddress" value="" name="street" placeholder="Pezinská">
                 <label for="floatingAddress">Address and number</label>
+                <ul id="street-suggestions"></ul>
                 @error('street')
                 <div class="invalid-feedback">
                     {{$message}}
@@ -60,6 +61,7 @@
                     <div class="form-floating mb-3">
                     <input type="text" class="form-control @error('postcode') is-invalid @enderror" id="floatingPostcode" value="" name="postcode" placeholder="Pezinská">
                     <label for="floatingPostcode">Postcode</label>
+                    <ul id="postcode-suggestions"></ul>
                     @error('postcode')
                     <div class="invalid-feedback">
                         {{$message}}
@@ -248,6 +250,23 @@
         document.getElementById('step-2').style.display = 'none';
         document.getElementById('agreement').checked = false;
     });
+
+    const postcodeInput = document.getElementById('floatingPostcode');
+    postcodeInput.addEventListener('input', fetchPostcodeSuggestions);
+
+    async function fetchPostcodeSuggestions() {
+        const postcode = postcodeInput.value;
+        const response = await fetch('/checkout/postcode', {
+            method: 'POST',
+            headers: {
+            'Content-Type': 'application/json',
+            'X-CSRF-TOKEN': document.querySelector('meta[name="csrf-token"]').getAttribute('content'),
+            },
+            body: JSON.stringify({ postcode })
+        });
+        const suggestions = await response.json();
+        console.log(suggestions); // Log the retrieved suggestions to the console
+    }
 </script>
 
 @endsection
