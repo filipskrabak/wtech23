@@ -113,7 +113,7 @@
     if (event.target.matches('.plus-btn')) {
         increasePcs(event);
     }
-    if (event.target.matches('.cart-item-remove-btn')) {
+    if (event.target.parentElement.matches('.cart-item-remove-btn')) {
         removeCartItem(event);
     }
     });
@@ -161,8 +161,8 @@
     }
 
     function removeCartItem(event) {
-        let id = event.target.getAttribute('data-id');
-        let size = event.target.getAttribute('data-size');
+        let id = event.target.parentElement.getAttribute('data-id');
+        let size = event.target.parentElement.getAttribute('data-size');
 
         fetch(`/cart/${id}?size=${size}`, {
             method: 'DELETE',
@@ -172,7 +172,7 @@
         })
         .then(response => {
             if (response.ok) {
-                event.target.parentElement.parentElement.remove();
+                updateContent();
             } else {
                 console.log('Failed to remove cart item');
             }
