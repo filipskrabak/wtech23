@@ -47,7 +47,7 @@
                 </div>
                 </div>
             <div class="form-floating mb-3">
-                <input type="text" class="form-control @error('street') is-invalid @enderror" id="floatingAddress" value="" name="street" placeholder="Pezinská">
+                <input type="text" class="form-control @error('street') is-invalid @enderror" id="floatingAddress" value="{{$user->street->name ?? '' }}" name="street" placeholder="Pezinská">
                 <label for="floatingAddress">Address and number</label>
                 <ul id="street-suggestions"></ul>
                 @error('street')
@@ -62,7 +62,7 @@
             <div class="row">
                 <div class="col-lg-3">
                     <div class="form-floating mb-3">
-                    <input type="text" class="form-control @error('postcode') is-invalid @enderror" id="floatingPostcode" value="" name="postcode" placeholder="Pezinská">
+                    <input type="text" class="form-control @error('postcode') is-invalid @enderror" id="floatingPostcode" value="{{$user->postcode->postcode ?? '' }}" name="postcode" placeholder="Pezinská">
                     <label for="floatingPostcode">Postcode</label>
                     @error('postcode')
                     <div class="invalid-feedback">
@@ -73,7 +73,7 @@
                 </div>
                 <div class="col-lg-9">
                     <div class="form-floating mb-3">
-                    <input type="text" class="form-control @error('city') is-invalid @enderror" id="floatingCity" value="" name="city" placeholder="Pezinská">
+                    <input type="text" class="form-control @error('city') is-invalid @enderror" id="floatingCity" value="{{$user->postcode->district->city->name ?? '' }}" name="city" placeholder="Pezinská">
                     <label for="floatingCity">City</label>
                     @error('city')
                     <div class="invalid-feedback">
