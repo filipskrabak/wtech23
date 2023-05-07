@@ -51,9 +51,10 @@
 
                     <ul class="dropdown-menu" aria-labelledby="dropdownProfile">
                       <li><a class="dropdown-item" href="/edit"><i class="fa-solid fa-user-pen"></i> Edit details</a></li>
-                      <li><a class="dropdown-item" href="/orders"><i class="fa-solid fa-list"></i> My orders</a></li>
                       @can('admin', App\Models\User::class)
                       <li><a class="dropdown-item" href="/dashboard/products"><i class="fa-solid fa-gauge"></i> Admin dashboard</a></li>
+                      @else
+                      <li><a class="dropdown-item" href="/orders"><i class="fa-solid fa-list"></i> My orders</a></li>
                       @endcan
                       <li>
                         <form class="inline" method="POST" action="/logout">
