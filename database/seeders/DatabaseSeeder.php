@@ -465,13 +465,13 @@ class DatabaseSeeder extends Seeder
         ]);
 
         DB::table('streets')->insert([
-            'name' => 'Andrusovova',
+            'name' => 'Andrusovova 11',
             'house_number' => 11,
             'district_id' => 1
         ]);
 
         DB::table('streets')->insert([
-            'name' => 'A. Gwerkovej',
+            'name' => 'A. Gwerkovej 15',
             'house_number' => 15,
             'district_id' => 1
         ]);
