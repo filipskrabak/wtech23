@@ -123,4 +123,23 @@ class OrderController extends Controller
         // Redirect to order view
         return redirect()->route('orders.show', ['order' => $order]);
     }
+
+    public function update(Request $request, Order $order) {
+        $request->validate([
+            'status' => 'required',
+        ]);
+
+        $order->status = $request->input('status');
+        $order->save();
+
+        return redirect('/dashboard/orders')
+        ->with('message','Product has been deleted.');
+    }
+
+    public function destroy(Order $order) {
+        $order->delete();
+
+        return redirect('/dashboard/orders')
+        ->with('message','Product has been deleted.');
+    }
 }

@@ -100,7 +100,7 @@ Route::controller(CheckoutController::class)->group(function () {
 //OrderController routes
 Route::controller(OrderController::class)->group(function () {
     // Show user orders
-    Route::get('/orders', 'index')->middleware('auth');
+    Route::get('/orders', 'index')->middleware('auth')->name('orders.index');
 
     // Show order details
     Route::get('/orders/{order}', 'show')->name('orders.show');
@@ -111,6 +111,15 @@ Route::controller(OrderController::class)->group(function () {
 
 //Admin routes
 Route::middleware('can:admin, App\Models\User')->group(function () {
+
+    //OrderController routes
+    Route::controller(OrderController::class)->group(function () {
+        // Update order status
+        Route::put('/dashboard/orders/{order}', 'update')->name('dashboard.orders.update');
+
+        // Delete order
+        Route::delete('/dashboard/orders/{order}', 'destroy')->name('dashboard.orders.destroy');
+    });
 
     // Admin User routes
     Route::controller(UserController::class)->group(function () {
@@ -134,7 +143,7 @@ Route::middleware('can:admin, App\Models\User')->group(function () {
         Route::get('/dashboard/attribute-values', 'attributes')->name('dashboard.attribute-values.index');
 
         //Show all orders
-        Route::get('/dashboard/orders', 'orders');
+        Route::get('/dashboard/orders', 'orders')->name('dashboard.orders.index');
     });
 
     //DashboardProductController routes

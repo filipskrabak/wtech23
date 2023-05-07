@@ -16,6 +16,11 @@ class CheckoutController extends Controller
     public function index() {
         if(Auth::id() == null) {
             $products = session()->get('cart', []);
+
+            if(count($products) == 0) {
+                return redirect('/cart')->with('message', 'Cart is empty!');
+            }
+
             return view('checkout', [
                 'products' => $products,
             ]);
@@ -29,6 +34,10 @@ class CheckoutController extends Controller
 
         //get User
         $user = Auth::user();
+
+        if(count($products) == 0) {
+            return redirect('/cart')->with('message', 'Cart is empty!');
+        }
 
         return view('checkout', [
             'products' => $products,

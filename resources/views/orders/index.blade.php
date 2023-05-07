@@ -44,28 +44,28 @@
 
                 @can('admin', App\Models\User::class)
                 <td>
-                    <form method="POST" action="/orders/{{$order->id}}">
+                    <form method="POST" action="{{ route('dashboard.orders.update',$order) }}">
                         @csrf
-                        @method('DELETE')
+                        @method('PUT')
 
                         <div class="input-group input-group-sm">
-                        <select class="form-select form-select-sm" id="categorySelect2" aria-label="Select order status">
+                        <select class="form-select form-select-sm" id="categorySelect2" aria-label="Select order status" name="status">
                             <option disabled selected>Select status</option>
-                            <option value="1">Shipped</option>
-                            <option value="2">Cancelled</option>
-                            <option value="3">Settled</option>
+                            <option value="shipped">Shipped</option>
+                            <option value="cancelled">Cancelled</option>
+                            <option value="settled">Settled</option>
                         </select>
-                        <button class="btn  btn-outline-primary"><i class="fa-solid fa-xmark me-1"></i> Change</button>
+                        <button class="btn btn-outline-primary"><i class="fa-solid fa-arrow-right" type="submit"></i> Change</button>
                         </div>
                     </form>
                 </td>
                 <td>
                     <div class="container d-flex justify-content-end">
                         <a href="/orders/{{$order->id}}" class="btn btn-sm btn-primary me-2"><i class="fa-solid fa-shirt me-1"></i>View</a>
-                        <form method="POST" action="/orders/{{$order->id}}">
+                        <form method="POST" action="{{ route('dashboard.orders.destroy',$order) }}">
                             @csrf
                             @method('DELETE')
-                            <button class="btn btn-sm btn-danger"><i class="fa-solid fa-xmark me-1"></i> Delete</button>
+                            <button class="btn btn-sm btn-danger"><i class="fa-solid fa-xmark me-1" type="submit"></i> Delete</button>
                         </form>
                     </div>
                 </td>
