@@ -2,14 +2,19 @@
 
 @section('title', 'Orders')
 
+
 @section('content')
 
 @include('layouts.adminnav')
 
 <section class="container mt-3">
     <div class="row justify-content-start align-items-center">
-        <div class="col-md-3">
+        <div class="col-md-5">
+            @can('admin', App\Models\User::class)
+            <h1 class="text-left">Dashboard - orders</h1>
+            @else
             <h1 class="text-left">Orders</h1>
+            @endcan
         </div>
     </div>
     @if(@count($orders) == 0)
